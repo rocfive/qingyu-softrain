@@ -1,0 +1,37 @@
+/* pages/card/list.wxss */
+.tab{
+  height: 92rpx;
+  white-space: nowrap
+}
+.tab view{
+  height: 92rpx;
+  line-height: 92rpx;
+  display: inline-block;
+  margin-right: 60rpx;
+}
+.tab .cur{
+  box-sizing: border-box;
+  border-bottom: 5rpx solid #418dfd
+}
+.cardlist .item{
+  margin-top: 30rpx;
+}
+.cardlist .item image{
+  width: 702rpx;
+  height: 418rpx;
+  border-radius: 20rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.23)
+}
+.cardlist .item .name{
+  font-size: 30rpx;
+  font-weight: bold
+}
+.cardlist .item .price{
+  font-size: 26rpx;
+  color: #418dfd;
+  font-weight: bold
+}
+.cardlist .item .price text{
+  font-size: 36rpx;
+}

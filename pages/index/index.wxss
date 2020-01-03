@@ -1,0 +1,241 @@
+/**index.wxss**/
+.top{
+  width: 100vw;
+  height: 100rpx;
+}
+.top .address{
+  width: 200rpx;
+  font-size: 30rpx;
+}
+.top .address .address_l{
+  min-width: 100rpx;
+  max-width: 132rpx;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap
+}
+.top .address .icon-arrLeft-fill{
+  font-size: 36rpx;
+  color: #666666
+}
+.top .searchbox{
+  width: 532rpx;
+  height: 64rpx;
+  background: #f7f7f7;
+  border-radius: 32rpx;
+}
+.top .searchbox .icon-sousuo{
+  color: #7f8699;
+  font-size: 36rpx;
+  vertical-align: middle
+}
+.top .searchbox input{
+  width: calc(100% - 50rpx)
+}
+.banner, .banner swiper-item, .banner swiper-item image{
+  width: 100vw;
+  height: 400rpx;
+}
+.headline{
+  height: 94rpx;
+}
+.headline .headline_l{
+  height: 42rpx;
+  line-height: 42rpx;
+  width: 160rpx;
+  border-right: 1px solid #dddddd
+}
+.headline .headlinebt{
+  width: 136rpx;
+  height: 30rpx;
+}
+.headline .newest{
+  width: 64rpx;
+  height: 36rpx;
+  text-align: center;
+  border: 1rpx solid #418dfd;
+  line-height: 36rpx;
+  border-radius: 8rpx;
+  color: #418dfd;
+  font-size: 24rpx;
+  margin:0 20rpx;
+}
+.headline .headline_r{
+  font-size: 26rpx;
+  color: #333333;
+  width: 428rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.headline .icon-gengduo{
+  font-size: 32rpx;
+}
+.cube image{
+  border-radius: 5rpx;
+}
+.cube01{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.cube01 .group01{
+  width: 702rpx;
+  height: 336rpx;
+}
+.cube01 .img01{
+  width: 274rpx;
+  height: 336rpx;
+}
+.cube01 .group02{
+  width: 424rpx;
+  height: 336rpx;
+}
+.cube01 .img02, .cube01 .img03{
+  width: 424rpx;
+  height: 166rpx;
+}
+.cube01 .img04{
+  width: 702rpx;
+  height: 274rpx;
+  border-radius: 10rpx;
+  margin-top: 6rpx
+}
+.cube02{
+  height: 828rpx;
+  padding-top: 16px;
+  padding-bottom: 16rpx;
+  position: relative;
+  box-sizing: border-box
+}
+.cube02 navigator{
+  position: absolute
+}
+.cube02 image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx
+}
+.cube02 .img01, .cube02 .img04{
+  width: 342rpx;
+  height: 354rpx;
+}
+.cube02 .img02, .cube02 .img03{
+  width: 342rpx;
+  height: 422rpx;
+}
+.cube02 .img01, .cube02 .img02{
+  top: 16rpx;
+}
+.cube02 .img01, .cube02 .img03{
+  left: 24rpx;
+}
+.cube02 .img02, .cube02 .img04{
+  right: 24rpx;
+}
+.cube02 .img03, .cube02 .img04{
+  bottom: 16rpx
+}
+.cube03{
+  margin-bottom: 20rpx;
+}
+.cube03 .group{
+  width: 702rpx;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  overflow: hidden
+}
+.cube03 .group image{
+  width: 350rpx;
+  height: 172rpx;
+}
+.cube04, .cube05{
+  padding-top: 26rpx;
+  padding-bottom: 20rpx;
+}
+.cube04 .img01, .cube05 .img01{
+  width: 702rpx;
+  height: 274rpx;
+  border-radius: 10rpx;
+}
+.cube04 .group01{
+  width: 702rpx;
+  margin-top: 20rpx;
+}
+.cube04 .img02, .cube05 .img02{
+  width: 226rpx;
+  height: 296rpx;
+  border-radius: 10rpx;
+}
+.cube05 .group01{
+  margin-bottom: 20rpx
+}
+@import "../style/goodslist";
+.recommon{
+  width: 100vw;
+  /* height: 700rpx; */
+  box-sizing: border-box;
+  padding-top:20rpx; 
+}
+.recommon swiper{
+  width: 728rpx;  
+  height: 664rpx;
+  margin: auto;
+}
+.recommon swiper-item{
+  width: 364rpx; 
+  height: 700rpx; 
+}
+.recommon swiper-item .item{
+  width: 340rpx;
+  height: 602rpx;
+  margin: auto;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  position: relative
+}
+.recommon swiper-item image{
+  width: 340rpx;
+  height: 322rpx;
+  margin-bottom: 20rpx;
+}
+.recommon .name{
+  width: 300rpx;
+  margin: auto;
+  margin-bottom: 12rpx
+}
+.recommon .address{
+  width: 300rpx;
+  margin: auto;
+  font-size: 26rpx;
+  color: #666666
+}
+.recommon .item_b{
+  width: 300rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+}
+.recommon .item_b view{
+  color: #4794ff
+}
+.recommon .item_b .iconfont{
+  font-size: 42rpx;
+}
+/* 默认指示点的样式 */
+.recommon .wx-swiper-dot {
+  width: 15rpx;
+  height: 15rpx;
+  background: #d4e6ff;
+  border-radius: 15rpx;
+}
+/* 选中指示点的样式 */
+.recommon .wx-swiper-dot.wx-swiper-dot-active {
+    width: 30rpx;
+    height: 15rpx;
+    background: #b5d4ff;
+    border-radius: 15rpx;
+}

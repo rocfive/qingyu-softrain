@@ -1,0 +1,94 @@
+/* pages/commission/money.wxss */
+@import "bottom";
+page{
+  background: #f2f2f2;
+  padding-bottom: 120rpx
+}
+.head{
+  width: 100vw;
+  height: 204rpx;
+  background: linear-gradient(180deg,#418dfd,#9197fb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14rpx 0 62rpx;
+  color: #fff;
+  box-sizing: border-box
+}
+.head .head_l{
+  display: flex;
+  flex-flow: column;
+}
+.head .money{
+  line-height: 55rpx;
+  font-size: 36rpx;
+  font-weight: bold
+}
+.group{
+  width: 100vw;
+  margin-bottom: 10rpx;
+}
+.group .item{
+  width: 100vw;
+  height: 100rpx;
+  padding: 0 14rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1rpx solid #e4e4e4
+}
+.group .item:last-child{
+  border:none;
+}
+.group .item .item_l{
+  display: flex;
+  align-items: center;
+  color: #444
+}
+.group .item .item_l .iconfont{
+  color: #888888;
+  margin-right: 10rpx
+}
+.group .item .item_r{
+  color: #888888
+}
+.green,.group .item .item_r.green{
+  color: #468efd
+}
+.group2{
+  width: 100vw;
+}
+.group2 .item{
+  width: 100vw;
+  height: 100rpx;
+  padding: 0 14rpx 0 58rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1rpx solid #e4e4e4
+}
+.group2 .txtmsg{
+  width: 100vw;
+  padding: 20rpx 58rpx;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 24rpx;
+  color: #888888
+}
+.txbtn{
+  width: 702rpx;
+  height: 82rpx;
+  border-radius: 41rpx;
+  margin:28rpx auto;
+  text-align: center;
+  line-height: 82rpx;
+  background: #468efd;
+  color: #fff
+}
+.txbtn.nolock{
+  background: #bcbcbc
+}

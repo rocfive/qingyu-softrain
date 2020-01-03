@@ -1,0 +1,40 @@
+/* pages/goods/pay.wxss */
+.group .item{
+  height: 110rpx;
+  border-bottom: 1rpx solid #eee
+}
+.group .item:last-child{
+  border-bottom: 0;
+}
+.group .item label{
+  font-size: 30rpx
+}
+.group .item .money{
+  font-size: 30rpx;
+  color: #4694ff;
+  font-weight: bold
+}
+.payitem{
+  height: 112rpx;
+}
+.payitem .payicon{
+  width: 40rpx;
+}
+.payitem .payname{
+  width: 560rpx;
+}
+.payitem .payname .tips{
+  font-size: 24rpx;
+  color: #888888
+}
+.payitem .checkbox1{
+  width: 42rpx;
+  height: 42rpx;
+  border: 1px solid #bfbfbf;
+  border-radius: 50%;
+  box-sizing: border-box
+}
+.payitem .checkbox image{
+  width: 42rpx;
+  height: 42rpx;
+}

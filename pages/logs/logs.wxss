@@ -1,0 +1,108 @@
+page{
+  background: #fff
+}
+.pages{
+  width: 100vw;
+  height: 70vh;
+}
+.pages .logo{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 100rpx;
+}
+.pages .logo image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.pages button{
+  width: 600rpx;
+  height: 85rpx;
+  border: 2rpx solid #bed9fe;
+  color: #418dfd;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 84rpx;
+  padding: 0;
+}
+.pages .wechat_btn{
+  background: #2ead3c;
+  color: #fff;
+  border: none;
+  margin-bottom: 36rpx;
+  font-size: 28rpx;
+}
+
+.pop_getUserInfo{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-flow: row;
+  justify-content:space-around;
+  align-items: center;
+}
+.pop_getUserInfo .pop_user_main{
+  width: 540rpx;
+  /* height: 500rpx; */
+  border-radius: 10rpx;
+  display: flex;
+  flex-flow: column;
+  background: #fff;
+}
+.pop_getUserInfo .pop_user_main .bt{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 32rpx
+}
+.pop_getUserInfo .pop_user_main .pop_user_main_box{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box
+}
+.pop_getUserInfo .pop_user_main .pop_user_main_box image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.pop_getUserInfo .pop_user_main .btn_box{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-flow: row;
+  align-items: center;  
+  border-top: 1rpx solid #ccc;
+}
+.pop_getUserInfo button{
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  border: none;
+  background: #fff;
+  padding: 0;
+  line-height: 98rpx;
+  font-size: 32rpx;
+  font-weight: normal
+}
+.pop_getUserInfo button::after{
+  border: none;
+}
+.pop_getUserInfo .btn_box .closepop{
+  border-right: 1rpx solid #ccc
+}

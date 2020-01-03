@@ -1,0 +1,115 @@
+/* pages/goods/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page{
+  padding-bottom: 150rpx;
+}
+.goodsimg, .goodsimg swiper-item, .goodsimg swiper-item image{
+  width: 100vw;
+  height: 750rpx;
+}
+.progress{
+  width: 78rpx;
+  height: 42rpx;
+  background: rgba(0,0,0,0.62);
+  position: absolute;
+  top: 690rpx;
+  right: 24rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 42rpx;
+  font-size: 24rpx;
+}
+.seckillbar{
+  width: 750rpx;
+  height: 100rpx;
+  position: relative
+}
+.seckillbar .bg{
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+.seckillbar .bar_l{
+  width: 300rpx;
+  height: 100rpx;
+  line-height:100rpx;
+  position: relative;
+  color: #fff;
+}
+.seckillbar .seckillprice{
+  font-size: 32rpx;
+  font-weight: bold;
+  display: inline-block
+}
+.seckillbar .seckillprice text{
+  font-size: 56rpx;
+}
+.seckillbar .original{
+  font-size: 20rpx;
+  text-decoration: line-through;
+  margin-left: 18rpx;
+  display: inline-block;
+}
+.seckillbar .bar_r{
+  width: 274rpx;
+  color: #3d9aff;
+}
+.seckillbar .bar_r .flag{
+  display: inline-block;
+  width: 38rpx;
+  height: 38rpx;
+  background: #3d9aff;
+  border-radius: 10rpx;
+  color: #fff;
+  margin: 0 6rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 38rpx;
+}
+
+
+.goodsmsg{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  position: relative
+}
+.goodsmsg .title{
+  width: 600rpx;
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+.goodsmsg .subhead{
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999999;
+  margin-bottom: 20rpx
+}
+.price{
+  color: #4694ff;
+  font-size: 26rpx;
+}
+.price text{
+  font-size: 42rpx;
+  font-weight: bold
+}
+.oldprice{
+  font-size: 28rpx;
+  color: #888;
+  text-decoration: line-through
+}
+.share{
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  color: #4694ff
+}
+.share .iconfont{
+  font-size: 32rpx;
+  color: #4694ff
+}
+.bt{
+  border-bottom: 1rpx solid #f2f2f2
+}

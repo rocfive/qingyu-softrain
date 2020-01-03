@@ -1,0 +1,29 @@
+<!--pages/myzoe/retail.wxml-->
+<view class="m-t bg_fff flex_c_c">
+  <view class="cardimg"><image src="../img/cardimg.png"></image></view>
+  <view class="cardname">【V脸套餐】瘦脸针+玻尿酸+水光针乐享价988礼品卡</view>
+  <view class="giftbag">
+    <view class="title">包含以下好礼</view>
+    <view class="group">
+      <view class="item flex_r_a">
+        <text class="name">瘦脸针</text>
+        <text>x1</text>
+      </view>
+      <view class="item flex_r_a">
+        <text class="name">玻尿酸</text>
+        <text>x1</text>
+      </view>
+      <view class="item flex_r_a">
+        <text class="name">皮肤清洁</text>
+        <text>x1</text>
+      </view>
+    </view>
+    <view class="flex_r_b pricemsg">
+      <view>购买礼包</view>
+      <view class="money">￥988</view>
+    </view>
+    <image src="../img/baohan.png" class="giftbag_foot" mode="widthFix"></image>
+  </view>
+  <view class="tips">点击“去支付”并购买礼包。</view>
+</view>
+<view class="btn">去支付</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#418dfd",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "spec": "../goods/spec"
+  }
+}

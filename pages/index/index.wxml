@@ -1,0 +1,117 @@
+<!--index.wxml-->
+<view class="top p-w-24 flex_r_b bg_fff">
+  <view class="address flex_r" bindtap="chosecity">
+    <text class="address_l">{{cityname}}</text>
+    <text class="iconfont icon-arrLeft-fill"></text>
+  </view>
+  <view class="searchbox p-w-24 flex_r_b" bindtap="tosearch">
+    <text class="iconfont icon-sousuo"></text>
+    <input type="text" placeholder="搜索" value="" disabled='true'></input>
+  </view>
+</view>
+<swiper class="banner">
+  <swiper-item wx:for='{{banner}}' wx:key='index'><image bindtap='card' src="{{item.pic}}" mode="aspectFill"></image></swiper-item>
+</swiper>
+<view class="headline flex_r_c p-w-24 bg_fff" bindtap="toheadlinelist">
+  <view class="headline_l"><image src="../img/headline.png" class="headlinebt"></image></view>
+  <view class="newest">最新</view>
+  <swiper vertical='true' autoplay='true' class="headline_r">
+    <swiper-item wx:for='{{notice}}' wx:key='index' catchtap='toheadlinedetail' data-id='{{item.id}}'>{{item.title}}</swiper-item>
+  </swiper>
+  <text class="iconfont icon-gengduo"></text>
+</view>
+<!-- 样式一 -->
+<view class="cube cube01 flex_c p-w-24 bg_fff m-12" wx:if='{{cube.style=="1"}}'>
+  <view class="group01 flex_r_b">
+    <navigator url="../goods/list?id={{cube.list[0].cate_id}}"><image src="{{cube.list[0].pic}}" class="img01" mode="aspectFill"></image></navigator>    
+    <view class="group02 flex_c_b">
+      <navigator url="../goods/list?id={{cube.list[1].cate_id}}"><image src="{{cube.list[1].pic}}" class="img02" mode="aspectFill"></image></navigator>
+      <navigator url="../goods/list?id={{cube.list[2].cate_id}}"><image src="{{cube.list[2].pic}}" class="img03" mode="aspectFill"></image></navigator>
+    </view>
+  </view>
+  <navigator url="../goods/list?id={{cube.list[3].cate_id}}"><image src="{{cube.list[3].pic}}" class="img04" mode="aspectFill"></image></navigator>
+</view>
+<!-- 样式二 -->
+<view class="cube cube02 p-w-24 bg_fff m-12" wx:elif='{{cube.style=="2"}}'>
+  <navigator class="img0{{index+1}}" wx:for='{{cube.list}}' wx:key='index' url="../goods/list?id={{item.cate_id}}"><image src="{{item.pic}}" mode="aspectFill"></image></navigator>
+</view>
+<!-- 样式三 -->
+<view class="cube cube03 p-w-24 m-20" wx:elif='{{cube.style=="3"}}'>
+  <view class="group flex_r_b">
+    <navigator wx:for='{{cube.list}}' wx:key='index' url="../goods/list?id={{item.cate_id}}"><image src="{{item.pic}}" mode="aspectFill"></image></navigator>
+  </view>
+</view>
+<!-- 样式四 -->
+<view class="cube cube04 flex_c p-w-24 m-12 bg_fff" wx:elif='{{cube.style=="4"}}'>
+  <navigator url="../goods/list?id={{cube.list[0].cate_id}}"><image src="{{cube.list[0].pic}}" class="img01" mode="aspectFill"></image></navigator>   
+  <view class="group01 flex_r_b">
+    <navigator url="../goods/list?id={{cube.list[1].cate_id}}"><image src="{{cube.list[1].pic}}" class="img02" mode="aspectFill"></image></navigator> 
+    <navigator url="../goods/list?id={{cube.list[2].cate_id}}"><image src="{{cube.list[2].pic}}" class="img02" mode="aspectFill"></image></navigator> 
+    <navigator url="../goods/list?id={{cube.list[3].cate_id}}"><image src="{{cube.list[3].pic}}" class="img02" mode="aspectFill"></image></navigator> 
+  </view>  
+</view>
+<!-- 样式五 -->
+<view class="cube cube05 flex_c p-w-24 m-12 bg_fff" wx:elif='{{cube.style=="5"}}'>  
+  <view class="group01 flex_r_b">
+    <navigator url="../goods/list?id={{item.cate_id}}" wx:for='{{cube.list}}' wx:key='index' wx:if='{{index<3}}'><image src="{{item.pic}}" class="img02" mode="aspectFill"></image></navigator> 
+  </view>  
+  <navigator url="../goods/list?id={{cube.list[3].cate_id}}"><image src="{{cube.list[3].pic}}" class="img01" mode="aspectFill"></image></navigator>   
+</view>
+<navigator url="../goods/list?ishot=1" class="bt p-w-24 bg_fff flex_r_b">
+  <view class="bt_l flex_r">
+    <text>热门项目</text>
+  </view>
+  <view class="bt_r">
+    <text>查看更多</text>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+</navigator>
+<view class="list">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" data-id="{{item.id}}" wx:for='{{hotlist}}' wx:key='index'>
+    <image src="{{item.image}}" class="listimg" mode="aspectFill"></image>
+    <view class="item_r flex_c_b">
+      <view class="h2">{{item.store_name}}</view>
+      <view class="item_r_b flex_r_b">
+         <view>
+          <text class="price">￥<text>{{item.price}}</text></text>
+          <text class="oldprice">￥{{item.ot_price}}</text>
+         </view>
+         <view class="flex_r">
+          <text>已售{{item.sales}}</text>
+          <view class="buybtn" catchtap="chosespec" data-id="{{item.id}}">抢购</view>
+         </view>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator url="../store/list" class="bt p-w-24 bg_fff flex_r_b m-12">
+  <view class="bt_l flex_r">
+    <text>推荐门店</text>
+  </view>
+  <view class="bt_r">
+    <text>查看更多</text>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+</navigator>
+<view class="recommon bg_fff" >
+  <swiper display-multiple-items="2" indicator-dots='true' wx:if='{{mendian.length>1}}'>
+    <swiper-item wx:for='{{mendian}}' wx:key='index' wx:if='{{index<9}}'>
+      <view class="item" bindtap="storedetail" data-id="{{item.id}}">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+        <view class="name">{{item.name}}</view>
+        <view class="address">{{item.introduction}}</view>
+        <view class="item_b flex_r_a">
+          <view class="flex_c_c">
+            <text class="iconfont icon-ditu3"></text>
+            <text>{{item.distance}}km</text>
+          </view>
+          <view class="flex_c_c" data-tel="{{item.phone}}" catchtap="toCall">
+            <text class="iconfont icon-dianhua1"></text>
+            <text>咨询</text>
+          </view>
+        </view>
+      </view>      
+    </swiper-item>      
+  </swiper>
+</view>
+<spec id='spec' goodsid='{{goodsid}}'></spec>

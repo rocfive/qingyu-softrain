@@ -1,0 +1,2 @@
+/* pages/business/orderlist.wxss */
+@import "../myzoe/orderlist";

@@ -1,0 +1,70 @@
+<!--pages/commission/tx_record.wxml-->
+<view class='top'>预计佣金：+99.00元</view>
+<view class='tab'>
+  <view class='{{ctype==0?"item cur":"item"}}' data-id='{{0}}' bindtap='changeTab'>全部</view>
+  <view class='{{ctype==1?"item cur":"item"}}' data-id='{{1}}' bindtap='changeTab'>待审核</view>
+  <view class='{{ctype==2?"item cur":"item"}}' data-id='{{2}}' bindtap='changeTab'>待打款</view>
+  <view class='{{ctype==3?"item cur":"item"}}' data-id='{{3}}' bindtap='changeTab'>已打款</view>
+  <view class='{{ctype==4?"item cur":"item"}}' data-id='{{4}}' bindtap='changeTab'>无效</view>
+</view>
+<view class='list'>
+  <view class='item'>
+    <view class='item_t'>
+      <view class='item_t_l'>
+        <text>提现到余额</text>
+        <text class='time'>2018-09-24 11:26</text>
+      </view>
+      <view class='item_t_r'>
+        <text>+0.00元</text>
+        <text class='dsh gray' wx:if='{{item.status==4}}'>已通过</text>
+        <text class='dsh green' wx:if='{{item.status==3}}'>已打款</text>
+        <text class='dsh red' wx:else>待打款</text>
+      </view>
+    </view>
+    <view class='item_f'>
+      <view>
+        <text>申请佣金</text>
+        <text>1.00元</text>
+      </view>
+      <view>
+        <text>实际金额</text>
+        <text>1.00元</text>
+      </view>
+      <view>
+        <text>提现手速费</text>
+        <text>1.00元</text>
+      </view>
+    </view>
+    <view class='todetail' bindtap='todetail'>查看详情</view>
+  </view> 
+  <view class='item'>
+    <view class='item_t'>
+      <view class='item_t_l'>
+        <text>提现到余额</text>
+        <text class='time'>2018-09-24 11:26</text>
+      </view>
+      <view class='item_t_r'>
+        <text>+0.00元</text>
+        <text class='dsh gray' wx:if='{{item.status==4}}'>已通过</text>
+        <text class='dsh green' wx:if='{{item.status==3}}'>已打款</text>
+        <text class='dsh red' wx:else>待打款</text>
+      </view>
+    </view>
+    <view class='item_f'>
+      <view>
+        <text>申请佣金</text>
+        <text>1.00元</text>
+      </view>
+      <view>
+        <text>实际金额</text>
+        <text>1.00元</text>
+      </view>
+      <view>
+        <text>提现手速费</text>
+        <text>1.00元</text>
+      </view>
+    </view>
+    <view class='todetail' bindtap='todetail'>查看详情</view>
+  </view>  
+</view>
+<view class="nomore">暂无数据</view>

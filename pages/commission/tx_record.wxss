@@ -1,0 +1,102 @@
+/* pages/commission/tx_record.wxss */
+page{
+  background: #f2f2f2
+}
+.top{
+  width: 100vw;
+  height: 82rpx;
+  background: #418dfd;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.tab{
+  width: 100vw;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e4e4e4
+}
+.tab .item{
+  height: 98rpx;
+  line-height: 98rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #444
+}
+.tab .item.cur{
+  color: #418dfd;
+  border-bottom: 3rpx solid #418dfd;
+}
+.list {
+  
+}
+.list .item{
+  width: 100vw;
+  background: #fff;
+  margin-top: 10rpx;
+}
+.list .item .item_t{
+  width: 100vw;
+  height: 127rpx;
+  padding: 10rpx 15rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #444;
+  border-bottom: 1rpx solid #e4e4e4
+}
+.list .item .item_t .item_t_l{
+  display: flex;
+  flex-flow: column;
+}
+.list .item .item_t .item_t_r{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end
+}
+.list .item .time{
+  font-size: 22rpx;
+  color: #888888
+}
+.list .item .dsh{
+  font-size: 22rpx;
+}
+.list .item .item_f{
+  width: 100vw;
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+.list .item .item_f view{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 26rpx;
+  color: #888888
+}
+.list .item .todetail{
+  width: 100vw;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
+  background: #f2f2f2;
+  font-size: 24rpx;
+  color: #888888
+}
+.gray{
+  color: #999
+}
+.red{
+  color: #ff3030
+}
+.green{
+  color: #468efd
+}

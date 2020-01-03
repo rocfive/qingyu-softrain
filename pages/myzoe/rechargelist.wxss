@@ -1,0 +1,17 @@
+/* pages/myzoe/rechargelist.wxss */
+.item{
+  border-bottom: 1rpx solid #f2f2f2;
+  height: 120rpx;
+}
+.list .item:last-child{
+  border-bottom: none
+}
+.item .time{
+  font-size: 24rpx;
+  color: #777777;
+  margin-top: 10rpx;
+}
+.item .money{
+  font-size: 32rpx;
+  color: #4694ff
+}

@@ -1,0 +1,108 @@
+{
+  "pages": [     
+
+    "pages/index/index",
+    "pages/headline/list",
+    "pages/headline/detail",
+    "pages/goods/list",
+    "pages/goods/detail",
+    "pages/goods/takeorder",
+    "pages/goods/techlist",
+    "pages/goods/techdetail",
+    "pages/goods/order",
+    "pages/goods/pay",
+    "pages/goods/searchlist",
+    "pages/goods/coupon",
+    "pages/card/index",
+    "pages/card/list",
+    "pages/card/seckill",
+    "pages/store/list",
+    "pages/store/chose",
+    "pages/store/detail",
+    "pages/store/piclist",
+    "pages/city/list",
+    "pages/myzoe/index",
+    "pages/myzoe/orderlist",
+    "pages/myzoe/orderdetail",
+    "pages/myzoe/aftersale",
+    "pages/myzoe/recharge",
+    "pages/myzoe/rechargelist",
+    "pages/myzoe/evaluate",
+    "pages/myzoe/coupon",
+    "pages/myzoe/aboutus",
+    "pages/myzoe/retail",
+    "pages/myzoe/card",
+    "pages/myzoe/invite",
+    "pages/commission/index",
+    "pages/commission/money",
+    "pages/commission/order",
+    "pages/commission/team",
+    "pages/commission/tx",
+    "pages/commission/tx_record",
+    "pages/commission/tx_recordxq",
+    "pages/commission/daily",
+    "pages/business/index",
+    "pages/business/withdraw",
+    "pages/business/orderlist",
+    "pages/business/statistics",
+    "pages/business/txrecord",
+    "pages/business/staff",
+    "pages/business/addstaff",
+    "pages/business/charge",
+    "pages/business/earnings",
+    "pages/business/itemrecord",
+    "pages/business/storemsg",
+    "pages/business/notice",
+    "pages/business/noticed",
+    "pages/business/login",
+    "pages/business/findcode",
+    "pages/staff/tx",
+    "pages/staff/index",
+    "pages/staff/orderlist",
+    "pages/staff/onoff",
+
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#418dfd",
+    "navigationBarTitleText": "weChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#418dfd",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/tabbar01.jpg",
+        "selectedIconPath": "pages/img/tabbar01_c.jpg"
+      },
+      {
+        "pagePath": "pages/card/index",
+        "text": "优惠",
+        "iconPath": "pages/img/tabbar02.jpg",
+        "selectedIconPath": "pages/img/tabbar02_c.jpg"
+      },
+      {
+        "pagePath": "pages/myzoe/orderlist",
+        "text": "订单",
+        "iconPath": "pages/img/tabbar03.jpg",
+        "selectedIconPath": "pages/img/tabbar03_c.jpg"
+      },
+      {
+        "pagePath": "pages/myzoe/index",
+        "text": "我的",
+        "iconPath": "pages/img/tabbar04.jpg",
+        "selectedIconPath": "pages/img/tabbar04_c.jpg"
+      }
+    ]
+  },
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,20 @@
+<!--pages/commission/tx.wxml-->
+<form class='form' bindsubmit="tx">
+  <view class='tit'>可提现佣金 <text>￥100.00 </text></view>
+  <view class='inputbox'>
+    <text>￥</text>
+    <input type='digit' placeholder='0.00' bindinput='money'></input>
+  </view>  
+  <view class='type'>
+    <label>提现方式</label>
+    <picker mode='selector' bindchange="bindPickerChange" value="{{typeindex}}" range="{{txtypearr}}" range-key="name">
+      <view class='picker'>
+        <text wx:if='{{txtype}}'>提现到{{txtypearr[typeindex].name}}</text>
+        <text wx:else>请选择</text>
+        <text class='iconfont icon-gengduo'></text>
+      </view>
+    </picker>
+  </view>
+
+  <view form-type='submit' class='submit'>下一步</view>
+</form>

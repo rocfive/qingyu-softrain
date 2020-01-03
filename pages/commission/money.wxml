@@ -1,0 +1,82 @@
+<!--pages/commission/money.wxml-->
+<view class='head'>
+  <view class='head_l'>
+    <text>累计佣金（元）</text>
+    <text class='money'>123.50</text>
+  </view>
+  <navigator url='tx_record'>提现明细</navigator>
+</view>
+<view class='group'>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-yongjin'></text> 可提现佣金
+    </view>    
+    <view class='item_r green'>0.00元</view>
+  </view>
+</view>
+<view class='group'>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-shijian2'></text> 已申请佣金
+    </view>    
+    <view class='item_r'>0.00元</view>
+  </view>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-daidakuanjiangjin'></text> 待打款佣金
+    </view>    
+    <view class='item_r'>0.00元</view>
+  </view>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-weijiesuan'></text> 无效佣金
+    </view>    
+    <view class='item_r'>0.00元</view>
+  </view>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-qianbao1'></text> 成功提现佣金
+    </view>    
+    <view class='item_r'>0.00元</view>
+  </view>
+</view>
+<view class='group'>
+  <view class='item'>
+    <view class='item_l'>
+      <text class='iconfont icon-daojishi_huaban'></text> 待核销佣金
+    </view>    
+    <view class='item_r'>0.00元</view>
+  </view>
+</view>
+<view class='group2'>
+  <view class='item' bindtap='showtips'>
+    <view class='item_l'>用户须知</view>
+    <text class='iconfont icon-xiala'></text>
+  </view>
+  <view class='txtmsg' wx:if='{{showtips}}'>
+    <!-- <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" /> -->
+    <view>买家确认收货后，立即获得分享佣金</view>
+    <view>注意：可用佣金满<text class="green">1元</text>后才能申请提现</view>
+  </view>
+</view>
+<view class='txbtn' bindtap='tx'>我要提现</view>
+
+<view class='fixed'>
+  <navigator url='index' class='link' open-type='redirect' hover-class="none">
+    <text class='iconfont icon-shouye-copy-copy'></text>
+    <text>分销中心</text>
+  </navigator>
+  <view class='link active'>
+    <text class='iconfont icon-yongjin'></text>
+    <text>分销佣金</text>
+  </view>
+  <navigator url='order' class='link' open-type='redirect' hover-class="none">
+    <text class='iconfont icon-dingdan1'></text>
+    <text>分销订单</text>
+  </navigator>
+  <navigator url='team' class='link' open-type='redirect' hover-class="none">
+    <text class='iconfont icon-i'></text>
+    <text>我的团队</text>
+  </navigator>
+</view>

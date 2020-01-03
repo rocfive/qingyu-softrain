@@ -1,0 +1,55 @@
+/* pages/logs/getTel.wxss */
+page{
+  background: #fff
+}
+.formbox{
+  margin-top: 120rpx;
+  padding: 0 80rpx;
+  box-sizing: border-box
+}
+.formbox .logo{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 100rpx;
+}
+.formbox .logo image{
+  width: 180rpx;
+  height: 180rpx;
+}
+.formbox .item{
+  width: 100%;
+  height: 72rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin-bottom: 30rpx;
+}
+.formbox .item input{
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 590rpx;
+}
+.formbox .item input.codeinput{
+  width: 400rpx;
+}
+.formbox .item .codebtn{
+  width: 150rpx;
+  height: 48rpx;
+  border: 1rpx solid #bed9fe;
+  color: #418dfd;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  border-radius: 24rpx;
+}
+button.btn{
+  width: 590rpx;
+  height: 80rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 10rpx;
+  color: #fff;
+  padding: 0;
+}

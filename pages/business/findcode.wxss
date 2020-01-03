@@ -1,0 +1,24 @@
+/* pages/business/findcode.wxss */
+@import "login";
+.formbox{
+  height: 860rpx;
+  margin-top: -430rpx;
+}
+.formbox .item {
+  margin-top: 20rpx;
+}
+.formbox .item input {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.formbox .item .getcode{
+  position: absolute;
+  right: 0;
+  bottom: 30rpx;
+  color: #3d9aff;
+  text-decoration: underline
+}
+.formbox .formbox_b{
+  margin-top: 80rpx;
+}
+

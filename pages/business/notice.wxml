@@ -1,0 +1,21 @@
+<!--pages/business/notice.wxml-->
+<view class="tab bg_fff p-w-24 flex_r_a">
+  <view class="active">门店</view>
+  <view>平台</view>
+</view>
+<view class="list bg_fff m-10">
+  <view class="item flex_r_b p-w-24" bindtap="detail">
+    <image src="../img/headlineimg.png" mode="aspectFill" class="pic"></image>
+    <view class="item_r">
+      <view class="title">这里是标题</view>
+      <view class="describe">韩国id5月初夏手术活动，折扣超级给力！</view>
+    </view>
+  </view>
+  <view class="item flex_r_b p-w-24">
+    <image src="../img/headlineimg.png" mode="aspectFill" class="pic"></image>
+    <view class="item_r">
+      <view class="title">这里是标题</view>
+      <view class="describe">韩国id5月初夏手术活动，折扣超级给力！</view>
+    </view>
+  </view>
+</view>

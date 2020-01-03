@@ -1,0 +1,50 @@
+/* pages/business/itemrecord.wxss */
+.tab{
+  width: 100vw;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eeeeee
+}
+.tab .tab_l view{
+  margin-right: 16rpx;
+}
+.tab .tab_l .active{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: bold;
+  color: #4694ff;
+  border-bottom: 3rpx solid #4694ff;
+  box-sizing: border-box
+}
+.tab .tab_r{
+  font-size: 24rpx
+}
+.tab .pickerbox{
+  width: 162rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+.th{
+  height: 102rpx;
+  background: #f7f7f7;
+}
+.th view{
+  width: 220rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.td{  
+  height: 128rpx;
+  border-bottom: 2rpx solid #eeeeee
+}
+.list .td:last-child{
+  border-bottom: none
+}
+.td view{
+  width: 220rpx;
+  text-align: center;
+}
+.td .money{
+  color: #4694ff
+}

@@ -1,0 +1,36 @@
+<!--pages/goods/techlist.wxml-->
+<view class='tab'>
+  <view class='{{active=="1"?"item flex_r_c active":"item flex_r_c"}}' bindtap='toactive' data-id='1'>推荐 <text class='{{active=="1"?"iconfont icon-arrLeft-fill cur":"iconfont icon-arrLeft-fill"}}'></text></view>
+  <view class='{{active=="2"?"item flex_r_c active":"item flex_r_c"}}' bindtap='toactive' data-id='2'>价格 
+    <view class="flex_c_c item_r">
+      <text class='{{premium=="asc"?"iconfont icon-arrLeft-fill-copy cur":"iconfont icon-arrLeft-fill-copy"}}'></text>
+      <text class='{{premium=="desc"?"iconfont icon-arrLeft-fill cur":"iconfont icon-arrLeft-fill"}}'></text>
+    </view>  
+  </view>
+  <view class='{{active=="3"?"flex_r_c item active":"flex_r_c item"}}' bindtap='toactive' data-id='3'>评价 
+    <view class="flex_c_c item_r">
+      <text class='{{service_score=="asc"?"iconfont icon-arrLeft-fill-copy cur":"iconfont icon-arrLeft-fill-copy"}}'></text>
+      <text class='{{service_score=="desc"?"iconfont icon-arrLeft-fill cur":"iconfont icon-arrLeft-fill"}}'></text>
+    </view>  
+  </view>
+</view>
+<view class="techlist">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+    <image src="{{item.image}}" class="pic"></image>
+    <view class="item_r">
+      <view class="name"><text space="nbsp">{{item.name}}</text><text class="money" wx:if='{{item.premium}}'>￥{{item.premium}}元(服务费)</text></view>
+      <view class="grade">评分：<text class="num">{{item.service_score}}分</text></view>
+      <view class="info">{{item.introduction}}</view>
+      <view class="item_btn flex_c_b_r">
+        <view class="waittime">等待{{item.wait_time}}分钟</view>
+        <view class="{{store_teach_id==item.id?'btn chose':'btn'}}" catchtap="chose" data-id="{{item.id}}" data-name="{{item.name}}">选择</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="btnbox flex_c_c bg_fff">
+  <view class="btn" bindtap="takeorder">立即下单</view>
+</view>
+

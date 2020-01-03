@@ -1,0 +1,27 @@
+<!--pages/business/charge.wxml-->
+<view class="list">
+  <block wx:for='{{list}}' wx:key='{{index}}'>
+    <view class="item bg_fff" bindtap="detail">
+      <view class="line01 flex_r_b p-w-24">
+        <view class="ordernum">订单：{{item.ordernum}}</view>
+      </view>
+      <view bindtap="todetail" class="goods p-w-24 flex_r_b">
+        <image src='{{item.img}}'></image>
+        <view class="goods_r">
+          <view class="goods_title">{{item.title}}</view>
+          <view>预约时间：{{item.yuyuetime}}</view>
+          <view>规格：{{item.spec}}</view>
+          <view class="price">{{clothse.fuwu_price}}</view>
+        </view>
+      </view>
+      <view class="line p-w-24 flex_r_b">
+        <view>
+          <text class="iconfont icon-mendian"></text>
+          <text class="txt">{{item.storename}}</text>
+        </view>
+        <text class="price">￥<text>{{item.money}}</text></text>
+      </view>  
+      <view class="charge_time p-w-24">已核销 <text>2019-05-24  14:30:12</text></view>
+    </view>  
+  </block>  
+</view>

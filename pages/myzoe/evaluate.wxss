@@ -1,0 +1,100 @@
+/* pages/myzoe/evaluate.wxss */
+.goods{
+  height: 200rpx;
+  background: #f7f7f7
+}
+.goods image{
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 10rpx;
+}
+.goods .goods_r{
+  position: relative;
+  width: 524rpx;
+  height: 152rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #666666
+}
+.goods .goods_r .goods_title{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  margin-bottom: 14rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333
+}
+.goods .goods_r .nums{
+  position: absolute;
+  right: 0;
+  top: 80rpx;
+}
+.goods .goods_r .price{
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  color: #4694ff;
+  font-size: 26rpx;
+  font-weight: bold
+}
+.goods .goods_r .price text{
+  font-size: 36rpx;
+}
+
+.evaluatebox{
+  height: 608rpx;
+  padding: 42rpx 24rpx;
+  box-sizing: border-box
+}
+.evaluatebox .evaluate_t{
+  height: 320rpx;
+}
+.evaluatebox .title{
+  font-size: 32rpx;
+}
+.evaluatebox .star{
+  width: 352rpx;
+  margin-top: 40rpx;
+  margin-bottom: 24rpx;
+}
+.evaluatebox .star .iconfont{
+  font-size: 48rpx;
+  color: #dadada
+}
+.evaluatebox .star .iconfont.light{
+  color: #3e9aff;
+}
+.evaluatebox .score{
+  height: 44rpx;
+  font-size: 32rpx;
+  color: #3e9aff
+}
+.evaluatebox .textarea{
+  width: 700rpx;
+  height: 200rpx;
+  border: 2rpx solid #f0f0f0;
+  padding: 24rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  line-height: 48rpx;
+}
+.evaluatebox .textarea .hint{
+  color: #999999
+}
+
+
+.btn{
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+  position: fixed;
+  bottom: 28rpx;
+  left: 24rpx;
+}

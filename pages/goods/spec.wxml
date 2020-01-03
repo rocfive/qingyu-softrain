@@ -1,0 +1,22 @@
+<!--pages/goods/spec.wxml-->
+<view class="fixed" hidden="{{hidespec}}">
+  <view class="main">
+    <view class="fixed_head p-w-28 flex_r_b">
+      <image src="{{msg.slider_image[0]}}"></image>
+      <view class="fixed_head_r">
+        <view class="h1">{{msg.store_name}}</view>
+        <view class="selected"><text class="price" wx:if='{{money}}'>￥{{money}}</text> <text wx:if='{{checkbox}}'>已选：{{checkval}}</text></view>
+      </view>
+      <text class="iconfont icon-guanbi" bindtap="closespec"></text>
+    </view>
+    <scroll-view scroll-y class="spec">
+      <block wx:for='{{productAttr}}' wx:key='index'>
+      <view class="specbt">{{item.attr_name}}</view>
+      <view class="speclist">
+        <view class="{{attr_value.check?'chose item':'item'}}" wx:for='{{item.attr_value}}' wx:key='index' wx:for-item='attr_value' bindtap="chosevlue" data-val="{{attr_value.attr}}" data-itemname="{{item.attr_name}}" data-ind="{{index}}">{{attr_value.attr}} <block wx:if='{{attr_value.check}}'> <view class="iconbg"></view><icon type="success_no_circle" size='22rpx' color="#fff"></icon></block></view>        
+      </view>
+      </block>
+    </scroll-view>
+    <view class="btn_takeorder" bindtap="takeorder">选好了</view>
+  </view>
+</view>

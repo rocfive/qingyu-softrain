@@ -1,0 +1,53 @@
+/* pages/commission/daily.wxss */
+.list .item{
+  width: 100vw;
+  height: 200rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e7e7e7
+}
+.list .item:last-child{
+  border-bottom: none
+}
+.list .item .img{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 5rpx
+}
+.list .item .item_r{
+  width: 548rpx;
+  height: 148rpx;
+  position: relative;
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-flow: column;
+  line-height: 42rpx;
+}
+.list .item .item_r .title{
+  font-size: 28rpx;
+  color: #333333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list .item .item_r .item_r_b{
+  margin-top: 6rpx;
+}
+.list .item .item_r .item_r_b .headpic{
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+}
+.list .item .item_r .item_r_b .name{
+  width: 120rpx;
+  margin-left: 14rpx
+}
+.list .item .item_r .earnings{
+  color: #498efe;
+  font-size: 26rpx;
+}

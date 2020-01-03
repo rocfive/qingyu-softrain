@@ -1,0 +1,195 @@
+/* pages/myzoe/orderlist.wxss */
+.tabbox{
+  height: 130rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.tabbox .tab{
+  width: 500rpx;
+  height: 70rpx;
+  border: 2rpx solid #eee;
+  border-radius: 35rpx;
+  overflow: hidden
+}
+.tabbox .tab view{
+  width: 250rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: #cda053;
+}
+.tabbox .tab .active{
+  background: #cda053;
+  color: #fff
+}
+.menustatus{
+  height: 90rpx;
+  border-bottom: 1rpx solid #eee
+}
+.menustatus .cur{
+  line-height: 90rpx;
+  box-sizing: border-box;
+  color: #4694ff;
+  border-bottom: 4rpx solid #4694ff
+}
+.list .item{
+  margin-bottom: 10rpx;
+}
+.list .item .line01{
+  height: 84rpx;
+}
+.list .item .line01 .ordernum{
+  font-size: 28rpx;
+}
+.list .item .line01 .status{
+  font-size: 28rpx;
+  color: #ff4040
+}
+.list .item .goods{
+  height: 200rpx;
+  background: #f7f7f7
+}
+.list .item .goods image{
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 10rpx;
+}
+.list .item .goods .goods_r{
+  position: relative;
+  width: 524rpx;
+  height: 152rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #666666
+}
+.list .item .goods .goods_r .goods_title{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  margin-bottom: 14rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333
+}
+.list .item .goods .goods_r .price{
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  color: #fd3a3a
+}
+.list .item .goods .goods_r .nums{
+  position: absolute;
+  right: 0;
+  top: 80rpx;
+}
+.list .item .line{
+  height: 78rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.list .item .line .txt{
+  font-size: 26rpx;
+  color: #888888;
+  margin-left: 6rpx;
+}
+.list .item .line .iconfont{
+  color: #4694ff;
+  font-size: 42rpx;
+}
+.list .item .line .price{
+  color: #4694ff;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+.list .item .line .price text{
+  font-size: 36rpx;
+}
+.list .item .line .time{
+  font-size: 24rpx;
+}
+.list .item .line .txt1{
+  color: #888
+}
+.list .item .line .txt1 text{
+  color: #333333
+}
+.list .item .line .btntel{
+  width: 122rpx;
+  height: 52rpx;
+  color: #fff;
+  background: #f8734c;
+  border-radius: 26rpx;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  margin-left: 10rpx
+}
+.list .item .line_b{
+  height: 96rpx;
+}
+.list .item .line_b .btn{
+  min-width: 100rpx;
+  padding: 0 20rpx;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  border: 1rpx solid #eee;
+  border-radius: 30rpx;
+  margin-left: 10rpx;
+  color: #888888
+}
+.list .item .line_b .btn.btn01{
+  border-color: #4694ff;
+  color:#4694ff;
+}
+
+.pop{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+}
+.pop .popmain{
+  width: 600rpx;
+  height: 802rpx;
+  border-radius: 50rpx
+}
+.pop .popmain image{
+  width: 320rpx;
+  height: 320rpx;
+  margin-bottom: 60rpx;
+}
+.pop .popmain .title{
+  font-size: 32rpx;
+  color: #000;
+  margin:30rpx 0 36rpx ;
+}
+.pop .popmain .code{
+  width: 480rpx;
+  height: 80rpx;
+  background: #f7f7f7;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: bold;
+  margin-bottom: 36rpx;
+  font-size: 42rpx;
+}
+.pop .popmain .tips{
+  width: 480rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #e35a7b;
+  font-size: 26rpx;
+}
+.kong{
+  width: 100vw;
+  height: calc(100vh - 90rpx);
+  font-size: 36rpx;
+  color: #666666;
+  padding-bottom: 160rpx;
+  box-sizing: border-box
+}
+.kong image{
+  width: 702rpx;
+  margin-bottom: 60rpx;
+}

@@ -1,0 +1,66 @@
+/* pages/business/staff.wxss */
+page{
+  padding-bottom: 140rpx;
+}
+.item {
+  margin-bottom: 10rpx;
+}
+.item .item_m {
+  padding-top: 28rpx;
+  padding-bottom: 20rpx;
+}
+.item .item_m image{
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%
+}
+.item .item_m .item_m_r{
+  width: 578rpx;
+  line-height: 42rpx;
+}
+.item .item_m .names{
+  width: 180rpx;
+}
+.item .item_m .phone{
+  width: 370rpx;
+}
+.item .item_m .name{
+  font-weight: bold
+}
+.item .item_m .item_m_r .time{
+  color: #4694ff;
+  font-size: 24rpx;
+  margin-top: 16rpx
+}
+
+.item .item_b{
+  height: 106rpx;
+  border-top: 1rpx solid #f2f2f2
+}
+.item .item_b .btn{
+  width: 156rpx;
+  height: 54rpx;
+  border: 2rpx solid #9d9d9d;
+  border-radius: 27rpx;
+  text-align: center;
+  line-height: 54rpx;
+  margin-left: 16rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #666666;
+}
+.fixed_btn{
+  width: 702rpx;
+  height: 90rpx;
+  position: fixed;
+  background: #f7f7f7;
+  border: 2rpx solid #bfbfbf;
+  border-radius: 45rpx;
+  bottom: 40rpx;
+  left: 24rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #666666
+}
+

@@ -1,0 +1,75 @@
+/* pages/business/login.wxss */
+.bg{
+  width: 100vw;
+  height: 100vh;
+}
+.formbox{
+  position: fixed;
+  width: 694rpx;
+  height: 752rpx;
+  left: 28rpx;
+  top: 50%;
+  margin-top: -376rpx;
+  border-radius: 14rpx;
+  padding: 44rpx;
+  box-sizing: border-box
+}
+.formbox .title{
+  font-size: 48rpx;
+  text-indent: 16rpx;
+}
+.formbox .item{
+  margin-top: 50rpx;
+  border-bottom: 1rpx solid #d9e3f1;
+  position: relative;
+  padding: 0 16rpx;
+  box-sizing: border-box
+}
+.formbox .item.success{
+  border-bottom: 4rpx solid #5396f9
+}
+.formbox .item label{
+  font-size: 30rpx;
+  color: #666666;
+}
+.formbox .item input{
+  width: 606rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  color: #888;
+}
+.formbox .item icon{
+  position: absolute;
+  right: 0;
+  bottom: 6rpx;
+}
+.formbox .forget{
+  float: right;
+  margin-top: 40rpx;
+  text-decoration: underline;
+  /* border-bottom: 1px solid #4e99fe; */
+  font-size: 26rpx;
+  color: #4e99fe;
+}
+.formbox .formbox_b{
+  margin-top: 60rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+.formbox .formbox_b radio{
+  transform:scale(0.7)
+}
+.formbox .logbtn{
+  width: 335rpx;
+  height: 102rpx;
+  background: linear-gradient(90deg, #3d9aff, #9d95fb);
+  border-radius: 20rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 102rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow:  0px 20px 20px -20px #3d9aff
+}

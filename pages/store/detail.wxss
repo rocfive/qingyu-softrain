@@ -1,0 +1,120 @@
+/* pages/store/detail.wxss */
+@import "../style/goodslist";
+.bg{
+  width: 100vw;
+  height: 534rpx;
+  position: absolute; 
+  left: 0; 
+  top: 0
+}
+.bg image{  
+  width: 100vw;
+  height: 298rpx;
+}
+.storemsg{
+  position: relative;
+  width: 702rpx;
+  height: 284rpx;
+  margin-top: 214rpx;
+  border-radius: 10rpx;
+  margin-left: 24rpx;
+  box-shadow: 0 0 9rpx rgba(0,0,0,0.16);
+  padding-top: 24rpx;
+}
+.storename{
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx
+}
+.storemsg .msg{
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 12rpx;
+}
+.storemsg .msg .iconfont{
+  font-size: 36rpx;
+  margin-right: 12rpx
+}
+.storemsg .msg_foot{
+  width: 702rpx;
+  height: 82rpx;
+  border-top: 1px solid #f2f2f2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.storemsg .msg_foot .msg_btn{
+  width: 376rpx;
+  height: 82rpx;  
+}
+.storemsg .msg_foot .msg_btn:first-child{
+  border-right: 1px solid #f2f2f2;
+}
+.storemsg .msg_foot .msg_btn .iconfont{
+  font-size: 36rpx;
+  margin-right: 20rpx;
+  background-image: linear-gradient(30deg,#3d9aff,#8d96fc);
+  -webkit-background-clip:text;
+  color: transparent;
+}
+.environment{
+  padding-bottom: 26rpx;
+}
+.environment image{
+  width: 226rpx;
+  height: 160rpx;
+  margin-right: 12rpx;
+}
+.info{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-top: 1px solid #f2f2f2
+}
+.engineer{
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  border-top: 1px solid #f2f2f2
+}
+.engineerlist, .engineerlist swiper-item {
+  height: 200rpx;
+}
+.engineerlist swiper-item image{
+  width: 116rpx;
+  height: 116rpx;
+}
+.engineerlist1{
+  overflow: hidden
+}
+.engineerlist .item-noswiper {
+  height: 200rpx;
+  float: left;
+  margin-right: 58rpx;
+}
+.engineerlist .item-noswiper:last-child{
+  margin-right: 0
+}
+.engineerlist .item-noswiper image{
+  width: 116rpx;
+  height: 116rpx;
+}
+.engineer .indicator{
+  width: 702rpx;
+  height: 30rpx;
+  margin-bottom: 20rpx
+}
+.engineer .indicator .dot{
+  width: 12rpx;
+  height: 12rpx;
+  background: #93c4ff;
+  margin-right: 14rpx;
+  border-radius: 50%
+}
+.engineer .indicator .dot.cur{
+  background: #418dfd
+}
+.engineer .indicator .dot:last-child{
+  margin-right: 0
+}
+.list{
+  border-top: 1px solid #f2f2f2
+}

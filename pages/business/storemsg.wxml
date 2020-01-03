@@ -1,0 +1,67 @@
+<!--pages/business/storemsg.wxml-->
+<view class="item bg_fff p-w-28 flex_r_b">
+  <label>门店名称</label>
+  <input type="text" value="科华路王府井店"></input>
+</view>
+<view class="item bg_fff p-w-28 flex_r_b">
+  <label>门店电话</label>
+  <input type="text" value="" placeholder="请输入联系方式"></input>
+</view>
+<view class="item bg_fff p-w-28 flex_r_b">
+  <label>营业时间</label>
+  <view class="flex_r_r">
+    <picker mode="time">
+      <view class="timebox">
+        <text wx:if='{{time1}}'></text>
+        <text wx:else>请选择</text>
+      </view>
+    </picker>
+    <text style="color:#a0a0a0; margin:0 4rpx">-</text>
+    <picker mode="time">
+      <view class="timebox">
+        <text wx:if='{{time2}}'></text>
+        <text wx:else>请选择</text>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="item bg_fff p-w-28 flex_r_b">
+  <label>门店地址</label>
+  <picker mode='region'>
+    <view class="item_r">四川省   成都市  武侯区</view>
+  </picker>
+</view>
+<view class="item bg_fff p-w-28 flex_r_b">
+  <label>详细地址</label>
+  <input type="text" value="航利中心3栋2单元401" placeholder="请输入联系方式"></input>
+</view>
+<view class="flex_c bg_fff m-10 p-w-28 intro">
+  <label>门店简介</label>
+  <textarea placeholder="请输入门店简介" class="textarea"></textarea>
+</view>
+<view class="item bg_fff p-w-28 flex_r_b m-10">
+  <label>获取经纬度</label>
+  <view class="item_r"><text space='emsp'>纬度：30.67度  经度：104.06度</text></view>
+</view>
+<view class="bg_fff p-w-28 intro flex_c">
+  <label>门头照</label>
+  <view class="upimg flex_c_c">
+    <text class="iconfont icon-zhaoxiangji"></text>
+  </view>
+  <!-- <image src="../img/business.png" class="doorimg"></image> -->
+</view>
+<view class="bg_fff p-w-28 intro flex_c">
+  <label>环境照片</label>
+  <view class="storelist">
+    <!-- <image src="../img/business.png" class="pic"></image> -->
+    <view class="upimg1 flex_c_c">
+      <text class="iconfont icon-jia"></text>
+    </view>
+  </view>  
+</view>
+<view class="item bg_fff p-w-28 flex_r_b m-10 title">歇业设置</view>
+<view class="item bg_fff p-w-28 flex_r_b m-10">
+  <label>营业中</label>
+  <switch color="#3d9aff"></switch>
+</view>
+<view class="btn">保存</view>

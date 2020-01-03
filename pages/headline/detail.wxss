@@ -1,0 +1,23 @@
+/* pages/headline/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page{
+  background: #fff
+}
+.head{
+  height: 168rpx;
+  border-bottom: 1px solid #f2f2f2;
+  padding-top:20rpx;
+  padding-bottom: 20rpx; 
+}
+.head .title{
+  width: 100%;
+  height: 92rpx;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+.head .time{
+  color: #999999
+}
+.content{
+  margin-top: 48rpx
+}

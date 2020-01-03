@@ -1,0 +1,14 @@
+/* pages/myzoe/aftersale.wxss */
+@import "orderlist";
+.tab{
+  width: 100vw;
+  height: 96rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.tab .active{
+  color: #4694ff;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-bottom:4rpx solid #4694ff;
+}

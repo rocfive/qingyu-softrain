@@ -1,0 +1,16 @@
+/* pages/store/chose.wxss */
+@import "list";
+.chosebox1{
+  width: 42rpx;
+  height: 42rpx;
+  border: 1px solid #dfdfdf;
+  border-radius: 50%;
+  box-sizing: border-box
+}
+.chosebox image{
+  width: 42rpx;
+  height: 42rpx;
+}
+.storelist .item .item_c {
+  width: 292rpx;
+}

@@ -1,0 +1,185 @@
+/**app.wxss**/
+@import "pages/style/iconfont";
+image{
+  vertical-align: middle
+}
+page{
+  background: #f7f7f7;
+  font-family: "苹方";
+  font-size: 28rpx;
+  color: #333
+}
+.bg_fff{
+  background: #fff
+}
+.fl{
+  float: left
+}
+.w702{
+  width: 702rpx;
+  margin: auto
+}
+.m-10{
+  margin-top: 10rpx
+}
+.m-12{
+  margin-top: 12rpx
+}
+.m-20{
+  margin-top: 20rpx
+}
+.p-w-12{
+  padding: 0 12rpx;
+  box-sizing: border-box
+}
+.p-w-24{
+  padding: 0 24rpx;
+  box-sizing: border-box
+}
+.p-w-28{
+  padding: 0 28rpx;
+  box-sizing: border-box
+}
+.flex_r{
+  display: flex;
+  flex-flow: row;
+  align-items: center
+}
+.flex_c{
+  display: flex;
+  flex-flow: column;
+  justify-content: center
+}
+.flex_r_b{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between
+}
+.flex_r_s_b{
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: space-between
+}
+.flex_r_r{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end
+}
+.flex_r_c{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center
+}
+.flex_r_a{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around
+}
+.flex_c_b{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between
+}
+.flex_c_c{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center
+}
+.flex_c_a{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around
+}
+.flex_c_a1{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around
+}
+.flex_c_t{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.flex_c_b_r{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: center
+}
+.b_radio01{
+  background: #cda053;
+  color: #fff;
+  border-top-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.nomore{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 240rpx;
+  justify-content: center;
+  color: #888888;
+  font-size: 24rpx
+}
+.nomore::before,.nomore::after{
+  content: " ";
+  width: 100rpx;
+  height: 1px;
+  background: #c4c4c4;
+  margin: 0 10rpx;
+}
+.text_nowrap{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.bt{
+  height: 105rpx;
+  /* border-bottom: 1rpx solid #eee */
+}
+.bt .bt_l{
+  font-size: 32rpx;
+  font-weight: bold
+}
+.bt .bt_l::before{
+  width: 6rpx;
+  height: 36rpx;
+  content: " ";
+  display: inline-block;
+  background: #4694ff;
+  margin-right: 20rpx;
+  border-radius: 5rpx;
+}
+.bt .bt_r{
+  font-size: 26rpx;
+  color: #666666
+}
+.bt .bt_r .iconfont{
+  color: #8a8a8a
+}
+.btnbox{
+  width: 100vw;
+  height: 124rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 2rpx solid #f2f2f2
+}
+.btnbox .btn{
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+}

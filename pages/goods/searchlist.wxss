@@ -1,0 +1,53 @@
+/* pages/goods/searchlist.wxss */
+@import "../style/goodslist";
+@import "../store/list";
+@import "../goods/techlist";
+@import "../card/list";
+page{
+  background: #fff
+}
+.head{
+  height: 84rpx;
+}
+.head .head_l{
+  width: 626rpx;
+  height: 70rpx;
+  background: #f7f7f7;
+  border-radius: 35rpx;
+}
+.head .head_l .pickers{
+  width: 120rpx;
+  height: 46rpx;
+  border-right: 1rpx solid #aaaaaa
+}
+.head .searchbox{
+  width: 452rpx;
+}
+.head .searchbox .iconfont{
+  color: #888888;
+  font-size: 32rpx;
+}
+.head .searchbox input{
+  width: 356rpx;
+}
+.head .cancle{
+  font-size: 30rpx;
+}
+.hottitle{
+  font-size: 30rpx;
+  color: #999999;
+  margin-top: 100rpx;
+  margin-bottom: 24rpx;
+  padding-left: 36rpx
+}
+.hotword .item{
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  background: #f7f7f7;
+  border-radius: 32rpx;
+  display: inline-block;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+  color: #999999
+}

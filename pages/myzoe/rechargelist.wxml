@@ -1,0 +1,10 @@
+<!--pages/myzoe/rechargelist.wxml-->
+<view class="list bg_fff m-10">
+  <view class="item flex_r_b p-w-24" wx:for="{{list}}" wx:key='{{index}}'>
+    <view class="flex_c">
+      <text>用户充值</text>
+      <text class="time">{{item.addtime}}</text>
+    </view>
+    <view class="money">+{{item.money}}</view>
+  </view>
+</view>

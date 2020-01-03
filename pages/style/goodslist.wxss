@@ -1,0 +1,49 @@
+.list .item{
+  width: 100vw;
+  height: 234rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.list .item .listimg{
+  width: 188rpx;
+  height: 178rpx;
+}
+.list .item .item_r{
+  width: 486rpx;
+  height: 178rpx;
+}
+.list .item .item_r .h2{
+  text-align: justify;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  width: 100%;
+  margin: 10rpx 0;
+}
+.list .item .item_r_b{
+  width: 100%;  
+  font-size: 24rpx;
+  color: #888888
+}
+.list .item .item_r_b .price{
+  font-size: 26rpx;
+  color: #4694ff
+}
+.list .item .item_r_b .price text{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.list .item .item_r_b .oldprice{
+  font-size: 24rpx;
+  color: #888888;
+  text-decoration: line-through;
+}
+.list .item .buybtn{
+  width: 133rpx;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  border: 2rpx solid #418dfd;
+  border-radius: 28rpx;
+  color: #4694ff;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}

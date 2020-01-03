@@ -1,0 +1,74 @@
+/* pages/commission/tx.wxss */
+page{
+  background: #f2f2f2
+}
+.form{
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  margin-top: 10rpx
+}
+.tit{
+  width: 100vw;
+  height: 100rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #e4e4e4;
+  color: #444444;
+  background: #fff;
+}
+.inputbox{
+  width: 100vw;
+  padding: 30rpx 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42rpx;
+  color: #444444;
+  background: #fff;
+}
+.inputbox text{
+  width: 42rpx;
+}
+.inputbox input{
+  width: 660rpx;
+  margin: auto; 
+}
+.type{
+  width: 100vw;
+  height: 100rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+.type label{
+  width: 120rpx;
+  font-size: 26rpx;
+  color: #888888
+}
+.type .picker{
+  width: 562rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22rpx;
+  color: #444444
+}
+.submit{
+  width: 712rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  background: linear-gradient(160deg, #3c9aff, #9e95fb);
+  border: none;
+  color: #fff;
+  margin: 54rpx auto;
+  padding: 0;
+  text-align: center
+}
+

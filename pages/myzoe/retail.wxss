@@ -1,0 +1,94 @@
+/* pages/myzoe/retail.wxss */
+.m-t{
+  padding-bottom:48rpx; 
+}
+.m-t .cardimg{
+  width: 100vw;
+  height: 202rpx;
+  box-shadow: 0 0 7rpx rgba(0,0,0,0.2);
+  background: #f7f7f7;
+  padding-top:48rpx; 
+  box-sizing: border-box
+}
+.m-t .cardimg image{
+  width: 484rpx;
+  height: 290rpx;
+  box-shadow: 0 0 7rpx rgba(0,0,0,0.2);
+  border-radius: 20rpx;
+  margin: auto;
+  display: block;
+}
+.m-t .cardname{
+  margin-top: 160rpx;
+}
+.giftbag{
+  width: 652rpx;
+  min-height: 270rpx;
+  border: 1px dashed #a2cfff;
+  border-radius: 20rpx;
+  margin-top: 100rpx;
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 10rpx
+}
+.giftbag .title{
+  width: 220rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #fff;
+  margin: auto;
+  margin-top: -30rpx;
+  text-align: center;
+  color: #418dfd;
+}
+.giftbag .group{
+  width: 586rpx;
+  margin: 40rpx auto 0;
+  border-bottom: 1rpx dashed #c6c6c6;
+  overflow: hidden;
+  padding-bottom: 16rpx;
+}
+.giftbag .group .item{
+  width: 253rpx;
+  text-align: center;
+  float: left;
+  margin: 0 20rpx;
+  color: #888888;
+  margin-bottom: 30rpx;
+}
+.giftbag .group .item .name{
+  width: 200rpx;
+}
+.giftbag .pricemsg{
+  width: 586rpx;
+  height: 102rpx;
+  margin: auto;
+  font-size: 26rpx;
+  color: #888888
+}
+.giftbag .pricemsg .money{
+  font-size: 40rpx;
+  color: #418dfd;
+  font-weight: bold
+}
+.giftbag .giftbag_foot{
+  width: 652rpx;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -8rpx;
+}
+.m-t .tips{
+  margin-top: 40rpx;
+  font-size: 26rpx;
+}
+.btn{
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin: 80rpx auto 40rpx;
+}

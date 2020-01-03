@@ -1,0 +1,74 @@
+<!--pages/myzoe/orderlist.wxml-->
+<view class="menustatus bg_fff p-w-24 flex_r_b">
+  <view class="{{active==0?'cur':''}}" bindtap="changeacitve" data-id="0">全部</view>
+  <view class="{{active==1?'cur':''}}" bindtap="changeacitve" data-id="1">待付款</view>
+  <view class="{{active==2?'cur':''}}" bindtap="changeacitve" data-id="2">待核销</view>
+  <view class="{{active==4?'cur':''}}" bindtap="changeacitve" data-id="4">待评价</view>
+  <view class="{{active==5?'cur':''}}" bindtap="changeacitve" data-id="5">已完成</view>
+</view>
+<view class="list">
+  <block wx:for='{{list}}' wx:key='index'>
+  <view class="item bg_fff" bindtap="detail" data-id="{{item.order_id}}">
+    <view class="line01 flex_r_b p-w-24">
+      <view class="ordernum">订单：{{item.order_id}}</view>
+      <view class="status" >{{item._status._title}}</view>
+    </view>
+    <view bindtap="todetail" class="goods p-w-24 flex_r_b">
+      <image src='{{item.cartInfo[0].productInfo.image}}'></image>
+      <view class="goods_r">
+        <view class="goods_title">{{item.store_name}}</view>
+        <view>预约时间：{{item._order_time}}</view>
+        <view>规格：{{item.spec}}</view>
+        <view class="price">{{item.cartInfo[0].productInfo.price}}</view>
+      </view>
+    </view>
+    <view class="line p-w-24 flex_r_b">
+      <view>
+        <text class="iconfont icon-mendian"></text>
+        <text class="txt">{{item._menshop.name}}</text>
+      </view>
+      <text class="price">￥<text>{{item.pay_price}}</text></text>
+    </view>
+    <view class="line p-w-24 flex_r_b">
+      <view>
+        <text class="iconfont icon-shangcheng1"></text>
+        <text style="font-size:26rpx;">{{item._add_time}}</text>
+      </view>        
+      <view>
+        <text class="time">技师：{{item._teach.name}}</text>
+        <text class="btntel" data-tel="{{item._teach.phone}}">联系电话</text>
+      </view>
+    </view>   
+    <view class="line_b p-w-24 flex_r_r" wx:if='{{item._status._type==0}}'>
+      <view class="btn" bindtap="cancle_order" data-id="{{item.o2o_fuwu_order_id}}">取消订单</view>
+      <view class="btn btn01" bindtap="pay_order" data-id="{{item.o2o_fuwu_order_id}}">付款</view>
+    </view>
+    <view class="line_b p-w-24 flex_r_r" wx:elif='{{item._status._type==1}}'>
+      <view class="btn" bindtap="cancle_order" data-id="{{item.o2o_fuwu_order_id}}">取消订单</view>
+      <view class="btn btn01" bindtap="" data-id="{{item.o2o_fuwu_order_id}}">申请退款</view>
+      <view class="btn btn01" catchtap="charge" data-code="{{item._verify_code}}"  data-codeimg="{{item.code}}">生成核销码</view>
+    </view>
+    <view class="line_b p-w-24 flex_r_r" wx:elif='{{item._status._type==3}}'>
+      <view class="btn btn01" catchtap="evaluate" data-id="{{item.o2o_fuwu_order_id}}">评价</view>
+    </view>
+    <!-- <view class="line_b p-w-24 flex_r_r" wx:elif='{{item.state==4}}'>
+      <view class="btn" bindtap="del_order" data-id="{{item.o2o_fuwu_order_id}}">删除</view>
+      <view class="btn btn01" bindtap="evaluate_order" data-id="{{item.o2o_fuwu_order_id}}"  data-storeid="{{item.o2o_fuwu_organization_id}}" data-num="{{item.o2o_fuwu_order_sn}}" wx:if='{{item.o2o_fuwu_order_if_evaluate==0}}'>评价</view>
+    </view> -->
+  </view>  
+  </block>  
+</view>
+
+<view class="pop flex_c_c" hidden="{{verification}}" bindtap="cancle_charge">
+  <view class="popmain bg_fff flex_c_c" catchtap="">
+    <view class="title">请将二维码出示给核销员</view>
+    <image src="{{codeimg}}"></image>
+    <view class="code"><text>{{_verify_code}}</text></view>
+    <view class="tips">温馨提示：为了更好的保护您利益,请不要轻易将您的核销二维码泄露给他人</view>
+  </view>
+</view>
+
+<view class="bg_fff kong flex_c_c" wx:if='{{list.length<1}}'> 
+  <image src="../img/none.jpg" mode="widthFix"></image>
+  <view>暂无内容，快去逛逛吧~</view>
+</view>

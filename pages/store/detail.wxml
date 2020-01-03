@@ -1,0 +1,91 @@
+<!--pages/store/detail.wxml-->
+<view class="bg bg_fff"><image src="{{menshop.image}}"></image></view>
+<view class="storemsg bg_fff">
+  <view class="storename p-w-28">{{menshop.name}}</view>
+  <view class="p-w-28 msg flex_r">
+    <text class="iconfont icon-shijian1"></text>
+    <text>{{menshop.start_time}}-{{menshop.end_time}}</text>
+  </view>
+  <view class="p-w-28 msg flex_r">
+    <text class="iconfont icon-dingwei"></text>
+    <text>{{menshop.address}}</text>
+  </view>
+  <view class="flex_r_b msg_foot">
+    <view class="msg_btn flex_r_c" data-tel="{{menshop.phone}}" bindtap="toCall">
+      <text class="iconfont icon-dianhua"></text>
+      <text>咨询</text>
+    </view>
+    <view class="msg_btn flex_r_c" data-lat="{{menshop.lat}}" data-lng="{{menshop.lng}}" bindtap="toMap">
+      <text class="iconfont icon-weizhi"></text>
+      <text>地图</text>
+    </view>
+  </view>
+</view>
+<view bindtap="piclist" class="bt p-w-24 bg_fff flex_r_b m-12">
+  <view class="bt_l flex_r">
+    <text>门店环境</text>
+  </view>
+  <view class="bt_r">
+    <text>查看更多</text>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+</view>
+<view class="p-w-24 environment flex_r bg_fff">
+  <image src="{{item}}" mode="aspectFill" wx:for='{{slider_image}}' wx:key='{{index}}'></image>
+</view>
+<view class="bt p-w-24 bg_fff flex_r_b m-10">
+  <view class="bt_l flex_r">
+    <text>门店简介</text>
+  </view>  
+</view>
+<view class="info bg_fff p-w-24">
+  <text>{{menshop.introduction}}</text>
+</view>
+<view class="bt p-w-24 bg_fff flex_r_b m-10">
+  <view class="bt_l flex_r">
+    <text>技师展示</text>
+  </view>  
+</view>
+<view class="engineer p-w-24 bg_fff">
+  <block wx:if='{{teach_list.length>3}}'>
+    <swiper class="engineerlist" display-multiple-items="4" bindchange="engineerchange" current="{{current}}">
+      <swiper-item class='flex_c_c' wx:for='{{teach_list}}' wx:key='{{index}}'>
+        <image src="{{item.image}}"></image>
+        <text>{{item.name}}</text>
+      </swiper-item>
+    </swiper>
+    <view class="indicator flex_r_c">
+      <text class="{{current==index?'dot cur':'dot'}}" wx:for='{{engineerlist}}' wx:key='{{index}}'></text>
+    </view>
+  </block>
+  <view class="engineerlist engineerlist1" wx:else>
+    <view class='flex_c_c item-noswiper' wx:for='{{teach_list}}' wx:key='{{index}}'>
+      <image src="{{item.image}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view class="bt p-w-24 bg_fff flex_r_b m-10">
+  <view class="bt_l flex_r">
+    <text>项目展示</text>
+  </view>  
+</view>
+<view class="list">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" wx:for='{{hot_product}}' wx:key='{{index}}' data-id="{{item.id}}">
+    <image src="{{item.image}}" class="listimg" mode="aspectFill"></image>
+    <view class="item_r flex_c_b">
+      <view class="h2">{{item.store_name}}</view>
+      <view class="item_r_b flex_r_b">
+         <view>
+          <text class="price">￥<text>{{item.price}}</text></text>
+          <text class="oldprice">￥{{item.ot_price}}</text>
+         </view>
+         <view class="flex_r">
+          <text>已售{{item.sales}}</text>
+          <view class="buybtn"  catchtap="chosespec" data-id="{{item.id}}">预约</view>
+         </view>
+      </view>
+    </view>
+  </view>  
+</view>
+<spec id='spec' goodsid='{{goodsid}}'></spec>

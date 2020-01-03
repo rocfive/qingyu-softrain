@@ -1,0 +1,75 @@
+/* pages/card/index.wxss */
+.banner{
+  width: 100vw;
+  height: 400rpx;
+  background: #fff;
+  padding-top: 6rpx;
+  box-sizing: border-box
+}
+.banner swiper-item{
+  width: 675rpx;
+  height: 340rpx;
+  display: flex;
+  justify-content: center
+}
+.banner swiper-item,.banner swiper-item image{
+  width: 675rpx;
+  height: 340rpx;
+  border-radius: 10rpx;
+}
+.banner .wx-swiper-dot{
+  width: 30rpx; 
+  height: 8rpx;
+  background: #e6e6e6;
+  border-radius: 15rpx;
+}
+/* 选中指示点的样式 */
+.banner .wx-swiper-dot.wx-swiper-dot-active {
+    width: 30rpx;
+    height: 8rpx;
+    background: #000000;
+    border-radius: 15rpx;
+}
+.seckill{
+  padding-top: 16rpx;
+  padding-bottom: 28rpx;
+}
+.seckill image{
+  width: 702rpx;
+}
+.bt{
+  height: 80rpx;
+  padding-top: 10rpx;
+}
+.cardlist{
+  padding-top:2rpx;
+  white-space: nowrap
+}
+.cardlist .item{
+  width: 386rpx;
+  height: 370rpx;
+  margin-left: 24rpx;
+  margin-top: 10rpx;
+  display: inline-block
+}
+.cardlist .item .pic{
+  width: 384rpx;
+  height: 228rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.23)
+}
+.cardlist .item .name{
+  margin-top: 28rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.cardlist .item .price{
+  color: #418dfd;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+.cardlist .item .price text{
+  font-size: 36rpx;
+}

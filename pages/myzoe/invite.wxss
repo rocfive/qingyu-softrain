@@ -1,0 +1,48 @@
+/* pages/myzoe/invite.wxss */
+page{
+  background: #fff
+}
+.invitelist{
+  width: 100vw;
+  height: 900rpx;
+  background: #fff;
+  padding-top: 6rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin-top:68rpx;
+}
+.invitelist swiper-item{
+  width: 600rpx;
+  height: 900rpx;
+  display: flex;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+.invitelist swiper-item image{
+  width: 600rpx;
+  height: 900rpx;
+  border-radius: 10rpx;
+}
+.invitelist swiper-item.other{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center
+}
+.invitelist swiper-item.other image{
+  width: 580rpx;
+  height: 800rpx;
+}
+.savebtn{
+  width: 310rpx;
+  height: 86rpx;
+  background: linear-gradient(90deg, #3d9aff, #9c95fb);
+  margin:80rpx auto 40rpx;
+  border-radius: 43rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 86rpx;
+  font-size: 30rpx;
+}

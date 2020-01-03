@@ -1,0 +1,11 @@
+<!--pages/business/withdraw.wxml-->
+<view class="head">
+  <image src="../img/bg_tx.png" class="bg"></image>
+  <view class="flex_c_c head_main">
+    <text class="money">4562.00</text>
+    <text>可提现总金额</text>
+  </view>
+</view>
+<view class="main flex_r_c">
+  <view class="btn">立即提现</view>
+</view>

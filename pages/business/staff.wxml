@@ -1,0 +1,137 @@
+<!--pages/business/staff.wxml-->
+<view class="list">
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+  <view class="item bg_fff">
+    <view class="item_m p-w-28 flex_r_s_b">
+      <image src="../img/doctor.png"></image>
+      <view class="flex_c item_m_r">
+        <view class="flex_r_b">
+          <view class="flex_c names">
+            <text class="name">李俐娇</text>
+            <text>接单数：0</text>
+          </view>
+          <view class="flex_c phone">
+            <text>手机：13432050608</text>
+            <text>收益：80.00</text>
+          </view> 
+        </view>
+        <view class="time">停止服务：2019-10-21 09:00至2019-10-21 14:00</view>
+      </view>    
+    </view>    
+    <view class="item_b flex_r_r p-w-28">
+      <view class="btn">禁止接单</view>
+      <view class="btn">删除技师</view>
+    </view>
+  </view>
+</view>
+
+<view class="fixed_btn" bindtap="add"><text class="iconfont icon-jia"></text> 添加员工</view>

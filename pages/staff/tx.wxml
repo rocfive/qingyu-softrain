@@ -1,0 +1,67 @@
+<!--pages/staff/tx.wxml-->
+<view class="head p-w-24 flex_r_a">
+  <view class="flex_c_t">
+    <text>账户余额</text>
+    <text>￥{{balance}}</text>
+  </view>
+  <view class="flex_c_a">
+    <text>累计提现（元）</text>
+    <text>￥0.00</text>
+    <text class="record" bindtap="record">提现记录</text>
+  </view>
+</view>
+<view class="types bg_fff m-10 flex_r_b">
+  <view class="{{pay_type==1?'active':''}}" data-id="{{1}}" bindtap="changetype">提现到微信</view>
+  <view class="{{pay_type==2?'active':''}}" data-id="{{2}}" bindtap="changetype">提现到银行卡</view>
+  <view class="{{pay_type==3?'active':''}}" data-id="{{3}}" bindtap="changetype">提现到支付宝</view>
+</view>
+<view class="m-10 bg_fff p-w-24 group01" wx:if='{{pay_type==2}}'>
+  <view class="item flex_r">
+    <label>持卡人</label>
+    <input type="text" placeholder="持卡人姓名" style="width:600rpx" bindinput="bank_name"></input>
+  </view>
+  <view class="item flex_r">
+    <label>卡号</label>
+    <input type="number" placeholder="卡号" style="width:630rpx" bindinput="o2o_fuwu_money_log_desc"></input>
+  </view>
+  <view class="item flex_r">
+    <label>开户银行</label>
+    <input type="text" placeholder="开户银行" style="width:542rpx" bindinput="bank_address"></input>
+  </view>
+</view>
+<view class="m-10 bg_fff p-w-24 group01" wx:if='{{pay_type==3}}'>
+  <view class="item flex_r">
+    <label>姓名</label>
+    <input type="text" placeholder="姓名" style="width:600rpx" bindinput="bank_name"></input>
+  </view>
+  <view class="item flex_r">
+    <label>支付宝账号</label>
+    <input type="number" placeholder="支付宝账号" style="width:520rpx" bindinput="o2o_fuwu_money_log_desc"></input>
+  </view>
+</view>
+<view class="m-10 bg_fff group02">
+  <label class="p-w-24">提现金额(元)</label>
+  <view class="flex_r money">
+    <text>￥</text>
+    <input type="digit" placeholder="0.00" bindinput="intmoney"></input>
+  </view>
+  <block wx:if='{{options.forms=="staff"}}'>
+    <view class="p-w-24 m-10">备注：</view>
+    <view class="p-w-24 m-10">
+      <text class="red">1.提现金额会进入用户余额，可到个人中心查看。</text>
+    </view>
+  </block>
+  <block wx:else>
+  <view class="p-w-24 flex_r_b m-10">
+    <text>手续费 0.6%</text>
+    <text class="red">提现金额不可超过账户余额</text>
+  </view>
+  <view class="p-w-24 m-10">备注：</view>
+  <view class="p-w-24 m-10">
+    <text class="red">1.手续费从账户余额中扣除。
+    2.若提现后余额不够手续费，则从提现金额中扣除。
+    </text>
+  </view>
+  </block>
+</view>
+<view class="btn" bindtap="withdraw">提现</view>

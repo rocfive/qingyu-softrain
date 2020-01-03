@@ -1,0 +1,63 @@
+<!--pages/goods/order.wxml-->
+<view class="goodsmsg p-w-28 flex_r_b bg_fff">
+  <image src="{{cartInfo[0].productInfo.image}}"></image>
+  <view class="msg_r">
+    <view class="h1">{{cartInfo[0].productInfo.store_name}}</view>
+    <view class="spec flex_r_b">
+      <view class="selected" wx:if='{{ordermsg.checkval}}'>已选：{{ordermsg.checkval}}</view>
+      <text class="price">￥<text>{{ordermsg.money}}</text></text>
+    </view> 
+  </view>
+</view>
+<view class="group m-10">
+  <view class="item flex_r_b p-w-24 bg_fff">
+    <label>预约门店</label>
+    <view>{{menshop.name}}</view>
+  </view>
+  <view class="item flex_r_b p-w-24 bg_fff">
+    <label>技师</label>
+    <view>{{teach.name}}</view>
+  </view>
+  <view class="item flex_r_b p-w-24 bg_fff">
+    <label>预约时间</label>
+    <view>{{ordermsg.order_time}}</view>
+  </view>
+  <view class="item flex_r_b p-w-24 bg_fff">
+    <label>预留姓名</label>
+    <view>{{ordermsg.real_name}}</view>
+  </view>
+  <view class="item flex_r_b p-w-24 bg_fff">
+    <label>预留手机号</label>
+    <view>{{ordermsg.user_phone}}</view>
+  </view>
+</view>
+<view class="group m-10">
+  <view class="item item01 flex_r_b p-w-24 bg_fff" wx:if='{{coupon_price}}' bindtap="coupon">
+    <label class="flex_r"><text class="iconfont icon-youhuiquan1"></text> 优惠券</label>
+    <view>
+      <text>省{{coupon_price}}元：优惠券</text>
+      <text class="iconfont icon-gengduo"></text>
+    </view>
+  </view>
+  <!-- <view class="item item02 flex_r_b p-w-24 bg_fff">
+    <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
+    <view>
+      <text>皮肤清洁护理卡单次</text>
+      <text class="iconfont icon-gengduo"></text>
+    </view>
+  </view> -->
+</view>
+<view class="group group1 bg_fff m-10 p-w-24">
+  <view class="flex_r_b item03">
+    <label>商品价</label>
+    <view class="money">￥{{ordermsg.money}}</view>
+  </view>
+  <view class="flex_r_b item03">
+    <label>技师服务费</label>
+    <view class="money">￥{{teach.premium}}</view>
+  </view>
+</view>
+<view class="bottom bg_fff p-w-24 flex_r_b">
+  <view>合计：<text class="money">￥{{total}}</text></view>
+  <view class="btn" bindtap="pay">确定支付</view>
+</view>

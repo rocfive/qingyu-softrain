@@ -1,0 +1,21 @@
+<!--pages/business/login.wxml-->
+<image src="../img/businessbg.png" class="bg"></image>
+<form>
+  <view class="formbox bg_fff">
+    <view class="title">登录</view>
+    <view class="item success">
+      <label>账户手机号</label>
+      <input type="number" placeholder="请输入账户手机号"></input>
+      <icon type="success" color='#4e99fe'></icon>
+    </view>
+    <view class="item">
+      <label>密码</label>
+      <input type="text" password='true' placeholder="请输入密码"></input>
+    </view>
+    <view class="flex_r_r"><navigator url="findcode" class="forget">忘记密码？</navigator></view>
+    <view class="flex_r_b formbox_b">
+      <view><radio></radio>记住账号</view>
+      <view class="logbtn">登录</view>
+    </view>
+  </view>
+</form>

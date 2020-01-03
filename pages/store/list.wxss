@@ -1,0 +1,29 @@
+/* pages/store/list.wxss */
+.storelist .item{
+  height: 202rpx;
+  border-bottom: 1px solid #f2f2f2
+}
+.storelist .item:last-child{
+  border: none
+}
+.storelist .item .storeimg{
+  width: 144rpx;
+  height: 136rpx;
+}
+.storelist .item .item_c{
+  width: 348rpx;
+  height: 136rpx;
+}
+.storelist .item .adddress{
+  font-size: 24rpx;
+  color: #888888;
+  margin-top: 10rpx;
+}
+.storelist .item .item_r{
+  width: 158rpx;
+  color: #4694ff;
+  font-size: 26rpx;
+}
+.storelist .item .item_r .iconfont{
+  font-size: 42rpx
+}

@@ -1,0 +1,50 @@
+<!--pages/commission/team.wxml-->
+<view class='list'>
+  <view class='item'>
+    <image src='../img/doctor.png' class='headpic'></image>
+    <view class='item_r'>
+      <view class='item_r_line01'>
+        <view class='name'>YY</view>
+        <view>+1.00</view>
+      </view>
+      <view class='item_r_line02'>
+        <view class='time'>成为分销商时间：2018-09-19 15:21</view>
+        <view>1个成员</view>
+      </view>
+    </view>
+  </view>
+  <view class='item'>
+    <image src='../img/doctor.png' class='headpic'></image>
+    <view class='item_r'>
+      <view class='item_r_line01'>
+        <view class='name'>YY</view>
+        <view>+1.00</view>
+      </view>
+      <view class='item_r_line02'>
+        <view class='time'>成为分销商时间：2018-09-19 15:21</view>
+        <view>1个成员</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='fixed'>
+  <navigator url='index' class='link' open-type='redirect'>
+    <text class='iconfont icon-shouye-copy-copy'></text>
+    <text>分销中心</text>
+  </navigator>
+  <navigator url='money' class='link'  open-type='redirect'>
+    <text class='iconfont icon-yongjin'></text>
+    <text>分销佣金</text>
+  </navigator>
+  <navigator url='order' class='link'  open-type='redirect'>
+    <text class='iconfont icon-dingdan1'></text>
+    <text>分销订单</text>
+  </navigator>
+  <view class='link active'>
+    <text class='iconfont icon-i'></text>
+    <text>我的团队</text>
+  </view>
+</view>
+
+

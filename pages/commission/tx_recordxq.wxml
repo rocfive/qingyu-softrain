@@ -1,0 +1,20 @@
+<!--pages/commission/tx_recordxq.wxml-->
+<view class='top'>
+  <text>申请佣金：1元</text>
+  <text style='margin-left:76rpx'>审核佣金：1元</text>
+</view>
+<view class='box_m'>
+  <image src='../img/goodsimg.png' class='img'></image>
+  <view class='box_m_msg'>
+    <text class='title'>家庭保洁  全屋日常保洁</text>
+    <view>佣金:1元</view>
+  </view>
+  <view class='box_m_r'>
+    <view>二级</view>
+    <view class='status'>已打款</view>
+  </view>
+</view>
+<view class='box_f'>
+  <view>订单编号：SH24546455465571</view>
+  <view style='margin-top:16rpx'>订单金额：100.00元</view>
+</view>

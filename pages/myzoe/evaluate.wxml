@@ -1,0 +1,24 @@
+<!--pages/myzoe/evaluate.wxml-->
+<view class="goods p-w-24 flex_r_b">
+  <image src='{{goods.img}}'></image>
+  <view class="goods_r">
+    <view class="goods_title">{{goods.title}}</view>
+    <view>预约时间：{{goods.yuyuetime}}</view>
+    <view>规格：{{goods.spec}}</view>
+    <view class="price">￥<text>481</text></view>
+  </view>
+</view>
+<view class="bg_fff evaluatebox">
+  <view class="evaluate_t flex_c_c">
+    <view class="title">您的评价让我们做得更好</view>
+    <view class="star flex_r_b">
+      <text class="{{index<score?'iconfont icon-xingxingchengcopy light':'iconfont icon-xingxingchengcopy'}}" wx:for='{{5}}' wx:key='{{index}}' data-id="{{index+1}}" bindtap="rank"></text>
+    </view>
+    <view class="score"><text wx:if='{{score}}'>{{score}}分</text></view>
+  </view>
+  <textarea class="textarea" bindinput="intcontent">
+    <text class="hint" wx:if='{{!content}}'>亲，请对本次服务做出评价</text>
+  </textarea>
+</view>
+
+<view class="btn">提交评价</view>

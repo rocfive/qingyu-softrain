@@ -1,0 +1,53 @@
+/* pages/commission/team.wxss */
+@import "bottom";
+page{
+  background: #f2f2f2;
+  padding-bottom: 120rpx;
+}
+.ts{
+  width: 100vw;
+  height: 70rpx;
+  background: #f2f2f2;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #888888
+}
+.ts .name{
+  color: #444444;
+  font-size: 28rpx
+}
+.list .item{
+  width: 100vw;
+  height: 148rpx;
+  background: #fff;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.list .item .headpic{
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+}
+.list .item .item_r{
+  width: 620rpx;
+  height: 82rpx;
+  justify-content: space-around
+}
+.list .item .item_r .item_r_line01,.list .item .item_r .item_r_line02{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.list .item .time{
+  font-size: 24rpx;
+  color: #888888
+}
+

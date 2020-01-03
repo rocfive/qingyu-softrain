@@ -1,0 +1,2 @@
+/* pages/goods/coupon.wxss */
+@import "../myzoe/coupon";

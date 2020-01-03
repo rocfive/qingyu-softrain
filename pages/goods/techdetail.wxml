@@ -1,0 +1,23 @@
+<!--pages/goods/techdetail.wxml-->
+<view class="head bg_fff p-w-24 flex_r_b">
+  <image src="{{msg.image}}" class="pic"></image>
+  <view class="head_r">
+    <view class="name">{{msg.name}}</view>
+    <view class="grade">评分：<text wx:if='{{msg.service_score}}'>{{msg.service_score}}</text><text wx:else>0</text>分</view>
+  </view>
+</view>
+<view class="info p-w-24 bg_fff">
+  <view class="title">个人简介：</view>
+  <view>{{msg.introduction}}</view>
+</view>
+<view class="m-10 evaluate_bt p-w-24 bg_fff">评价</view>
+<view class="list">
+  <view class="item flex_c bg_fff p-w-24" wx:for='{{list}}' wx:key='index'>
+    <view class="flex_r_b">
+      <text class="name">{{item.nickname}}</text>
+      <text class="time">{{item.add_time}}</text>
+    </view>
+    <view class="content"><text>客户评价：{{item.comment}}</text></view>
+  </view>
+</view>
+<view class="nomore">没有更多评论了</view>

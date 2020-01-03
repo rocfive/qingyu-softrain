@@ -1,0 +1,4 @@
+<!--pages/store/piclist.wxml-->
+<view class="piclist bg_fff">
+  <image src="{{item}}" mode="aspectFill" bindtap='topic' data-src="{{item}}" data-list="{{slide}}" wx:for='{{slide}}' wx:key='{{index}}'></image>
+</view>

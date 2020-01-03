@@ -1,0 +1,40 @@
+<!--pages/business/itemrecord.wxml-->
+<view class="tab flex_r_b bg_fff p-w-24">
+  <view class="flex_r tab_l">
+    <view class="active">今日</view>
+    <view>近七日</view>
+    <view>近一月</view>
+    <view>近三月</view>
+  </view>
+  <view class="flex_r tab_r">
+    <picker range="{{yearxl}}" bindchange="changeyear">
+      <view class='pickerbox'>
+        <text class='year' wx:if='{{year}}'>{{year}}</text>
+        <text class='year' wx:else>2019-11</text>
+      </view>
+    </picker>
+    <text class="iconfont icon-xiala"></text>
+  </view>
+</view>
+<view class="th p-w-24 flex_r_b">
+  <view>项目名称</view>
+  <view>服务次数</view>
+  <view>总金额</view>
+</view>
+<view class="list">
+  <view class="td bg_fff p-w-24 flex_r_b">
+    <view>身体体龄定制</view>
+    <view>897</view>
+    <view class="money">12456.00</view>
+  </view>
+  <view class="td bg_fff p-w-24 flex_r_b">
+    <view>身体体龄定制</view>
+    <view>897</view>
+    <view class="money">12456.00</view>
+  </view>
+  <view class="td bg_fff p-w-24 flex_r_b">
+    <view>身体体龄定制</view>
+    <view>897</view>
+    <view class="money">12456.00</view>
+  </view>
+</view>

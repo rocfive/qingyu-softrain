@@ -1,0 +1,28 @@
+/* pages/business/txrecord.wxss */
+.tab{
+  height: 90rpx;
+}
+.tab view{
+  padding: 0 12rpx;
+}
+.tab .active{
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #5798fe;
+  border-bottom: 3rpx solid #5798fe;
+}
+.list .item{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  line-height: 42rpx;
+}
+.list .item .types{
+  color: #666666
+}
+.list .item .status{
+  color: #777777
+}
+.list .item .money{
+  color: #5798fe
+}
+

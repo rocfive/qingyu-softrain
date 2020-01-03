@@ -1,0 +1,14 @@
+<!--pages/headline/list.wxml-->
+<swiper class="banner" indicator-dots='true' indicator-color='#bacef6' indicator-active-color='#5683da'>
+  <swiper-item wx:for='{{banner}}' wx:key='index'><image src="{{item.pic}}" mode="aspectFill"></image></swiper-item>
+</swiper>
+<view class="list bg_fff">
+  <view class="item flex_r_b p-w-24" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+    <image src="{{item.image_input}}" mode="aspectFill" class="pic"></image>
+    <view class="item_r">
+      <view class="title">{{item.title}}</view>
+      <view class="describe">{{item.synopsis}}</view>
+    </view>
+  </view>
+</view>
+

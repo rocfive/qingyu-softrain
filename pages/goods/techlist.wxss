@@ -1,0 +1,121 @@
+/* pages/goods/techlist.wxss */
+.tab{
+  width: 100vw;
+  height: 95rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.tab .item{
+  width: 375rpx;
+  height: 45rpx;
+  border-right: 1rpx solid #f2f2f2;
+  box-sizing: border-box;
+  position: relative
+}
+.tab .item:last-child{
+  border-right: none
+}
+.tab .item.active{
+  color: #4694ff
+}
+.tab .item .iconfont{
+  color: #9d9d9d;
+  margin-left: 10rpx
+}
+.tab .item .item_r .icon-arrLeft-fill-copy{
+  margin-top: 10rpx;
+}
+.tab .item .item_r .icon-arrLeft-fill{
+  margin-top: -24rpx;
+}
+.tab .item .cur, .tab .item .iconfont.cur{
+  color: #4694ff
+}
+.techlist .item{
+  width: 100vw;
+  height: 204rpx;
+  border-bottom: 1px solid #f2f2f2
+}
+.techlist .item:last-child{
+  border-bottom: none
+}
+.techlist .item .pic{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+}
+.techlist .item .item_r{
+  width: 552rpx;
+  position: relative
+}
+.techlist .item .name{
+  font-weight: bold;
+  line-height: 44rpx;
+}
+.techlist .item .grade{
+  font-size: 24rpx;
+  color: #999999
+}
+.techlist .item .num{
+  color: #4694ff;
+  font-size: 24rpx;
+  font-weight: normal;
+  margin-left: 16rpx;
+}
+.techlist .item .rank{
+  margin-left: 16rpx;
+  border-left: 1px solid #b3b3b3;
+  padding-left: 16rpx;
+  font-size: 24rpx;
+  color: #333333;
+  margin-right: 16rpx;
+  font-weight: normal;
+}
+.techlist .item .money{
+  color: #f8724c;
+  font-size: 24rpx;
+  font-weight: normal;
+}
+.techlist .item .info{
+  width: 384rpx;
+  font-size: 24rpx;
+  color: #666666;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  margin-top: 6rpx;
+}
+.techlist .item .item_btn{
+  width: 148rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #4694ff;
+  font-size: 22rpx;
+}
+.techlist .item .waittime{
+  width: 132rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.techlist .item .btn{
+  width: 132rpx;
+  height: 54rpx;
+  border: 2rpx solid #418dfd;
+  border-radius: 28rpx;
+  text-align: center;  
+  font-size: 26rpx;
+  color: #4694ff;
+  box-sizing: border-box;
+  line-height: 50rpx;
+}
+.techlist .item .btn.chose{
+  line-height: 54rpx;
+  background: linear-gradient(30deg,#4a9dfa,#9c95fb);
+  border: none;
+  color: #fff
+}

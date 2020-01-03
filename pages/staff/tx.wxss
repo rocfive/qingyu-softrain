@@ -1,0 +1,69 @@
+/* pages/staff/tx.wxss */
+.head{
+  width: 100vw;
+  height: 180rpx;
+  /* background: linear-gradient(90deg,#418dfd,#9b95fb); */
+  background: #418dfd;
+  color: #fff
+}
+.head view{
+  height: 130rpx;
+}
+.head .record{
+  font-size: 26rpx;
+  text-decoration: underline
+}
+.types{
+  height: 86rpx;
+}
+.types view{
+  width: 196rpx;
+  text-align: center;
+  line-height: 86rpx;
+  box-sizing: border-box
+}
+.types .active{
+  border-bottom: 2rpx solid #4694ff;
+  color: #4694ff
+}
+.group02{
+  padding: 20rpx 0;
+  line-height: 48rpx;
+}
+.group02 .money{
+  width: 702rpx;
+  margin: auto;
+  height: 94rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 32rpx;
+  font-weight: bold
+}
+.group02 .money input{
+  width: calc(100% - 40rpx);
+  font-size: 30rpx;
+  font-weight: normal
+}
+.red{
+  color: #4694ff
+}
+.btn{
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin:70rpx auto
+}
+.item{
+  height: 88rpx;
+  border-bottom: 1rpx solid #eee
+}
+.item label{
+  margin-right: 10rpx
+}
+.group01 .item:last-child{
+  border-bottom: none
+}

@@ -1,0 +1,32 @@
+/* pages/headline/list.wxss */
+.banner, .banner swiper-item, .banner swiper-item image{
+  width: 100vw;
+  height: 226rpx;
+}
+.list .item{
+  height: 220rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.list .item:last-child{
+  border-bottom: none;
+}
+.list .item .pic{
+  width: 212rpx;
+  height: 168rpx;
+  border-radius: 10rpx;
+}
+.list .item .item_r{
+  width: 462rpx;
+  height: 168rpx;
+}
+.list .item .title{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #555555;
+  margin-top: 10rpx
+}
+.list .item .describe{
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 10rpx
+}

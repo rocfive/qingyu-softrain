@@ -1,0 +1,18 @@
+<view class="pages flex_c_c">
+  <view class="logo"><image src="../img/goodspic.png" mode="aspectFill"></image></view>
+  <button class="wechat_btn" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">微信一键登录</button>
+</view>
+
+<!-- 授权按钮 -->
+<view class='pop_getUserInfo' hidden='{{pop_User}}'>
+  <view class='pop_user_main'>
+    <view class='pop_user_main_box p-w-28 flex_c_c'>
+      <text>{{appname}}希望获取您的头像昵称信息</text>
+      <text>以便您更好的服务体验</text>
+    </view>
+    <view class='btn_box'>
+      <button class='closepop' bindtap='closepop'>取消</button>
+      <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" style="color:#418dfd">确定</button>
+    </view>    
+  </view>  
+</view>

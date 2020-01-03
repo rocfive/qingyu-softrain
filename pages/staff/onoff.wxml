@@ -1,0 +1,27 @@
+<!--pages/staff/onoff.wxml-->
+<view class="switch bg_fff p-w-24 flex_r_b">
+  <text>请假时间设置</text>
+  <switch color="#3c9aff" checked="{{showtime}}" bindchange="switchtime"></switch>
+</view>
+<view class="group m-10" wx:if='{{showtime}}'>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>开始时间</label>
+    <picker mode='date'>
+      <view>
+        <text>请选择</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </picker>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>结束时间</label>
+    <picker mode='date'>
+      <view>
+        <text>请选择</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="tips p-w-24">提示：时间范围内已经有客户预约了,不能停止接单。</view>
+<view class="btn btn1">确定</view>

@@ -1,0 +1,77 @@
+<!--pages/goods/detail.wxml-->
+<!-- 秒杀商品 -->
+<block  wx:if='{{options.isseckill==1}}'>
+  <swiper class="goodsimg" current="{{current}}" bindchange="changebanner">
+    <swiper-item wx:for='{{msg.images}}' wx:key='index'><image src="{{item}}"></image></swiper-item>
+  </swiper>
+  <view class="progress">{{current+1}}/{{msg.images.length}}</view>
+  <view class="seckillbar p-w-24 bg_fff flex_r_b">
+    <image src="../img/seckillbar.png" class="bg"></image>
+    <view class="bar_l">
+      <text class="seckillprice">￥<text>{{msg.price}}</text></text>
+      <text class="original">￥{{msg.ot_price}}</text>
+    </view>
+    <view class="bar_r flex_r_r">
+      <text style="margin-right:10rpx">距结束</text> 
+      <text class="flag">{{countDownHour}}</text>
+      <text>:</text>
+      <text class="flag">{{countDownMinute}}</text>
+      <text>:</text>
+      <text class="flag">{{countDownSecond}}</text>
+    </view>
+  </view>
+  <view class="goodsmsg p-w-24 bg_fff">
+    <view class="title">{{msg.title}}</view>
+    <view class="subhead">{{msg.info}}</view>
+    <view class="share flex_c_c">
+      <text class="iconfont icon-ziyuan"></text>
+      <text>分享</text>
+    </view>
+  </view>
+  <view class="bt p-w-24 bg_fff flex_r_b m-12">
+    <view class="bt_l flex_r">
+      <text>详情展示</text>
+    </view>
+  </view>
+  <view class="rbody bg_fff">
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="btnbox flex_c_c bg_fff">
+    <view class="btn" bindtap="seckillbuy">立即预约</view>
+  </view>
+</block>
+<!-- 普通商品 -->
+<block wx:else>
+  <swiper class="goodsimg" current="{{current}}" bindchange="changebanner">
+    <swiper-item wx:for='{{msg.slider_image}}' wx:key='index'><image src="{{item}}"></image></swiper-item>
+  </swiper>
+  <view class="progress">{{current+1}}/{{msg.slider_image.length}}</view>
+  <view class="goodsmsg p-w-24 bg_fff">
+    <view class="title">{{msg.store_name}}</view>
+    <view class="subhead">{{msg.store_info}}</view>
+    <view class="pricebox" wx:if='{{!isseckill}}'>
+      <text class="price">￥<text>{{msg.ot_price}}</text></text>
+      <text class="oldprice">￥{{msg.price}}</text>
+    </view>
+    <view class="share flex_c_c">
+      <text class="iconfont icon-ziyuan"></text>
+      <text>分享</text>
+    </view>
+  </view>
+  <view class="bt p-w-24 bg_fff flex_r_b m-12">
+    <view class="bt_l flex_r">
+      <text>详情展示</text>
+    </view>
+  </view>
+  <view class="rbody bg_fff">
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="btnbox flex_c_c bg_fff">
+    <view class="btn" bindtap="chosespec">立即预约</view>
+  </view>
+</block>
+
+<!-- 选择规格 -->
+<spec id='spec' goodsid='{{id}}'></spec>

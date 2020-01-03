@@ -1,0 +1,35 @@
+<!--pages/card/seckill.wxml-->
+<view class="banner">
+  <image src="{{lovely}}"></image>
+</view>
+<scroll-view scroll-x class="seckill_time p-w-28">
+  <block wx:for='{{seckillTime}}' wx:key='index' wx:if='{{item.status}}'>
+    <view class="{{item.id==timeid?'item cur':'item'}}" data-id="{{item.id}}" bindtap="changeTab">
+      <view class="time">{{item.time}}</view>
+      <view>{{item.state}}</view>
+    </view>
+  </block>
+  
+</scroll-view>
+<view class="seckillbt flex_r_c">
+  <image src="../img/seckillbt.png" mode="widthFix"></image>
+  <text class="after"></text>
+</view>
+<view class="list">
+  <view class="item flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+    <image src="{{item.image}}" class="pic" mode="aspectFill"></image>
+    <view class="item_r">
+      <view class="title">{{item.title}}</view>
+      <view class="money">
+        <view class="seckillprice">￥<text>{{item.price}}</text></view>
+        <view class="original">￥{{item.ot_price}}</view>
+      </view>
+      <view class="flex_r_b">
+        <view class="supply">限量<text>{{item.stock}}份</text></view>
+        <view class="buy" catchtap="panicbuy" data-id="{{item.id}}" wx:if='{{item.stock>0}}'>立即抢购</view>
+        <view class="buy" wx:else>已售罄</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="nomore" wx:if='{{nomore}}'>没有更多了</view>

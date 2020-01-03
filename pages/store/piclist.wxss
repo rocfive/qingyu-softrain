@@ -1,0 +1,13 @@
+/* pages/store/piclist.wxss */
+.piclist{
+  padding: 24rpx;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.piclist image{
+  width: 338rpx;
+  height: 238rpx;
+  margin-bottom: 24rpx
+}

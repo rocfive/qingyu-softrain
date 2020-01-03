@@ -1,0 +1,24 @@
+/* pages/goods/list.wxss */
+@import "../style/goodslist";
+.banner, .banner image{
+  width: 750rpx;
+  height: 300rpx;
+}
+.menu {
+  height: 172rpx;
+  padding:29rpx 22rpx;
+  box-sizing: border-box
+}
+.menu .item{
+  float: left;
+  width: 172rpx;
+  height: 114rpx;
+  margin-right: 6rpx;
+}
+.menu .item:last-child{
+  margin-right: 0
+}
+.menu .item image{
+  width: 172rpx;
+  height: 114rpx;
+}

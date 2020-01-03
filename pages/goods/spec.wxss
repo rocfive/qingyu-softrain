@@ -1,0 +1,123 @@
+/* pages/goods/spec.wxss */
+@import "../../app";
+.fixed{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0 
+}
+.fixed .main{
+  width: 750rpx;
+  height: 750rpx;
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.fixed .main .fixed_head{
+  margin-top: 40rpx;
+  position: relative
+}
+.fixed .main .fixed_head image{
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 10rpx;
+}
+.fixed .main .fixed_head .fixed_head_r{
+  width: 478rpx;
+  height: 190rpx;
+  line-height: 48rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box
+}
+.fixed .main .fixed_head .fixed_head_r .h1{
+  height: 96rpx;
+  width: 400rpx;
+  text-align: justify;
+}
+.fixed .main .fixed_head .selected{
+  color: #666666;
+  font-size: 24rpx;
+  margin-top: 20rpx
+}
+.fixed .main .fixed_head .selected .price{
+  color: #4694ff;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+.fixed .icon-guanbi{
+  position: absolute;
+  top: 0;
+  right: 28rpx;
+  font-size: 48rpx;
+  color: #a1a1a1
+}
+.fixed .spec{
+  width: 722rpx;
+  height: 340rpx;
+  margin-top: 40rpx;
+  margin-left: 28rpx;
+}
+.fixed .spec .specbt{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.fixed .spec .speclist{
+  font-size: 24rpx;
+}
+.fixed .spec .speclist .item{
+  display: inline-block;
+  padding:0 18rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border: 1px solid #bfbfbf;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+  position: relative;  
+  overflow: hidden;
+}
+.fixed .spec .speclist .item .iconbg, .fixed .spec .speclist .item icon{
+  display: none;
+}
+.fixed .spec .speclist .item.chose{
+  color: #3e9aff;
+  border-color: #4694ff;
+}
+.fixed .spec .speclist .chose .iconbg, .fixed .spec .speclist .item icon{
+  display: block;
+  position: absolute;
+}
+.fixed .spec .speclist .chose .iconbg{  
+  background: #4694ff;
+  right: -25rpx;
+  bottom: -25rpx;
+  width: 50rpx;
+  height:50rpx;
+  transform:rotate(45deg);
+}
+.fixed .spec .speclist .chose icon{
+  bottom: 2rpx;
+  right: 0;
+  height: 24rpx;
+}
+.fixed .btn_takeorder{
+  position: absolute;
+  bottom: 16rpx;
+  left: 24rpx;
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg, #3c9aff, #9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+}

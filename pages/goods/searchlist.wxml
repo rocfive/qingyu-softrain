@@ -1,0 +1,101 @@
+<!--pages/goods/searchlist.wxml-->
+<view class="head flex_r_b p-w-24">
+  <view class="head_l p-w-24 flex_r">
+    <picker range='{{types}}' value="{{index}}" bindchange="bindtypes" range-key="name">
+      <view class="pickers flex_r_c">
+        <text>{{types[index].name}}</text>
+        <text class="iconfont icon-arrLeft-fill"></text>
+      </view>
+    </picker>
+    <view class="searchbox p-w-24 flex_r_b">
+      <text class="iconfont icon-sousuo"></text>
+      <input type="text" placeholder="搜索" value="" confirm-type='search' bindconfirm='search' focus="{{isfocus}}"></input>
+    </view>
+  </view>
+  <view class="cancle" bindtap="cancle">取消</view>
+</view>
+<block wx:if='{{nolist}}'>
+<view class="hottitle p-w-24">热门搜索</view>
+<view class="hotword p-w-24">
+  <view class="item">瘦脸针</view>
+  <view class="item">玻尿酸</view>
+  <view class="item">瘦脸针</view>
+</view>
+</block>
+
+<!-- 项目列表 -->
+<view class="list" wx:if='{{index==0 && !nolist}}'>
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail">
+    <image src="../img/goodsimg.png" class="listimg" mode="aspectFill"></image>
+    <view class="item_r flex_c_b">
+      <view class="h2">瘦脸针】国产衡力肉毒素小V脸瘦脸针100u告别大咬别别别肌</view>
+      <view class="item_r_b flex_r_b">
+         <view>
+          <text class="price">￥<text>481</text></text>
+          <text class="oldprice">￥962</text>
+         </view>
+         <view class="flex_r">
+          <text>已售145</text>
+          <view class="buybtn">抢购</view>
+         </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 项目卡列表 -->
+<view class="cardlist" wx:if='{{index==1 && !nolist}}'>
+  <view class="item p-w-24" bindtap="detail">
+    <image src="../img/cardimg.png"></image>
+    <view class="flex_r_b p-w-12">
+      <view class="name">项目分类一</view>
+      <view class="price">￥<text>481</text></view>
+    </view>
+  </view>
+</view>
+<!-- 门店列表 -->
+<view class="storelist" wx:elif='{{index==2 && !nolist}}'>
+  <view class="item p-w-24 flex_r_b bg_fff" bindtap="detail">
+    <image src="../img/storeimg.png" class="storeimg"></image>
+    <view class="item_c">
+      <view class="name">科华路王府井店</view>
+      <view class="adddress">科华中路2号王府井购物中心二楼35号</view>
+    </view>
+    <view class="item_r flex_r_b">
+      <view class="flex_c_c">
+        <text class="iconfont icon-ditu3"></text>
+        <text>3.7km</text>
+      </view>
+      <view class="flex_c_c">
+        <text class="iconfont icon-dianhua1"></text>
+        <text>咨询</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 技师列表 -->
+<view class="techlist"  wx:elif='{{index==3 && !nolist}}'>
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail">
+    <image src="../img/doctor.png" class="pic"></image>
+    <view class="item_r">
+      <view class="name">刘茂平</view>
+      <view class="grade">评分：<text class="num">4.6分</text></view>
+      <view class="info">3D明星隐形矫正、Smile V脸正畸钻石牙美白、时星隐形尚美容冠时星隐形尚美容冠</view>
+      <view class="item_btn flex_c_b_r">
+        <view class="waittime">等待10分钟</view>
+        <view class="btn chose" catchtap="">选择</view>
+      </view>
+    </view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <image src="../img/doctor.png" class="pic"></image>
+    <view class="item_r">
+      <view class="name">刘茂平<text class="rank">技术首席</text><text class="money">￥50元(服务费)</text></view>
+      <view class="grade">评分：<text class="num">4.6分</text></view>
+      <view class="info">3D明星隐形矫正、Smile V脸正畸钻石牙美白、时星隐形尚美容冠时星隐形尚美容冠</view>
+      <view class="item_btn flex_c_b_r">
+        <view class="waittime">等待10分钟</view>
+        <view class="btn">选择</view>
+      </view>
+    </view>
+  </view>
+</view>

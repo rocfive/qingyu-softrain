@@ -1,0 +1,32 @@
+<!--pages/city/list.wxml-->
+<view class='page bg_fff'> 
+  <view class="searchbox p-w-24 flex_r_c">
+    <view class="search flex_r">
+      <text class="iconfont icon-sousuo"></text>
+      <input type="text" placeholder="输入城市名进行搜索" value="{{keyword}}" bindinput="keyword"></input>
+      <text class="iconfont icon-cuo" wx:if='{{keyword}}' bindtap="delkeyword"></text>
+    </view>    
+  </view>
+  <scroll-view scroll-y="true" class='scrool_left' scroll-into-view='{{scrollView}}'>
+    <view class='thiscity'>当前城市：<text bindtap='choseLocal' data-name='{{local}}'>{{local}}</text></view>
+    <view class="hot" id='order0'>
+      <view class='tit'>热门城市</view>
+      <view class="hotlist p-w-24">
+        <view class="{{local1==item.cityname?'cur':''}}"  bindtap='chosecity' data-name='{{item.cityname}}' wx:for='{{hotlist}}' wx:key='{{index}}'>{{item.cityname}}</view>
+      </view>
+    </view>
+    <view class='group' id='order{{index+1}}' wx:for='{{citylist}}' wx:key='{{index}}'>
+      <view class='tit'>{{item.ids}}</view>
+      <view class="p-w-28">
+        <view class='item' bindtap='chosecity' wx:for='{{item.data}}' data-name='{{list.cityname}}' wx:for-item='list' wx:key='{{index}}'>{{list.cityname}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='right'>
+    <view data-item-index="order0" bindtap='changeView'>热门</view>
+    <view data-item-index="order{{index+1}}" bindtap='changeView' wx:for='{{citylist}}' wx:key='{{index}}'>{{item.ids}}</view>
+  </view>
+  <scroll-view scroll-y class='searchList bg_fff p-w-24' wx:if='{{keyword}}'>
+    <view class='item' wx:for='{{searchlist}}' wx:key='{{index}}' bindtap='chosecity' data-name='{{item.cityname}}'>{{item.cityname}}</view>
+  </scroll-view>
+</view>

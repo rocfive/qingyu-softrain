@@ -1,0 +1,41 @@
+/* pages/staff/index.wxss */
+@import "../business/index";
+.headline{
+  height: 94rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box
+}
+.headline .headline_l{
+  height: 42rpx;
+  line-height: 42rpx;
+  width: 108rpx;
+  border-right: 1px solid #dddddd
+}
+.headline .headlinebt{
+  width: 78rpx;
+  height: 30rpx;
+}
+.headline .newest{
+  width: 64rpx;
+  height: 36rpx;
+  text-align: center;
+  border: 1rpx solid #418dfd;
+  line-height: 36rpx;
+  border-radius: 8rpx;
+  color: #418dfd;
+  font-size: 24rpx;
+  margin:0 20rpx;
+}
+.headline .headline_r{
+  font-size: 26rpx;
+  color: #333333;
+  width: 468rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.headline .icon-gengduo{
+  font-size: 32rpx;
+}

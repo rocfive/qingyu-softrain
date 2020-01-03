@@ -1,0 +1,111 @@
+/* pages/myzoe/orderdetail.wxss */
+.top{
+  height: 98rpx;
+}
+.top .iconfont{
+  color: #4694ff;
+  font-size: 36rpx;
+  font-weight: 32rpx;
+  margin-right: 10rpx;
+}
+.goods{
+  height: 200rpx;
+  background: #f7f7f7
+}
+.goods image{
+  width: 148rpx;
+  height: 148rpx;
+}
+.goods .goods_r{
+  position: relative;
+  width: 530rpx;
+  height: 148rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #666666
+}
+.goods .goods_r .goods_title{
+  width: 420rpx;
+  font-size: 30rpx;
+  font-weight: bold
+}
+.goods .goods_r .price{  
+  color: #fd3a3a
+}
+.goods .goods_r .nums{
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+}
+.item{
+  height: 96rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 26rpx;
+}
+.item label{
+  color: #999999
+}
+.item view{
+  width: 572rpx;
+  text-align: right
+}
+.group .item:last-child{
+  border-bottom: none
+}
+.item .btn{
+  width: 164rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1rpx solid #eee;
+  border-radius: 30rpx;
+  margin-left: 10rpx;
+  color: #888888
+}
+.btn.btn01{
+  border-color: #4694ff;
+  color:#4694ff;
+} 
+
+.pop{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+}
+.pop .popmain{
+  width: 600rpx;
+  height: 802rpx;
+  border-radius: 50rpx
+}
+.pop .popmain image{
+  width: 320rpx;
+  height: 320rpx;
+  margin-bottom: 60rpx;
+}
+.pop .popmain .title{
+  font-size: 32rpx;
+  color: #000;
+  margin:30rpx 0 36rpx ;
+}
+.pop .popmain .code{
+  width: 480rpx;
+  height: 80rpx;
+  background: #f7f7f7;
+  text-align: center;
+  line-height: 80rpx;
+  font-weight: bold;
+  margin-bottom: 36rpx;
+  font-size: 42rpx;
+}
+.pop .popmain .tips{
+  width: 480rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #e35a7b;
+  font-size: 26rpx;
+}
+
+

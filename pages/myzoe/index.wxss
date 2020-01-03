@@ -1,0 +1,153 @@
+/* pages/myzoe/index.wxss */
+page{
+  padding-bottom: 40rpx
+}
+.head{
+  width: 750rpx;
+  height: 538rpx;
+  position: relative
+}
+.head .bg{
+  width: 750rpx;
+  height: 348rpx;
+  position: relative
+}
+.head .line01{
+  position: absolute;
+  width: 702rpx;
+  left: 24rpx;
+  top: 34rpx;
+}
+.head .headpic{
+  width: 122rpx;
+  height: 122rpx;
+  border-radius: 50%;
+}
+.head .identity{
+  width: 372rpx;
+  color: #fff
+}
+.head .identity .nickname{
+  font-size: 34rpx;
+}
+.head .identity .vip{
+  width: 112rpx;
+  height: 34rpx;
+  border: 1px solid #e3e3e3;
+  border-radius: 17rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 34rpx;
+  margin-top: 12rpx;
+}
+.head .recharge{
+  width: 165rpx;
+  height: 50rpx;
+  background: #fff;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #3895fb;
+  padding: 0 20rpx;
+  box-sizing: border-box
+}
+.head .recharge .icon-gengduo{
+  font-size: 24rpx;
+}
+.head .line02{
+  position: absolute;
+  bottom: 226rpx;
+  left: 24rpx;
+  width: 702rpx;
+}
+.head .line02 .flex_c_c{
+  width: 50%;
+  color: #fff;
+  position: relative;
+  font-size: 24rpx;
+}
+.head .line02 .flex_c_c:first-child::after {
+  content: "";
+  width: 1px;
+  height: 70rpx;
+  background: #a7c2ff;
+  position: absolute;
+  right: 0
+}
+.head .line02 .flex_c_c .num{
+  font-size: 40rpx;
+}
+.head .line03{
+  position: absolute;
+  width: 702rpx;
+  height: 240rpx;
+  left: 24rpx;
+  top: 34rpx;
+}
+.head .line03 .identity{
+  text-align: center;
+  margin-top: 30rpx
+}
+
+.orderstatus{
+  width: 712rpx;
+  height: 200rpx;
+  box-shadow: 0 0 24rpx rgba(101,176,249,0.41);
+  border-radius: 20rpx;
+  position: relative;
+  margin: -208rpx auto 0;
+}
+.orderstatus .item{
+  width: 25%;
+  font-size: 26rpx;
+}
+.orderstatus .item .iconfont{
+  font-size: 56rpx;
+  background-image: linear-gradient(45deg,#3d9aff,#8d96fc);
+  -webkit-background-clip:text;
+  color: transparent;
+  margin-bottom: 10rpx;
+}
+.bt{
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  /* border-bottom: 1rpx solid #f2f2f2 */
+}
+.menubox{
+  overflow: hidden;
+  /* border-radius: 20rpx; */
+  border-top: 1rpx solid #f2f2f2;
+  padding: 10rpx 0;
+}
+.menubox .item{
+  width: 165rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 14rpx;
+  font-size: 26rpx;
+  color: #666
+}
+.menubox .item:nth-child(3n){
+  margin-right: 0
+}
+.menubox .item image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.menubox .item .iconfont{
+  color: #3895fb;
+  font-size: 48rpx;
+}
+.menubox1{
+  height: 190rpx;
+  border-top: 1rpx solid #f2f2f2;
+  font-size: 26rpx;
+  color: #666666
+}
+.menubox1 .iconfont{
+  color: #f8724c;
+  font-size: 60rpx;
+}
+

@@ -1,0 +1,99 @@
+<!--pages/myzoe/index.wxml-->
+<view class="head bg_fff">
+  <image src="../img/myzoebg.jpg" class="bg"></image>
+  <block wx:if='{{islogin}}'>
+    <view class="line01 flex_r_b"> 
+      <image src="../img/defaultheadpic.png" class="headpic"></image>
+      <view class="flex_c identity" bindtap="login">
+        <view class="nickname">{{msg.nickname}}</view>
+        <view class="vip" wx:if='{{msg.vip}}'>{{msg.vip_name}}</view>
+      </view>
+      <view class="recharge flex_r_b" bindtap="recharge">
+        <text class="iconfont icon-qianbao"></text>
+        <text>充值</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </view>
+    <view class="flex_r line02">
+      <view class="flex_c_c">
+        <text class="num">{{msg.now_money}}</text>
+        <text>账户(元)</text>
+      </view>
+      <view class="flex_c_c">
+        <text class="num">{{msg.couponCount}}</text>
+        <text>优惠券</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="flex_c_c line03" bindtap="login"> 
+      <image src="../img/defaultheadpic.png" class="headpic"></image>
+      <view class="flex_c identity">
+        <view class="nickname">点击登录</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="orderstatus bg_fff flex_r">
+  <view class="item flex_c_c" bindtap="order" data-id="1">
+    <text class="iconfont icon-daifukuan1"></text>
+    <text>待付款</text>
+  </view>
+  <view class="item flex_c_c" bindtap="order" data-id="2">
+    <text class="iconfont icon-daifuwu"></text>
+    <text>待服务</text>
+  </view>
+  <view class="item flex_c_c" bindtap="order" data-id="4">
+    <text class="iconfont icon-daipingjia"></text>
+    <text>待评价</text>
+  </view>
+  <view class="item flex_c_c" bindtap="aftersale">
+    <text class="iconfont icon-shouhou"></text>
+    <text>售后</text>
+  </view>
+</view>
+<view class="bg_fff">
+  <view class="bt p-w-24">所有功能</view>
+  <view class="w702 menubox">
+    <view class="item flex_c_c" hover-class="none" bindtap="commission">
+      <text class="iconfont icon-fenxiaoshang"></text>
+      <text>我的分销</text>
+    </view>
+    <navigator url="card" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-ka"></text>
+      <text>项目卡</text>
+    </navigator>
+    <navigator url="invite" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-yaoqinghaoyou"></text>
+      <text>邀请好友</text>
+    </navigator>
+    <navigator url="rechargelist" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-chongzhijilu"></text>
+      <text>充值记录</text>
+    </navigator>
+    <navigator url="coupon" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-youhuiquan"></text>
+      <text>优惠券</text>
+    </navigator>
+    <navigator url="aboutus" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-guanyuwomen1"></text>
+      <text>关于我们</text>
+    </navigator>
+  </view>
+</view>
+<view class="bg_fff m-10">
+  <view class="bt p-w-24">后台入口</view>
+  <view class="w702 flex_r_a menubox1">
+    <navigator url="../business/login" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-shangjia"></text>
+      <text>商家入口</text>
+    </navigator>
+    <navigator url="../staff/index" class="item flex_c_c" hover-class="none">
+      <text class="iconfont icon-jishi"></text>
+      <text>技师入口</text>
+    </navigator>
+  </view>
+</view>
+
+
+

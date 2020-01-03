@@ -1,0 +1,133 @@
+/* pages/myzoe/coupon.wxss */
+.tab{
+  height: 80rpx;
+  background: #fff;
+  color: #666666;
+  font-size: 28rpx;
+}
+.tab .active{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #4694ff;
+  font-weight: bold;
+  border-bottom: 2px solid #4694ff
+}
+.couponlist{
+  margin-top: 34rpx;
+}
+.couponlist .item{
+  width: 690rpx;
+  height: 200rpx;
+  margin: 0 auto 24rpx;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4rpx;
+}
+.couponlist .item .coupon-left::before{
+  content: "";
+  display:block;
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  background: #f7f7f7;
+  border-radius: 50%;
+  margin-left: -12rpx;
+}
+.couponlist .item::after{
+  content: "";
+  display:block;
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  background: #f7f7f7;
+  border-radius: 50%;
+  right: 0;
+  margin-right: -12rpx;
+}
+.couponlist .item .coupon-left{
+  width: 220rpx;
+  height: 200rpx;
+  background: linear-gradient(90deg, #3d9aff,#8d96fc);
+  color: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative
+}
+.couponlist .item .coupon-left .title{
+  font-size: 50rpx;
+}
+.couponlist .item .coupon-left .title text{
+  font-size: 80rpx;
+}
+.couponlist .item .coupon-left .subtitle{
+  font-size: 26rpx
+}
+.couponlist .item .coupon-dots {
+  width: 10rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 0;
+  left: 215rpx;
+  z-index: 10;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  overflow: hidden
+}
+.couponlist .item .coupon-dots text {
+    height: 10rpx;
+    width: 10rpx;
+    border-radius: 5rpx;
+    background: #f2f2f2;
+    display: block;
+}
+.couponlist .item .coupon-right {
+  width: 390rpx;
+  height:200rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  position: relative
+}
+.couponlist .item .coupon-right .title {
+  font-size: 32rpx;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+.couponlist .item .coupon-right .usetime{
+  color: #8d8d8d;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+}
+.couponlist .item .usebtn{
+  width: 80rpx;
+  height: 200rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-left: 1rpx dashed #e6e6e6;
+  color: #5596ff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box
+}
+.couponlist .item .couponchose{
+  position: absolute;
+  width: 72rpx;
+  height: 72rpx;
+  top: 0;
+  left: 0;
+}
+.item.dated .coupon-left{
+  background: #dadada
+}
+.item.dated .usebtn{
+  color: #dadada
+}
+.couponlist .item .coupon-right .title, .couponlist .item .coupon-right .usetime{
+  color: #999999
+}
+

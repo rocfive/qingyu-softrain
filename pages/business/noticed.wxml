@@ -1,0 +1,40 @@
+<!--pages/business/noticed.wxml-->
+<view class="head p-w-24 flex_c bg_fff">
+  <view class="title flex_r">韩国id5月初夏手术活动，折扣超级给力！</view>
+  <view class="time">2019-10-29</view>
+</view>
+<view class="content p-w-24 bg_fff">
+  <view>但是近期id整形医院一顾客按照东方航空的通知备齐了所有的资料，但还是登机时被拒，因此尽量.</view>
+</view>
+
+<!-- 商家端显示 -->
+<view class="m-20 bg_fff tab flex_r_a p-w-28">
+  <view class="active">已读</view>
+  <view>未读</view>
+</view>
+<scroll-view scroll-x class="p-w-28 bg_fff scrollbox">
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+  <view class="item">
+    <image src="../img/doctor.png"></image>
+    <text>刘茂平</text>
+  </view>
+</scroll-view>

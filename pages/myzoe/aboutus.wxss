@@ -1,0 +1,15 @@
+/* pages/myzoe/aboutus.wxss */
+.article{
+  padding-bottom: 40rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  color: #666666;
+  text-align: justify
+}
+.article image{
+  width: 702rpx;
+  margin-top: 10rpx;
+}
+.article1{
+  padding-left: 42rpx;
+}

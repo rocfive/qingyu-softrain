@@ -1,0 +1,19 @@
+<!--pages/goods/coupon.wxml-->
+<view class="couponlist">
+  <view class='item bg_fff flex_r' wx:for='{{list}}' wx:key='index'>    
+    <view class="coupon-dots flex_c_b"><text></text><text></text><text></text><text></text><text></text><text></text><text></text>
+      <text></text><text></text><text></text><text></text>
+    </view>
+    <view class="coupon-left">
+      <view class="title">￥<text>{{item.coupon_price}}</text></view>
+      <view class="subtitle">满{{item.use_min_price}}可用</view>
+    </view>
+    <view class="coupon-right flex_c">
+      <view class="title">{{item.coupon_title}}</view>
+      <view class="usetime">有效期至{{item.end_time}}</view>   
+    </view>
+    <view class="usebtn flex_c_c" bindtap="usecoupon" data-id="{{item.id}}" data-num="{{item.coupon_price}}">立即使用</view>
+    <image src="../img/couponchose.png" class="couponchose" wx:if='{{item.id==couponid}}'></image>
+  </view>
+</view>
+<view class="nomore" wx:if='{{list.length<1}}'>暂无可用的优惠券</view>

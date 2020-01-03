@@ -1,0 +1,56 @@
+/* pages/goods/techdetail.wxss */
+.head{
+  width: 100vw;
+  height: 190rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.head .pic{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+}
+.head .head_r{
+  width: 552rpx;
+  position: relative
+}
+.head .name{
+  font-weight: bold;
+  line-height: 44rpx;
+  margin-bottom: 10rpx;
+}
+.head .grade{
+  color: #4694ff;
+  font-size: 26rpx;
+  font-weight: normal;
+}
+.info{
+  padding-top: 16rpx;
+  padding-bottom: 40rpx;
+  font-size: 26rpx;
+  color: #888888
+}
+.info .title{
+  font-size: 28rpx;
+  margin: 12rpx 0;
+}
+.evaluate_bt{
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.list .item{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-top: 1rpx solid #f2f2f2
+}
+.list .item .name{
+  font-size: 26rpx;
+  color: #888888
+}
+.list .item .time{
+  font-size: 24rpx;
+}
+.list .item .content{
+  font-size: 26rpx;
+  color: #888888;
+  margin-top: 20rpx;
+}

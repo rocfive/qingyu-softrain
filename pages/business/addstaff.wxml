@@ -1,0 +1,38 @@
+<!--pages/business/addstaff.wxml-->
+<view class="imgitem flex_r_b bg_fff p-w-28">
+  <label>头像</label>
+  <view class="imgitem_r flex_r_r">
+    <image src="../img/doctor.png"></image>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+</view>
+<view class="item p-w-28 bg_fff flex_r_b">
+  <label>姓名</label>
+  <input type="text" placeholder="请输入姓名"></input>
+</view>
+<view class="item p-w-28 bg_fff flex_r_b">
+  <label>性别</label>
+  <view>
+    <radio-group name='sex'>
+      <radio value="0" color="#3d9aff" checked="{{sex=='0'?true:false}}"></radio>男
+      <radio value="1" color="#3d9aff" checked="{{sex=='1'?true:false}}"></radio>女
+    </radio-group>   
+  </view>
+</view>
+<view class="item p-w-28 bg_fff flex_r_b">
+  <label>联系电话</label>
+  <input type="text" placeholder="请输入联系方式"></input>
+</view>
+<view class="item p-w-28 bg_fff flex_r_b">
+  <label>登录账户</label>
+  <input type="text" placeholder="请输入员工手机号"></input>
+</view>
+<view class="codeitem p-w-28 bg_fff flex_r">
+  <label>默认密码：</label>
+  <view>123456</view>
+</view>
+<view class="flex_c bg_fff m-10 p-w-28 intro">
+  <label>简介</label>
+  <textarea placeholder="请输入员工的简介" class="textarea"></textarea>
+</view>
+<view class="btn">保存</view>

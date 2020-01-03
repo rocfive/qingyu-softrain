@@ -1,0 +1,51 @@
+<!--pages/myzoe/recharge.wxml-->
+<view class="head">
+  <image src="../img/rechargebg.png" class="bg"></image>
+  <view class="title">我的会员余额</view>
+  <view class="money">￥<text>0.88</text></view>
+</view>
+<view class="rechargebt flex_r_c">请选择充值金额</view>
+<view class="choselist p-w-28 flex_r_b">
+  <view class="item flex_c p-w-28">
+    <text class="price">100元</text>
+    <text class="song">送20元</text>
+  </view>
+  <view class="item flex_c p-w-28">
+    <text class="price">500元</text>
+    <text class="song">送30元</text>
+  </view>
+  <view class="item flex_c p-w-28">
+    <text class="price">200元</text>
+    <text class="song">送0元</text>
+    <view class="tj">
+      <image src="../img/recom.png" class="tj_bg"></image>
+      <text>推荐</text>
+    </view>
+  </view>
+  <view class="item flex_c p-w-28">
+    <text class="price">200元</text>
+    <text class="song">送0元</text>
+    <view class="tj">
+      <image src="../img/recom.png" class="tj_bg"></image>
+      <text>推荐</text>
+    </view>
+  </view>
+  <view class="item flex_c p-w-28">
+    <text class="price">200元</text>
+    <text class="song">送0元</text>
+    <view class="tj">
+      <image src="../img/recom.png" class="tj_bg"></image>
+      <text>推荐</text>
+    </view>
+  </view>
+  <view class="item flex_c p-w-28">
+    <text class="price">200元</text>
+    <text class="song">送0元</text>
+    <view class="tj">
+      <image src="../img/recom.png" class="tj_bg"></image>
+      <text>推荐</text>
+    </view>
+  </view>
+</view>
+<view class="btn">确认充值</view>
+

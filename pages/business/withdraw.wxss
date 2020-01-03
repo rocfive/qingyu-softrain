@@ -1,0 +1,36 @@
+/* pages/business/withdraw.wxss */
+.head, .head .bg{
+  width: 750rpx;
+  height: 424rpx;
+  position: relative
+}
+.head .head_main{
+  position: absolute;
+  width: 244rpx;
+  height: 244rpx;
+  top: 35rpx;
+  left: 253rpx;
+  border-radius: 50%;
+  color: #747474
+}
+.head .head_main .money{
+  font-size: 34rpx;
+  color: #409aff;
+  font-weight: bold
+}
+.main{
+  height: 300rpx;
+  background: #fafdff;
+  padding-bottom:30rpx;
+  box-sizing: border-box
+}
+.btn{
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg,#3c9aff,#9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;  
+}

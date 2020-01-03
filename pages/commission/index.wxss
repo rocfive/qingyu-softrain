@@ -1,0 +1,155 @@
+/* pages/commission/index.wxss */
+@import "bottom";
+button::after{
+  border: none
+}
+page{
+  background: #f2f2f2;
+  padding-bottom: 120rpx;
+}
+.head{
+  width: 100vw;
+  height: 204rpx;
+  background: linear-gradient(180deg,#418dfd,#9197fb);
+  color: #fff;
+  padding: 0 15rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head .headpic{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%
+}
+.head .head_m{
+  width: 320rpx;
+  font-size: 24rpx;
+}
+.head .head_m .name{
+  font-size: 30rpx;
+}
+.head .head_m .btn{
+  width: 120rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  border: 1px solid #fff;
+  line-height: 40rpx;
+  margin-top: 12rpx;
+}
+.head .head_r{
+  width: 230rpx
+}
+.head .head_r .money{
+  font-size: 40rpx;
+  font-weight: bold
+}
+.yqm{
+  width: 100vw;
+  height: 82rpx;
+  background: #fff;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.yongj{
+  width: 100vw;
+  height: 132rpx;
+  padding: 0 16rpx;
+  background: #fff;
+  margin-top: 10rpx;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #444444;
+  box-sizing: border-box;
+  position: relative
+}
+.yongj .money{
+  font-size: 34rpx;
+  color: #4694ff;
+}
+.yongj .tx_btn{
+  width: 145rpx;
+  height: 60rpx;
+  background: linear-gradient(90deg,#418dfd,#9197fb);
+  position: absolute;
+  right: 16rpx;
+  border-radius: 30rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+}
+.menu{
+  margin-top: 10rpx;
+  overflow: hidden
+}
+.menu .menu_item{
+  float: left;
+  width: 250rpx;
+  height: 232rpx;
+  background: #fff;
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: #444444;
+  box-sizing: border-box
+}
+.menu .menu_item:nth-child(3n){
+  border-right: none
+}
+.menu .menu_item .iconfont{
+  color: #468efd;
+  font-size: 48rpx;
+  margin-top: 50rpx;
+}
+.menu .menu_item .num{
+  color: #888888
+}
+.bodys{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center
+}
+.logo{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.toast{
+  font-size: 32rpx;
+  color: #666;
+  margin-top: 30rpx;
+}
+.confrimbtn{
+  margin-top:80rpx;
+  width: 300rpx;
+  background: #01cdb0;
+  height: 80rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.btncancle{
+  width: 300rpx;
+  height: 60rpx;
+  background: none;
+  border-radius: 40rpx;
+  border: none;
+  color: #999;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}

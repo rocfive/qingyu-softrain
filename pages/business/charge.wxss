@@ -1,0 +1,11 @@
+/* pages/business/charge.wxss */
+@import "../myzoe/orderlist";
+.charge_time{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #ff4040;
+}
+.charge_time text{
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}

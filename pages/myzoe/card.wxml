@@ -1,0 +1,44 @@
+<!--pages/myzoe/card.wxml-->
+<view class="tab bg_fff p-w-28 flex_r_a">
+  <view class="item active">未使用</view>
+  <view class="item">已使用</view>
+  <view class="item dated">已失效</view>
+</view>
+<view class="list">
+  <view class="item">    
+    <view class="item_t flex_c">
+      <view class="name">皮肤清洁护理卡</view>
+      <view class="flex_r">
+        <view class="money"><text>10</text>次</view>
+        <view class="scope">只限用于皮肤清洁护理服务</view>
+      </view>
+    </view>
+    <view class="item_f flex_r_b">
+      <view>有效期至2018-12-30</view>
+      <view class="use_btn">立即使用</view>
+    </view>
+    <image src="../img/card_b.jpg" class="card_b"></image>
+    <view class="expire">
+      <image src="../img/card_t_r.png"></image>
+      <text>30天后到期</text>
+    </view>
+  </view>
+  <view class="item">    
+    <view class="item_t flex_c">
+      <view class="name">皮肤清洁护理卡</view>
+      <view class="flex_r">
+        <view class="money"><text>10</text>次</view>
+        <view class="scope">只限用于皮肤清洁护理服务</view>
+      </view>
+    </view>
+    <view class="item_f flex_r_b">
+      <view>有效期至2018-12-30</view>
+      <view class="use_btn">立即使用</view>
+    </view>
+    <image src="../img/card_b.jpg" class="card_b"></image>
+    <view class="expire">
+      <image src="../img/card_t_r.png"></image>
+      <text>30天后到期</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+/* pages/business/statistics.wxss */
+/* pages/business/statistics.wxss */
+page{
+  background: #f2f2f2
+}
+.tab{
+  width: 100vw;
+  height: 100rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.tab .tab_l view{
+  margin-right: 16rpx;
+}
+.tab .tab_l .active{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: bold;
+  color: #4694ff;
+  border-bottom: 3rpx solid #4694ff;
+  box-sizing: border-box
+}
+.tab .tab_r{
+  font-size: 24rpx
+}
+.tab .pickerbox{
+  width: 162rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #e5e5e5;
+  text-align: center;
+}
+.group{
+  width: 100vw;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.group .tit{
+  width: 100vw;
+  height: 80rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.group .tit.tit01{
+  justify-content: space-between
+}
+.group .tit .iconfont{
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #ee4b50;
+  color: #fff;
+  font-size: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14rpx;
+}
+.canvas{
+  width: 700rpx;
+  height: 470rpx;
+  margin: auto;
+}
+.tit_l{
+  display: flex;
+  align-items: center;
+}
+.tit_r view{
+  width: 134rpx;
+  height: 48rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #ababab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 12rpx;
+}
+.tit_r view .year{
+  width: 102rpx;
+  text-align: center;
+  color: #000
+}
+.table{
+  width: 100vw;
+  padding: 0 20rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.table view{
+  width: 350rpx;
+  height: 76rpx;
+  text-align: center;
+  line-height: 76rpx;
+  background: #fbf9f7;
+  border-radius: 10rpx;
+  margin-bottom: 4rpx;
+}

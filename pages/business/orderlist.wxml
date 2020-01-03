@@ -1,0 +1,41 @@
+<!--pages/business/orderlist.wxml-->
+<view class="menustatus bg_fff p-w-24 flex_r_b">
+  <view class="{{active==0?'cur':''}}" bindtap="changeacitve" data-id="0">全部</view>
+  <view class="{{active==1?'cur':''}}" bindtap="changeacitve" data-id="1">待付款</view>
+  <view class="{{active==2?'cur':''}}" bindtap="changeacitve" data-id="2">待核销</view>
+  <view class="{{active==3?'cur':''}}" bindtap="changeacitve" data-id="3">待评价</view>
+  <view class="{{active==4?'cur':''}}" bindtap="changeacitve" data-id="4">已完成</view>
+</view>
+<view class="list">
+  <block wx:for='{{list}}' wx:key='{{index}}'>
+  <view class="item bg_fff" bindtap="detail">
+    <view class="line01 flex_r_b p-w-24">
+      <view class="ordernum">订单：{{item.ordernum}}</view>
+      <view class="status" wx:if='{{item.state==1}}'>待付款</view>
+      <view class="status" wx:elif='{{item.state==2}}'>待核销</view>
+      <view class="status" wx:elif='{{item.state==3}}'>待评价</view>
+      <view class="status" wx:elif='{{item.state==4}}'>已完成</view>
+    </view>
+    <view bindtap="todetail" class="goods p-w-24 flex_r_b">
+      <image src='{{item.img}}'></image>
+      <view class="goods_r">
+        <view class="goods_title">{{item.title}}</view>
+        <view>预约时间：{{item.yuyuetime}}</view>
+        <view>规格：{{item.spec}}</view>
+        <view class="price">{{clothse.fuwu_price}}</view>
+      </view>
+    </view>
+    <view class="line p-w-24 flex_r_b">
+      <view>
+        <text style="font-size:26rpx;">{{item.addtime}}</text>
+      </view>
+      <text class="price">￥<text>{{item.money}}</text></text>
+    </view>    
+  </view>  
+  </block>  
+</view>
+
+<view class="bg_fff kong flex_c_c" wx:if='{{list.length<1}}'> 
+  <image src="../img/none.jpg" mode="widthFix"></image>
+  <view>暂无订单</view>
+</view>

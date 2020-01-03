@@ -1,0 +1,54 @@
+/* pages/goods/takeorder.wxss */
+.item{
+  height: 106rpx;
+  border-bottom: 1rpx solid #f2f2f2
+}
+.item label{
+  font-size: 30rpx;
+}
+.gorup .item:last-child{
+  border-bottom: 0
+}
+.gorup .item .item_r{
+  width: 518rpx;
+  height: 106rpx;
+  line-height: 106rpx;
+}
+.gorup .item .item_r input{
+  width: 518rpx;
+  text-align: right
+}
+.gorup .item .item_r .icon-cuo{
+  color: #999999;
+  font-size: 28rpx;
+}
+.pickerbg{
+  position: relative; 
+  width: 100vw;
+  height: 400rpx;
+  border-top: 1rpx solid #f2f2f2;
+  padding: 0 30rpx;
+}
+.pick_qux, .pick_quqd{
+  position: absolute;
+  bottom: 270px;
+  background: none;
+  height: 20px;
+  line-height: 20px;
+  width: 60rpx;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+  border: none;
+  font-size: 28rpx;
+}
+.pick_qux::after, .pick_quqd::after{
+  border: none
+}
+.pick_qux{
+  left: 28rpx;
+}
+.pick_quqd{
+  right: 28rpx;
+  color: #01dbaa
+}

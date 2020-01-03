@@ -1,0 +1,15 @@
+/* pages/staff/orderlist.wxss */
+@import "../business/orderlist";
+.filtrate{
+  height: 126rpx;
+  font-size: 30rpx;
+}
+.filtrate .timebox{
+  width: 307rpx;
+  height: 74rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 74rpx;
+  font-size: 26rpx;
+}
