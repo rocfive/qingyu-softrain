@@ -10,12 +10,14 @@ Page({
     page:1,
     active:0,
     verification: true,
+    hidenomore:true
   },
-  // 订单状态
+  // 切换订单状态
   changeacitve: function (e) {
     var that = this, id = e.currentTarget.dataset.id;
     that.setData({
       page:1,
+      nomore: false,
       active: e.currentTarget.dataset.id
     })
     app.globalData.showOrdercur = e.currentTarget.dataset.id;
@@ -58,9 +60,23 @@ Page({
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          that.setData({
-            list:res.data.data
-          })
+          var ress = res.data.data;
+          if (that.data.page == 1) {
+            that.setData({
+              list: ress
+            })
+          } else {
+            if (ress.length < 1) {
+              that.setData({
+                nomore: true
+              })
+            }
+            var list = that.data.list;
+            list.push.apply(list, ress);
+            that.setData({
+              list: list
+            })
+          }
         } else {
           wx.showToast({
             icon: "none",
@@ -69,6 +85,18 @@ Page({
         }
       }
     })
+  },
+  // 取消订单
+  cancle_order:function(){
+
+  },
+  // 申请退款
+  refund:function(e){
+
+  },
+  // 付款
+  pay_order:function(e){
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -119,7 +147,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.nomore) {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getList()
+    }    
   },
 
   /**

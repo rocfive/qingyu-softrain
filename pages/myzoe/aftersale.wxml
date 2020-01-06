@@ -1,10 +1,10 @@
 <!--pages/myzoe/aftersale.wxml-->
 <view class="tab flex_r_a p-w-28 bg_fff">
-  <view class="active">处理中</view>
-  <view>已完成</view>
+  <view class="{{active=='-1'?'active':''}}" data-id="{{-1}}" bindtap="changeTab">处理中</view>
+  <view class="{{active=='-2'?'active':''}}" data-id="{{-2}}" bindtap="changeTab">已完成</view>
 </view>
 <view class="list">
-  <view class="item bg_fff" bindtap="detail" wx:for='{{list}}' wx:key='{{index}}'>
+  <view class="item bg_fff" bindtap="detail" wx:for='{{list}}' wx:key='index'>
     <view class="line01 flex_r_b p-w-24">
       <view class="ordernum">订单：{{item.ordernum}}</view>
       <view class="status" wx:if='{{item.state==5}}'>退款中</view>
