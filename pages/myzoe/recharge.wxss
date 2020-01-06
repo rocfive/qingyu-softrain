@@ -64,6 +64,10 @@ page{
   margin-bottom: 24rpx;
   position: relative
 }
+.choselist .item.active{
+  border: 2rpx solid #c3dcff;
+  border-radius: 10rpx;
+}
 .choselist .item .price{
   font-size: 34rpx;
   color: #666666
@@ -75,11 +79,11 @@ page{
 .choselist .item .tj{
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 .choselist .item .tj .tj_bg{
-  width: 324rpx;
-  height: 132rpx;
+  width: 132rpx;
+  height: 42rpx;
 }
 .choselist .item .tj text{
   width: 108rpx;

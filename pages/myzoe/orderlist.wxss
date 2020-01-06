@@ -181,15 +181,3 @@
   color: #e35a7b;
   font-size: 26rpx;
 }
-.kong{
-  width: 100vw;
-  height: calc(100vh - 90rpx);
-  font-size: 36rpx;
-  color: #666666;
-  padding-bottom: 160rpx;
-  box-sizing: border-box
-}
-.kong image{
-  width: 702rpx;
-  margin-bottom: 60rpx;
-}

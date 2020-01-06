@@ -1,16 +1,18 @@
 <!--pages/goods/takeorder.wxml-->
-<view class="gorup">
-  <view class="item bg_fff p-w-24 flex_r_b">
-    <label>服务门店</label>
-    <view class="item_r flex_r_r" bindtap="chosestore">{{store_name}}</view>
+<block wx:if='{{product_type!="1"}}'>
+  <view class="gorup">
+    <view class="item bg_fff p-w-24 flex_r_b">
+      <label>服务门店</label>
+      <view class="item_r flex_r_r" bindtap="chosestore">{{store_name}}</view>
+    </view>
   </view>
-</view>
-<view class="gorup m-10" wx:if='{{start_time && end_time}}'>
-  <view class="item bg_fff p-w-24 flex_r_b">
-    <label>营业时间</label>
-    <view class="item_r flex_r_r">{{start_time}}-{{end_time}}</view>
+  <view class="gorup m-10" wx:if='{{start_time && end_time}}'>
+    <view class="item bg_fff p-w-24 flex_r_b">
+      <label>营业时间</label>
+      <view class="item_r flex_r_r">{{start_time}}-{{end_time}}</view>
+    </view>
   </view>
-</view>
+</block>
 <view class="gorup m-10">
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>预留姓名</label>
@@ -27,39 +29,42 @@
     </view>
   </view>
 </view>
-<view class="gorup m-10">
-  <view class="item bg_fff p-w-24 flex_r_b">
-    <label>预约开始时间</label>
-    <view class="item_r flex_r_r" wx:if='{{store_id}}'>{{choseyear}}年{{chosemonth}}月{{choseday}}日 {{chosehour}}时{{chosemin}}分</view>
+<block  wx:if='{{product_type!="1"}}'>
+  <view class="gorup m-10">
+    <view class="item bg_fff p-w-24 flex_r_b">
+      <label>预约开始时间</label>
+      <view class="item_r flex_r_r" wx:if='{{store_id}}'>{{choseyear}}年{{chosemonth}}月{{choseday}}日 {{chosehour}}时{{chosemin}}分</view>
+    </view>
   </view>
-</view>
-<view  class="pickerbg bg_fff" wx:if='{{store_id}}'>  
-  <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0; left:30rpx; " value="{{index_y}}" bindchange="bindChange1">
-    <picker-view-column>
-      <view wx:for="{{year}}" wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.year}}</view>
-    </picker-view-column>    
-  </picker-view>
-  <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 168rpx; " value="{{index_m}}" bindchange="bindChange2">
-    <picker-view-column>
-      <view wx:for="{{month}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.month}}</view>
-    </picker-view-column>
-  </picker-view>
-  <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 306rpx;  " value="{{index_d}}" bindchange="bindChange3">
-    <picker-view-column>
-      <view wx:for="{{day}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
-    </picker-view-column>
-  </picker-view>
-  <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 444rpx;  " value="{{index_h}}" bindchange="bindChange4">
-    <picker-view-column>
-      <view wx:for="{{hour}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.hour}}</view>
-    </picker-view-column>
-  </picker-view>
-  <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 582rpx; " value="{{index_min}}" bindchange="bindChange5">
-    <picker-view-column>
-      <view wx:for="{{minute}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
-    </picker-view-column>
-  </picker-view>
-</view>
+  <view  class="pickerbg bg_fff" wx:if='{{store_id}}'>  
+    <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0; left:30rpx; " value="{{index_y}}" bindchange="bindChange1">
+      <picker-view-column>
+        <view wx:for="{{year}}" wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.year}}</view>
+      </picker-view-column>    
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 168rpx; " value="{{index_m}}" bindchange="bindChange2">
+      <picker-view-column>
+        <view wx:for="{{month}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.month}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 306rpx;  " value="{{index_d}}" bindchange="bindChange3">
+      <picker-view-column>
+        <view wx:for="{{day}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 444rpx;  " value="{{index_h}}" bindchange="bindChange4">
+      <picker-view-column>
+        <view wx:for="{{hour}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.hour}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 138rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 582rpx; " value="{{index_min}}" bindchange="bindChange5">
+      <picker-view-column>
+        <view wx:for="{{minute}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</block>
+
 <view class="btnbox flex_c_c bg_fff">
   <view class="btn" bindtap="next">下一步</view>
 </view>

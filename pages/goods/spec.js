@@ -9,6 +9,10 @@ Component({
     goodsid: {
       type: String,
       value: '',      
+    },
+    cardId:{
+      type: String,
+      value: '',   
     }
   },
   
@@ -41,7 +45,7 @@ Component({
         return false;
       }
       wx.navigateTo({
-        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money +'&product_type='+that.data.msg.type,
+        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId,
       })
     },
     closespec:function(){

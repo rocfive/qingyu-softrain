@@ -74,4 +74,4 @@
 </block>
 
 <!-- 选择规格 -->
-<spec id='spec' goodsid='{{id}}'></spec>
+<spec id='spec' goodsid='{{id}}' cardId='{{options.cardId?options.cardId:""}}'></spec>

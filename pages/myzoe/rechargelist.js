@@ -1,21 +1,56 @@
 // pages/myzoe/rechargelist.js
+const app = getApp()
+var url = getApp().globalData.url;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[
-      { addtime: "2018-09-18 15:30", money:"200.00"},
-      { addtime: "2018-09-18 15:30", money: "200.00" }
-    ]
+    page: 1,
+    active: 0,
   },
+  getList: function () {
+    var that = this;
 
+    app.network.request1({
+      url: url + "spread/commission",
+      method: "GET",
+      data: { type: 2, page: that.data.page, limit: 20 },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          var ress = res.data.data;
+          if (that.data.page == 1) {
+            that.setData({
+              list: ress
+            })
+          } else {
+            if (ress.length < 1) {
+              that.setData({
+                nomore: true
+              })
+            }
+            var list = that.data.list;
+            list.push.apply(list, ress);
+            that.setData({
+              list: list
+            })
+          }
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList();
   },
 
   /**
@@ -57,7 +92,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.nomore) {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getList()
+    }   
   },
 
   /**

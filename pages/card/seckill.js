@@ -90,6 +90,9 @@ Page({
     // this.setData({
     //   goodsid: e.currentTarget.dataset.id
     // })
+    wx.navigateTo({
+      url: '/pages/goods/takeorder?productId=' + e.currentTarget.dataset.id + '&secKillId=' + e.currentTarget.dataset.sid + '&money=' + e.currentTarget.dataset.money + '&product_type=' + e.currentTarget.dataset.types,
+    })
   },
   /**
    * 生命周期函数--监听页面加载

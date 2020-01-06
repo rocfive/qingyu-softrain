@@ -4,6 +4,7 @@
   background: #fff;
   color: #666666;
   font-size: 28rpx;
+  border-bottom: 1rpx solid #f7f7f7
 }
 .tab .active{
   height: 80rpx;
@@ -18,7 +19,7 @@
 .couponlist .item{
   width: 690rpx;
   height: 200rpx;
-  margin: 0 auto 24rpx;
+  margin: 24rpx auto 0;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -63,7 +64,7 @@
   font-size: 50rpx;
 }
 .couponlist .item .coupon-left .title text{
-  font-size: 80rpx;
+  font-size: 48rpx;
 }
 .couponlist .item .coupon-left .subtitle{
   font-size: 26rpx

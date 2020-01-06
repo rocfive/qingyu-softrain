@@ -1,18 +1,53 @@
 // pages/myzoe/card.js
+const app = getApp()
+var url = getApp().globalData.url;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    active:1
   },
+  changeTab:function(e){
+    this.setData({
+      active:e.currentTarget.dataset.id
+    })
+    this.getList();
+  },
+  getList: function () {
+    var that = this;
 
+    app.network.request1({
+      url: url + "cards/user",
+      method: "GET",
+      data: { type: that.data.active},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            list: res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  // 立即使用
+  useit:function(e){
+    wx.navigateTo({
+      url: '../goods/detail?id=' + e.currentTarget.dataset.pid +'&cardId='+e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getList();
   },
 
   /**

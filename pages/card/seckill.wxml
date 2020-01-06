@@ -9,7 +9,6 @@
       <view>{{item.state}}</view>
     </view>
   </block>
-  
 </scroll-view>
 <view class="seckillbt flex_r_c">
   <image src="../img/seckillbt.png" mode="widthFix"></image>
@@ -26,7 +25,7 @@
       </view>
       <view class="flex_r_b">
         <view class="supply">限量<text>{{item.stock}}份</text></view>
-        <view class="buy" catchtap="panicbuy" data-id="{{item.id}}" wx:if='{{item.stock>0}}'>立即抢购</view>
+        <view class="buy" catchtap="panicbuy" data-id="{{item.product_id}}" data-types="{{item.product_type}}" data-money="{{item.price}}" data-sid="{{item.id}}" wx:if='{{item.stock>0}}'>立即抢购</view>
         <view class="buy" wx:else>已售罄</view>
       </view>
     </view>

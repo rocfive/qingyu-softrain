@@ -67,39 +67,89 @@ Page({
       money: that.data.money,
       real_name:that.data.name,
       user_phone: that.data.phone,
+      secKillId: that.data.secKillId,
+      cardId: that.data.cardId,
       order_time: that.data.choseyear + "年" + that.data.chosemonth + "月" + that.data.choseday + "日 " + that.data.chosehour + "时" + that.data.chosemin+"分"
     }
-    if (!order.store_id){
-      wx.showToast({
-        icon:"none",
-        title: '请选择服务门店',
+    if (that.data.product_type=="1"){
+      // 如果商品类型是项目
+      if (!order.real_name) {
+        wx.showToast({
+          icon: "none",
+          title: '请填写预留姓名',
+        })
+        return false;
+      }
+      if (!order.user_phone) {
+        wx.showToast({
+          icon: "none",
+          title: '请填写预留手机号',
+        })
+        return false;
+      }
+      if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(order.user_phone))) {
+        wx.showToast({
+          icon: "none",
+          title: '手机号格式错误',
+        })
+        return false;
+      }
+      app.network.request1({
+        url: url + "cart/add",
+        method: "POST",
+        data: order,
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            order.cartId = res.data.data.cartId;
+            wx.navigateTo({
+              url: 'order?ordermsg=' + JSON.stringify(order),
+            })
+            // wx.reLaunch({
+            //   url: 'order?ordermsg=' + JSON.stringify(ordermsg),
+            // })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
       })
-      return false;
-    }
-    if (!order.real_name) {
-      wx.showToast({
-        icon: "none",
-        title: '请填写预留姓名',
+    }else{
+      // 普通商品
+      if (!order.store_id) {
+        wx.showToast({
+          icon: "none",
+          title: '请选择服务门店',
+        })
+        return false;
+      }
+      if (!order.real_name) {
+        wx.showToast({
+          icon: "none",
+          title: '请填写预留姓名',
+        })
+        return false;
+      }
+      if (!order.user_phone) {
+        wx.showToast({
+          icon: "none",
+          title: '请填写预留手机号',
+        })
+        return false;
+      }
+      if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(order.user_phone))) {
+        wx.showToast({
+          icon: "none",
+          title: '手机号格式错误',
+        })
+        return false;
+      }
+      wx.navigateTo({
+        url: 'techlist?order=' + JSON.stringify(order),
       })
-      return false;
-    }
-    if (!order.user_phone) {
-      wx.showToast({
-        icon: "none",
-        title: '请填写预留手机号',
-      })
-      return false;
-    }
-    if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(order.user_phone))) {
-      wx.showToast({
-        icon: "none",
-        title: '手机号格式错误',
-      })
-      return false;
-    }
-    wx.navigateTo({
-      url: 'techlist?order='+JSON.stringify(order),
-    })
+    }    
   },
   getSelectTime:function(){
     var that=this;
@@ -260,7 +310,8 @@ Page({
       productId: options.productId,
       product_type: options.product_type,
       checkval: options.checkval,
-      money: options.money
+      money: options.money,
+      secKillId: options.secKillId
     })
   },
 
