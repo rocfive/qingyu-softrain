@@ -51,18 +51,13 @@
 
     <view wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>
       <view class="line_b p-w-24 flex_r_r" wx:if='{{item._status._type==1}}'>
-        <view class="btn" bindtap="cancle_order" data-id="{{item.o2o_fuwu_order_id}}">取消订单</view>
-        <view class="btn btn01" bindtap="" data-id="{{item.o2o_fuwu_order_id}}">申请退款</view>
+        <view class="btn" catchtap="refund" data-id="{{item.o2o_fuwu_order_id}}">申请退款</view>
         <view class="btn btn01" catchtap="charge" data-code="{{item._verify_code}}"  data-codeimg="{{item.code}}">生成核销码</view>
       </view>
       <view class="line_b p-w-24 flex_r_r" wx:elif='{{item._status._type==3}}'>
         <view class="btn btn01" catchtap="evaluate" data-id="{{item.o2o_fuwu_order_id}}">评价</view>
       </view>
     </view>
-    <!-- <view class="line_b p-w-24 flex_r_r" wx:elif='{{item.state==4}}'>
-      <view class="btn" bindtap="del_order" data-id="{{item.o2o_fuwu_order_id}}">删除</view>
-      <view class="btn btn01" bindtap="evaluate_order" data-id="{{item.o2o_fuwu_order_id}}"  data-storeid="{{item.o2o_fuwu_organization_id}}" data-num="{{item.o2o_fuwu_order_sn}}" wx:if='{{item.o2o_fuwu_order_if_evaluate==0}}'>评价</view>
-    </view> -->
   </view>  
   </block>  
 </view>
@@ -80,3 +75,4 @@
   <image src="../img/none.jpg" mode="widthFix"></image>
   <view>暂无内容，快去逛逛吧~</view>
 </view>
+<view class="nomore"  wx:if='{{nomore}}'>没有更多了</view>
