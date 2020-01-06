@@ -49,7 +49,7 @@ Page({
     app.network.request1({
       url: url + "order/computed",
       method: "POST",
-      data: { product_type: that.data.ordermsg.product_type, store_id: that.data.ordermsg.store_id, store_teach_id: that.data.ordermsg.store_teach_id, key: that.data.orderKey, couponId: that.data.couponId},
+      data: { product_type: that.data.ordermsg.product_type, store_id: that.data.ordermsg.store_id, store_teach_id: that.data.ordermsg.store_teach_id, key: that.data.orderKey, couponId: that.data.couponId, cardId: that.data.usableCard.id},
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
@@ -81,10 +81,11 @@ Page({
             cartInfo: ress.cartInfo,
             teach: ress.teach,
             menshop: ress.menshop,
-            coupon_price: ress.usableCoupon.coupon_price,
+            coupon_price: ress.usableCoupon?ress.usableCoupon.coupon_price:"",
             orderKey: ress.orderKey,
-            couponId: ress.usableCoupon.id
-          })
+            couponId: ress.usableCoupon?ress.usableCoupon.id:"",
+            usableCard: ress.usableCard ? ress.usableCard:""
+          })   
           that.computed();
         } else {
           wx.showToast({

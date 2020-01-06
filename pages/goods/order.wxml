@@ -10,18 +10,20 @@
   </view>
 </view>
 <view class="group m-10">
-  <view class="item flex_r_b p-w-24 bg_fff">
-    <label>预约门店</label>
-    <view>{{menshop.name}}</view>
-  </view>
-  <view class="item flex_r_b p-w-24 bg_fff">
-    <label>技师</label>
-    <view>{{teach.name}}</view>
-  </view>
-  <view class="item flex_r_b p-w-24 bg_fff">
-    <label>预约时间</label>
-    <view>{{ordermsg.order_time}}</view>
-  </view>
+  <block wx:if='{{ordermsg.product_type !="1"}}'>
+    <view class="item flex_r_b p-w-24 bg_fff">
+      <label>预约门店</label>
+      <view>{{menshop.name}}</view>
+    </view>
+    <view class="item flex_r_b p-w-24 bg_fff">
+      <label>技师</label>
+      <view>{{teach.name}}</view>
+    </view>
+    <view class="item flex_r_b p-w-24 bg_fff">
+      <label>预约时间</label>
+      <view>{{ordermsg.order_time}}</view>
+    </view>
+  </block>  
   <view class="item flex_r_b p-w-24 bg_fff">
     <label>预留姓名</label>
     <view>{{ordermsg.real_name}}</view>
@@ -39,20 +41,20 @@
       <text class="iconfont icon-gengduo"></text>
     </view>
   </view>
-  <!-- <view class="item item02 flex_r_b p-w-24 bg_fff">
+  <view class="item item02 flex_r_b p-w-24 bg_fff" wx:if='{{usableCard}}'>
     <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
     <view>
-      <text>皮肤清洁护理卡单次</text>
+      <text>{{usableCard.title}}</text>
       <text class="iconfont icon-gengduo"></text>
     </view>
-  </view> -->
+  </view>
 </view>
 <view class="group group1 bg_fff m-10 p-w-24">
   <view class="flex_r_b item03">
     <label>商品价</label>
     <view class="money">￥{{ordermsg.money}}</view>
   </view>
-  <view class="flex_r_b item03">
+  <view class="flex_r_b item03" wx:if='{{ordermsg.product_type !="1"}}'>
     <label>技师服务费</label>
     <view class="money">￥{{teach.premium}}</view>
   </view>

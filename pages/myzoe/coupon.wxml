@@ -1,51 +1,28 @@
 <!--pages/myzoe/coupon.wxml-->
 <view class="tab flex_r_a">
-  <view class="active">未使用</view>
-  <view>已使用</view>
-  <view>已失效</view>
+  <view class="{{active==1?'active':''}}" bindtap="changeTab" data-id="{{1}}">未使用</view>
+  <view class="{{active==2?'active':''}}" bindtap="changeTab" data-id="{{2}}">已使用</view>
+  <view class="{{active==3?'active':''}}" bindtap="changeTab" data-id="{{3}}">已失效</view>
 </view>
-<view class="couponlist">
-  <view class='item bg_fff flex_r'>    
+<view class="bg_fff kong flex_c_c" wx:if='{{list.length<1}}'> 
+  <image src="../img/none.jpg" mode="widthFix"></image>
+  <view>暂无数据</view>
+</view>
+<view class="couponlist" wx:else>
+  <view class='{{(item.status==1 || item.status==2)?"item dated bg_fff flex_r":"item bg_fff flex_r"}}' wx:for='{{list}}' wx:key='index'>    
     <view class="coupon-dots flex_c_b"><text></text><text></text><text></text><text></text><text></text><text></text><text></text>
       <text></text><text></text><text></text><text></text>
     </view>
     <view class="coupon-left">
-      <view class="title">￥<text>2</text></view>
-      <view class="subtitle">满20可用</view>
+      <view class="title">￥<text>{{item.coupon_price}}</text></view>
+      <view class="subtitle">满{{item.use_min_price}}可用</view>
     </view>
     <view class="coupon-right flex_c">
-      <view class="title">邀请好友优惠券</view>
-      <view class="usetime">有效期至2018-12-31</view>   
+      <view class="title">{{item.coupon_title}}</view>
+      <view class="usetime">有效期至{{item._end_time}}</view>   
     </view>
-    <view class="usebtn flex_c_c">立即使用</view>
-    <image src="../img/couponchose.png" class="couponchose"></image>
+    <view class="usebtn flex_c_c" wx:if='{{item.status==1}}'>已使用</view>
+    <view class="usebtn flex_c_c" wx:elif='{{item.status==2}}'>已过期</view>
+    <view class="usebtn flex_c_c" wx:else>立即使用</view>
   </view> 
-  <view class='item bg_fff flex_r'>    
-    <view class="coupon-dots flex_c_b"><text></text><text></text><text></text><text></text><text></text><text></text><text></text>
-      <text></text><text></text><text></text><text></text>
-    </view>
-    <view class="coupon-left">
-      <view class="title">￥<text>2</text></view>
-      <view class="subtitle">满20可用</view>
-    </view>
-    <view class="coupon-right flex_c">
-      <view class="title">邀请好友优惠券</view>
-      <view class="usetime">有效期至2018-12-31</view>   
-    </view>
-    <view class="usebtn flex_c_c">立即使用</view>
-  </view>  
-  <view class='item dated bg_fff flex_r'>    
-    <view class="coupon-dots flex_c_b"><text></text><text></text><text></text><text></text><text></text><text></text><text></text>
-      <text></text><text></text><text></text><text></text>
-    </view>
-    <view class="coupon-left">
-      <view class="title">￥<text>2</text></view>
-      <view class="subtitle">满20可用</view>
-    </view>
-    <view class="coupon-right flex_c">
-      <view class="title">邀请好友优惠券</view>
-      <view class="usetime">有效期至2018-12-31</view>   
-    </view>
-    <view class="usebtn flex_c_c">已失效</view>
-  </view>  
 </view>

@@ -9,8 +9,7 @@ Page({
   data: {
     page:1,
     active:0,
-    verification: true,
-    hidenomore:true
+    verification: true
   },
   // 切换订单状态
   changeacitve: function (e) {

@@ -1,20 +1,13 @@
 <!--pages/card/list.wxml-->
 <scroll-view scroll-x class="tab bg_fff p-w-24">
-  <view wx:for='{{menus}}' wx:key='{{index}}' class="{{active==item.id?'cur':''}}" data-id="{{item.id}}">{{item.name}}</view>
+  <view wx:for='{{menus}}' wx:key='index' class="{{active==item.p_id?'cur':''}}" data-id="{{item.p_id}}" bindtap="changeTab">{{item.store_name}}</view>
 </scroll-view>
 <view class="cardlist">
-  <view class="item p-w-24" bindtap="detail">
-    <image src="../img/cardimg.png"></image>
+  <view class="item p-w-24" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+    <image src="{{item.image}}" mode="aspectFill"></image>
     <view class="flex_r_b p-w-12">
-      <view class="name">项目分类一</view>
-      <view class="price">￥<text>481</text></view>
-    </view>
-  </view>
-  <view class="item p-w-24">
-    <image src="../img/cardimg.png"></image>
-    <view class="flex_r_b p-w-12">
-      <view class="name">项目分类一</view>
-      <view class="price">￥<text>481</text></view>
+      <view class="name">{{item.store_name}}</view>
+      <view class="price">￥<text>{{item.price}}</text></view>
     </view>
   </view>
 </view>

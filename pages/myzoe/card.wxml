@@ -1,44 +1,27 @@
 <!--pages/myzoe/card.wxml-->
 <view class="tab bg_fff p-w-28 flex_r_a">
-  <view class="item active">未使用</view>
-  <view class="item">已使用</view>
-  <view class="item dated">已失效</view>
+  <view class="{{active=='1'?'item active':'item'}}" data-id="1" bindtap="changeTab">未使用</view>
+  <view class="{{active=='2'?'item active':'item'}}" data-id="2" bindtap="changeTab">使用中</view>
+  <view class="{{active=='3'?'item active':'item'}}" data-id="3" bindtap="changeTab">已使用</view>
+  <view class="{{active=='4'?'item dated active':'item dated'}}" data-id="4" bindtap="changeTab">已失效</view>
 </view>
 <view class="list">
-  <view class="item">    
+  <view class="item" wx:for='{{list}}' wx:key='index'>    
     <view class="item_t flex_c">
-      <view class="name">皮肤清洁护理卡</view>
+      <view class="name">{{item.title}}</view>
       <view class="flex_r">
-        <view class="money"><text>10</text>次</view>
-        <view class="scope">只限用于皮肤清洁护理服务</view>
+        <view class="money"><text>{{item.num}}</text>次</view>
+        <view class="scope">{{item.des}}</view>
       </view>
     </view>
     <view class="item_f flex_r_b">
-      <view>有效期至2018-12-30</view>
-      <view class="use_btn">立即使用</view>
+      <view>有效期至{{item._end_time}}</view>
+      <view class="use_btn" bindtap="useit" data-pid="{{item.pid}}" data-id="{{item.id}}">立即使用</view>
     </view>
     <image src="../img/card_b.jpg" class="card_b"></image>
     <view class="expire">
       <image src="../img/card_t_r.png"></image>
-      <text>30天后到期</text>
-    </view>
-  </view>
-  <view class="item">    
-    <view class="item_t flex_c">
-      <view class="name">皮肤清洁护理卡</view>
-      <view class="flex_r">
-        <view class="money"><text>10</text>次</view>
-        <view class="scope">只限用于皮肤清洁护理服务</view>
-      </view>
-    </view>
-    <view class="item_f flex_r_b">
-      <view>有效期至2018-12-30</view>
-      <view class="use_btn">立即使用</view>
-    </view>
-    <image src="../img/card_b.jpg" class="card_b"></image>
-    <view class="expire">
-      <image src="../img/card_t_r.png"></image>
-      <text>30天后到期</text>
+      <text>{{item._msg}}</text>
     </view>
   </view>
 </view>
