@@ -5,8 +5,8 @@
   </view>
 </view>
 <view class="article p-w-24 bg_fff">
-  <view>宏强富瑞技术有限公司是集研发、生产、营销、服务、智能化为一体的人工智能医疗美容解决方案供应商。宏强作为中国光电美容的发起单位之一，历经多年的深耕与积累，已经拥有雄厚实力。</view>
-  <image src="../img/storeimg03.png" mode="widthFix"></image>
+  <view>{{msg.about_desc}}</view>
+  <image wx:if='{{msg.about_img!=""}}' src="{{msg.about_img}}" mode="widthFix"></image>
 </view>
 <view class="bt p-w-24 bg_fff flex_r_b m-10">
   <view class="bt_l flex_r">
@@ -14,11 +14,5 @@
   </view>
 </view>
 <view class="article1 article p-w-24 bg_fff">
-  <text>售前服务热线:010-56370068
-售后/投诉热线:13901353133
-传    真:+86-010-56370076
-E-mail:honkon@honkonlaser.com
-地    址:北京市通州区中关村科技园区通州园金桥科技产业基地环科中路16号72号楼
-工商注册地址:北京市北京经济技术开发区康定街11号院3号楼
-</text>
+  <text>{{msg.contact}}</text>
 </view>

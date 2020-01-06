@@ -1,4 +1,6 @@
 // pages/myzoe/aboutus.js
+const app = getApp()
+var url = getApp().globalData.url;
 Page({
 
   /**
@@ -8,11 +10,34 @@ Page({
 
   },
 
+  // 获取关于我们内容
+  getAbout: function () {
+    var that = this;
+    app.network.request({
+      url: url + "about",
+      method: "GET",
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            msg: res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAbout();
   },
 
   /**
