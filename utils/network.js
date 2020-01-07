@@ -34,6 +34,7 @@ function request(requestHandler) {
     }
   })
 }
+// 会员登录
 function request1(requestHandler) {
   var data = requestHandler.data;
   var url = requestHandler.url;
@@ -74,6 +75,88 @@ function request1(requestHandler) {
     }
   })
 }
+// 商家登录
+function request2(requestHandler) {
+  var data = requestHandler.data;
+  var url = requestHandler.url;
+  var method = requestHandler.method;
+
+  if (!wx.getStorageSync('mstoken')) {
+    console.log("1111")
+    wx.redirectTo({
+      url: '/pages/business/login?froms=shop',
+    })
+    return false;
+  }
+  wx.showLoading({
+    title: '加载中',
+  })
+  wx.request({
+    url: url,
+    data: data,
+    method: method,
+    header: {
+      'content-Type': 'application/json',
+      'Authori-zation-ms': 'Menshop ' + wx.getStorageSync("mstoken")
+    },
+    success: function (res) {
+      wx.hideLoading();
+      requestHandler.success(res)
+      if (res.data.status == "410000") {
+        wx.redirectTo({
+          url: '/pages/business/login?froms=shop',
+        })
+      }
+    },
+    fail: function () {
+      wx.hideLoading();
+      requestHandler.fail();
+    },
+    complete: function () {
+
+    }
+  })
+}
+function request3(requestHandler) {
+  var data = requestHandler.data;
+  var url = requestHandler.url;
+  var method = requestHandler.method;
+
+  if (!wx.getStorageSync('metoken')) {
+    wx.redirectTo({
+      url: '/pages/business/login?froms=employee',
+    })
+    return false;
+  }
+  wx.showLoading({
+    title: '加载中',
+  })
+  wx.request({
+    url: url,
+    data: data,
+    method: method,
+    header: {
+      'content-Type': 'application/json',
+      'Authori-zation-me': 'Employee ' + wx.getStorageSync("metoken")
+    },
+    success: function (res) {
+      wx.hideLoading();
+      requestHandler.success(res)
+      if (res.data.status == "410000") {
+        wx.redirectTo({
+          url: '/pages/business/login?froms=employee',
+        })
+      }
+    },
+    fail: function () {
+      wx.hideLoading();
+      requestHandler.fail();
+    },
+    complete: function () {
+
+    }
+  })
+}
 //点击防重
 let isClick = [];
 let preventDuplicateClicks = function (index) {
@@ -93,5 +176,7 @@ let preventDuplicateClicks = function (index) {
 module.exports = {
   request: request,
   request1: request1,
+  request2: request2,
+  request3: request3,
   preventDuplicateClicks
 }

@@ -1,4 +1,6 @@
 // pages/business/index.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -18,11 +20,31 @@ Page({
       url: '../myzoe/index',
     })
   },
+  getbusiness:function(){
+    var that=this;
+
+    app.network.request2({
+      url: url + "mslogin",
+      method: "POST",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getbusiness();
   },
 
   /**

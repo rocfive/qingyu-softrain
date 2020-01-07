@@ -37,11 +37,6 @@ Page({
       url: '../commission/index',
     })
   },
-  login:function(){
-    wx.navigateTo({
-      url: '../logs/logs',
-    })
-  },
   getUser:function(){
     var that=this;
 
