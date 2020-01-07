@@ -41,7 +41,7 @@
       <text class="iconfont icon-gengduo"></text>
     </view>
   </view>
-  <view class="item item02 flex_r_b p-w-24 bg_fff" wx:if='{{usableCard}}'>
+  <view class="item item02 flex_r_b p-w-24 bg_fff" wx:if='{{usableCard}}' bindtap="card">
     <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
     <view>
       <text>{{usableCard.title}}</text>

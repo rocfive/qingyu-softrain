@@ -1,0 +1,21 @@
+<!--pages/goods/cardlist.wxml-->
+<view class="list">
+  <view class="item" wx:for='{{list}}' wx:key='index'>    
+    <view class="item_t flex_c">
+      <view class="name">{{item.title}}</view>
+      <view class="flex_r">
+        <view class="money"><text>{{item.num}}</text>次</view>
+        <view class="scope">{{item.des}}</view>
+      </view>
+    </view>
+    <view class="item_f flex_r_b">
+      <view>有效期至{{item._end_time}}</view>
+      <view class="use_btn" bindtap="useit" data-pid="{{item.pid}}" data-id="{{item.id}}">立即使用</view>
+    </view>
+    <image src="../img/card_b.jpg" class="card_b"></image>
+    <view class="expire">
+      <image src="../img/card_t_r.png"></image>
+      <text>{{item._msg}}</text>
+    </view>
+  </view>
+</view>

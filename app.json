@@ -13,6 +13,7 @@
     "pages/goods/pay",
     "pages/goods/searchlist",
     "pages/goods/coupon",
+    "pages/goods/cardlist",
     "pages/card/index",
     "pages/card/list",
     "pages/card/seckill",

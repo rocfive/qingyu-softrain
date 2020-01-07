@@ -1,0 +1,2 @@
+/* pages/goods/cardlist.wxss */
+@import "../myzoe/card";
