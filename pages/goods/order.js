@@ -9,8 +9,7 @@ Page({
   data: {
     couponId:""
   },
-  pay:function(){
-    
+  pay:function(){    
     var that = this;
 
     app.network.request1({
@@ -100,6 +99,12 @@ Page({
   coupon:function(){
     wx.navigateTo({
       url: 'coupon?money=' + this.data.ordermsg.money + '&couponid=' + this.data.couponId,
+    })
+  },
+  // 点击项目卡更多
+  card:function(){
+    wx.navigateTo({
+      url: 'cardlist?pid=' + this.data.ordermsg.productId + '&order_time=' + this.data.ordermsg.order_time + '&unique=' + this.data.ordermsg.niqueId,
     })
   },
   /**
