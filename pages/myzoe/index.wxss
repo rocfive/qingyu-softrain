@@ -25,8 +25,13 @@ page{
 }
 .head .identity{
   width: 372rpx;
-  color: #fff
+  color: #fff;
 }
+.head .norecharge{
+  position: absolute;
+  left: 142rpx;
+}
+
 .head .identity .nickname{
   font-size: 34rpx;
 }

@@ -52,14 +52,22 @@
 <view class="group group1 bg_fff m-10 p-w-24">
   <view class="flex_r_b item03">
     <label>商品价</label>
-    <view class="money">￥{{ordermsg.money}}</view>
+    <view class="money">￥{{price.total_price}}</view>
   </view>
-  <view class="flex_r_b item03" wx:if='{{ordermsg.product_type !="1"}}'>
+  <view class="flex_r_b item03" wx:if='{{ordermsg.product_type !="1" && price.teach_price > 0}}'>
     <label>技师服务费</label>
-    <view class="money">￥{{teach.premium}}</view>
+    <view class="money">￥{{price.teach_price}}</view>
+  </view>
+  <view class="flex_r_b item03" wx:if='{{price.coupon_price > 0}}'>
+    <label>优惠券</label>
+    <view class="money">-￥{{price.coupon_price}}</view>
+  </view>
+  <view class="flex_r_b item03" wx:if='{{price.card_price > 0}}'>
+    <label>项目卡</label>
+    <view class="money">-￥{{price.card_price}}</view>
   </view>
 </view>
 <view class="bottom bg_fff p-w-24 flex_r_b">
-  <view>合计：<text class="money">￥{{total}}</text></view>
+  <view>合计：<text class="money">￥{{price.pay_price}}</text></view>
   <view class="btn" bindtap="pay">确定支付</view>
 </view>

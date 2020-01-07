@@ -3,12 +3,12 @@
   <image src="../img/myzoebg.jpg" class="bg"></image>
   <block wx:if='{{islogin}}'>
     <view class="line01 flex_r_b"> 
-      <image src="../img/defaultheadpic.png" class="headpic"></image>
-      <view class="flex_c identity" bindtap="login">
+      <image src="{{msg.avatar}}" class="headpic"></image>
+      <view class="flex_c identity {{!msg.recharge_switch ? 'norecharge' : ''}}" bindtap="login">
         <view class="nickname">{{msg.nickname}}</view>
         <view class="vip" wx:if='{{msg.vip}}'>{{msg.vip_name}}</view>
       </view>
-      <view class="recharge flex_r_b" bindtap="recharge">
+      <view class="recharge flex_r_b" bindtap="recharge" wx:if='{{msg.recharge_switch>0}}'>
         <text class="iconfont icon-qianbao"></text>
         <text>充值</text>
         <text class="iconfont icon-gengduo"></text>

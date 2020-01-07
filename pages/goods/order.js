@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    couponId:""
+    couponId:"",
+    price:[]
   },
   pay:function(){
     
@@ -54,7 +55,7 @@ Page({
         console.log(res)
         if (res.data.status == 200) {
           that.setData({
-            total: res.data.data.pay_price
+            price: res.data.data
           })
         } else {
           wx.showToast({
