@@ -3,16 +3,16 @@
   <image src="../img/bg_business.png"></image>
 </view>
 <view class="head">
-  <view class="headpic bg_fff flex_c_c"><image src="../img/business.png"></image></view>
-  <view class="storename">科华路王府井店</view>
+  <view class="headpic bg_fff flex_c_c"><image src="{{storeInfo.image}}"></image></view>
+  <view class="storename">{{storeInfo.name}}</view>
   <view class="situation flex_r_b">
     <view class="flex_r">
       <text class="iconfont icon-shuju1"></text>
-      <text>接单:31</text>
+      <text>接单:{{storeInfo.orderCount}}</text>
     </view>
     <view class="flex_r">
       <text class="iconfont icon-dengji"></text>
-      <text>收益:￥0.00</text>
+      <text>收益:￥{{storeInfo.now_money}}</text>
       <view class="txbtn" bindtap="tx">提现</view>
     </view>    
   </view>

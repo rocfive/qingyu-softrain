@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    storeInfo:[],
   },
   // 点击提现
   tx:function(){
@@ -30,7 +30,7 @@ Page({
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          
+         
         } else {
           wx.showToast({
             icon: "none",
@@ -40,11 +40,36 @@ Page({
       }
     })
   }, 
+
+  // 获取门店信息
+  storeInfo:function(){
+    var that = this;
+    app.network.request2({
+      url: url +"menshop/info",
+      method:"GET",
+      data:{},
+      success:function(res){
+        console.log(res)
+        if(res.data.status == 200){
+          that.setData({
+            storeInfo: res.data.data
+          })
+        }else{
+          wx.showToast({
+            icon:"none",
+            title:res.data.msg
+          })
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getbusiness();
+    this.storeInfo();
   },
 
   /**
