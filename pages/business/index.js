@@ -24,13 +24,15 @@ Page({
     var that=this;
 
     app.network.request2({
-      url: url + "mslogin",
-      method: "POST",
+      url: url + "menshop/info",
+      method: "GET",
       data: {},
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          
+          that.setData({
+            msg:res.data.data
+          })
         } else {
           wx.showToast({
             icon: "none",

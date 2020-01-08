@@ -21,7 +21,6 @@ label{
   border: 1rpx solid #efefef;
   text-align: center;
   line-height: 48rpx;
-  color: #a0a0a0
 }
 .item .item_r{
   width: 554rpx;

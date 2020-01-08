@@ -3,39 +3,39 @@
   <image src="../img/bg_business.png"></image>
 </view>
 <view class="head">
-  <view class="headpic bg_fff flex_c_c"><image src="../img/business.png"></image></view>
-  <view class="storename">科华路王府井店</view>
+  <view class="headpic bg_fff flex_c_c"><image src="{{msg.image}}"  mode="aspectFill"></image></view>
+  <view class="storename">{{msg.name}}</view>
   <view class="situation flex_r_b">
     <view class="flex_r">
       <text class="iconfont icon-shuju1"></text>
-      <text>接单:31</text>
+      <text>接单:{{msg.orderCount}}</text>
     </view>
     <view class="flex_r">
       <text class="iconfont icon-dengji"></text>
-      <text>收益:￥0.00</text>
+      <text>收益:￥{{msg.now_money}}</text>
       <view class="txbtn" bindtap="tx">提现</view>
     </view>    
   </view>
 </view>
 <view class="p-w-24 bg_fff" style="margin-top:16rpx">
-  <view class="bt flex_r_b">
+  <navigator url="orderlist?active=0" hover-class="none" class="bt flex_r_b">
     <view>我的订单</view>
     <view class="bt_r">更多<text class="iconfont icon-gengduo"></text></view>
-  </view>
-  <view class="flex_r_b menu">
-    <navigator url="orderlist" hover-class="none" class="flex_c_c">
+  </navigator>
+  <view class="flex_r_a menu">
+    <navigator url="orderlist?active=2" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-i"></text>
       <text>待核销</text>
     </navigator>
-    <navigator url="" class="flex_c_c">
+    <!-- <navigator url="" class="flex_c_c">
       <text class="iconfont icon-hexiao"></text>
       <text>已核销</text>
-    </navigator>
-    <navigator url="" class="flex_c_c">
+    </navigator> -->
+    <navigator url="orderlist?active=4" class="flex_c_c">
       <text class="iconfont icon-daiyuyue"></text>
       <text>待评价</text>
     </navigator>
-    <navigator url="" class="flex_c_c">
+    <navigator url="orderlist?active=5" class="flex_c_c">
       <text class="iconfont icon-pingjia"></text>
       <text>已完成</text>
     </navigator>

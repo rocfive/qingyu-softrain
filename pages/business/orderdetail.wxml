@@ -1,0 +1,55 @@
+<!--pages/business/orderdetail.wxml-->
+<navigator wx:if='{{msg.cartInfo[0].productInfo.product_type==0}}' class="top m-10 bg_fff p-w-24 flex_r" url='../store/detail?id={{msg.store_id}}'>
+  <text class="iconfont icon-mendian"></text>
+  <text>{{msg._menshop.name}}</text>
+</navigator>
+
+<view class="goods p-w-24 flex_r_b">
+  <image src="{{msg.cartInfo[0].productInfo.image}}"></image>
+  <view class="goods_r">
+    <view class="flex_r_s_b">
+      <view class="goods_title">{{msg.cartInfo[0].productInfo.store_name}}</view>
+    </view>
+    <view  wx:if='{{msg.cartInfo[0].productInfo.product_type==0}}'>规格：{{msg.cartInfo[0].productInfo.attrInfo.suk}}</view>
+  </view>
+</view>
+
+<view class="group"  wx:if='{{msg.cartInfo[0].productInfo.product_type==0}}'>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>营业时间</label>
+    <view>{{msg._menshop.start_time}}-{{msg._menshop.end_time}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>预约时间</label>
+    <view>{{msg._order_time}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>预留姓名</label>
+    <view>{{msg.real_name}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>预留手机号</label>
+    <view>{{msg.user_phone}}</view>
+  </view>
+</view>
+
+<view class="group m-10">
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>订单编号</label>
+    <view>{{msg.order_id}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>订单状态</label>
+    <!-- <view>已付款</view> -->
+    <view>{{msg._status._title}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>订单价格</label>
+    <view>￥{{msg.pay_price}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>下单时间</label>
+    <view>{{msg._add_time}}</view>
+  </view>
+</view>
+

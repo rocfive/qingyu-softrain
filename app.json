@@ -45,6 +45,7 @@
     "pages/business/index",
     "pages/business/withdraw",
     "pages/business/orderlist",
+    "pages/business/orderdetail",
     "pages/business/statistics",
     "pages/business/txrecord",
     "pages/business/staff",

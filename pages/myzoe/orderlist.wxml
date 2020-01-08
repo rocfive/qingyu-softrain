@@ -17,8 +17,8 @@
       <image src='{{item.cartInfo[0].productInfo.image}}'></image>
       <view class="goods_r">
         <view class="goods_title">{{item.cartInfo[0].productInfo.store_name}}</view>
-        <view  wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>预约时间：{{item._order_time}}</view>
-        <view  wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>规格：{{item.spec}}</view>
+        <view wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>预约时间：{{item._order_time}}</view>
+        <view wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>规格：{{item.cartInfo[0].productInfo.attrInfo.suk}}</view>
         <view class="price">{{item.cartInfo[0].productInfo.price}}</view>
       </view>
     </view>

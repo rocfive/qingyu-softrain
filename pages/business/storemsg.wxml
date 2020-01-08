@@ -1,26 +1,26 @@
 <!--pages/business/storemsg.wxml-->
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店名称</label>
-  <input type="text" value="科华路王府井店"></input>
+  <input type="text" value="{{msg.name}}"></input>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店电话</label>
-  <input type="text" value="" placeholder="请输入联系方式"></input>
+  <input type="text" value="{{msg.phone}}" placeholder="请输入联系方式"></input>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>营业时间</label>
   <view class="flex_r_r">
     <picker mode="time">
       <view class="timebox">
-        <text wx:if='{{time1}}'></text>
-        <text wx:else>请选择</text>
+        <text wx:if='{{msg.start_time}}'>{{msg.start_time}}</text>
+        <text wx:else style="color: #a0a0a0;">请选择</text>
       </view>
     </picker>
     <text style="color:#a0a0a0; margin:0 4rpx">-</text>
     <picker mode="time">
       <view class="timebox">
-        <text wx:if='{{time2}}'></text>
-        <text wx:else>请选择</text>
+        <text wx:if='{{msg.end_time}}'>{{msg.end_time}}</text>
+        <text wx:else style="color: #a0a0a0;">请选择</text>
       </view>
     </picker>
   </view>
@@ -28,40 +28,41 @@
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店地址</label>
   <picker mode='region'>
-    <view class="item_r">四川省   成都市  武侯区</view>
+    <view class="item_r">{{msg.province}}   {{msg.city}}  {{msg.district}}</view>
   </picker>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>详细地址</label>
-  <input type="text" value="航利中心3栋2单元401" placeholder="请输入联系方式"></input>
+  <input type="text" value="{{msg.address}}" placeholder="请输入联系方式"></input>
 </view>
 <view class="flex_c bg_fff m-10 p-w-28 intro">
   <label>门店简介</label>
-  <textarea placeholder="请输入门店简介" class="textarea"></textarea>
+  <textarea placeholder="请输入门店简介" class="textarea" value="{{msg.introduction}}"></textarea>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b m-10">
   <label>获取经纬度</label>
-  <view class="item_r"><text space='emsp'>纬度：30.67度  经度：104.06度</text></view>
+  <view class="item_r"><text space='emsp'>纬度：{{msg.lat}} 经度：{{msg.lng}}</text></view>
 </view>
 <view class="bg_fff p-w-28 intro flex_c">
   <label>门头照</label>
-  <view class="upimg flex_c_c">
+  <image src="{{msg.image}}" class="doorimg" wx:if='{{msg.image}}' bindtap="upimg"></image>
+  <view wx:else class="upimg flex_c_c" bindtap="upimg">
     <text class="iconfont icon-zhaoxiangji"></text>
   </view>
-  <!-- <image src="../img/business.png" class="doorimg"></image> -->
 </view>
 <view class="bg_fff p-w-28 intro flex_c">
   <label>环境照片</label>
   <view class="storelist">
-    <!-- <image src="../img/business.png" class="pic"></image> -->
-    <view class="upimg1 flex_c_c">
+    <image src="{{item}}" class="pic" wx:for='{{slider_image}}' wx:key='index' bindlongtap="delimg"  data-id="{{index}}"></image>
+    <view class="upimg1 flex_c_c" wx:if='{{slider_image.length<9}}' bindtap='upimg1'>
       <text class="iconfont icon-jia"></text>
     </view>
   </view>  
 </view>
 <view class="item bg_fff p-w-28 flex_r_b m-10 title">歇业设置</view>
 <view class="item bg_fff p-w-28 flex_r_b m-10">
-  <label>营业中</label>
-  <switch color="#3d9aff"></switch>
+  <label wx:if='{{msg.status==1}}'>歇业中</label>
+  <label wx:else>营业中</label>
+  <switch color="#3d9aff" checked="{{msg.status!=1}}"></switch>
 </view>
 <view class="btn">保存</view>

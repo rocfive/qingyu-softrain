@@ -1,16 +1,17 @@
 <!--pages/business/addstaff.wxml-->
 <view class="imgitem flex_r_b bg_fff p-w-28">
   <label>头像</label>
-  <view class="imgitem_r flex_r_r">
-    <image src="../img/doctor.png"></image>
+  <view class="imgitem_r flex_r_r" bindtap="upimg">
+    <image src="{{image}}" wx:if='{{image}}' mode="aspectFill"></image>
+    <text wx:else style="color: #a0a0a0;">上传头像</text>
     <text class="iconfont icon-gengduo"></text>
   </view>
 </view>
 <view class="item p-w-28 bg_fff flex_r_b">
   <label>姓名</label>
-  <input type="text" placeholder="请输入姓名"></input>
+  <input type="text" placeholder="请输入姓名" value="{{name}}" bindinput="inputtxt" data-id="name"></input>
 </view>
-<view class="item p-w-28 bg_fff flex_r_b">
+<!-- <view class="item p-w-28 bg_fff flex_r_b">
   <label>性别</label>
   <view>
     <radio-group name='sex'>
@@ -18,21 +19,21 @@
       <radio value="1" color="#3d9aff" checked="{{sex=='1'?true:false}}"></radio>女
     </radio-group>   
   </view>
-</view>
+</view> -->
 <view class="item p-w-28 bg_fff flex_r_b">
   <label>联系电话</label>
-  <input type="text" placeholder="请输入联系方式"></input>
+  <input type="number" placeholder="请输入联系电话" value="{{phone}}" bindinput="inputtxt" data-id="phone"></input>
 </view>
 <view class="item p-w-28 bg_fff flex_r_b">
-  <label>登录账户</label>
-  <input type="text" placeholder="请输入员工手机号"></input>
+  <label>登录账号</label>
+  <input type="text" placeholder="请输入员工登录账号" value="{{username}}" bindinput="inputtxt" data-id="username"></input>
 </view>
-<view class="codeitem p-w-28 bg_fff flex_r">
+<view class="item p-w-28 bg_fff flex_r_b">
   <label>默认密码：</label>
-  <view>123456</view>
+  <input type="text" placeholder="请输入默认密码" value="{{password}}" bindinput="inputtxt" data-id="password"></input>
 </view>
 <view class="flex_c bg_fff m-10 p-w-28 intro">
   <label>简介</label>
-  <textarea placeholder="请输入员工的简介" class="textarea"></textarea>
+  <textarea placeholder="请输入员工的简介" class="textarea" value="{{introduction}}" bindinput="inputtxt" data-id="introduction"></textarea>
 </view>
-<view class="btn">保存</view>
+<view class="btn" bindtap="save">保存</view>

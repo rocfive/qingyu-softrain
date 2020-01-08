@@ -1,4 +1,4 @@
-// pages/business/staff.js
+// pages/business/orderdetail.js
 const app = getApp()
 var url = getApp().globalData.url, timer;
 Page({
@@ -9,19 +9,13 @@ Page({
   data: {
 
   },
-  add:function(){
-    wx.navigateTo({
-      url: 'addstaff',
-    })
-  },
-  // 获取员工列表
-  getList:function(){
+  getDetail:function(){
     var that=this;
 
-    app.network.request2({
-      url: url + "menshop/info",
+    app.network.request1({
+      url: url + "order/detail",
       method: "GET",
-      data: {},
+      data: { uni: that.data.uni },
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
@@ -41,7 +35,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getList()
+    this.setData({
+      uni: options.id
+    })
+    this.getDetail();
   },
 
   /**
