@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    storeInfo:[],
   },
   // 点击提现
   tx:function(){
