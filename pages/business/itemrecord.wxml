@@ -1,16 +1,16 @@
 <!--pages/business/itemrecord.wxml-->
 <view class="tab flex_r_b bg_fff p-w-24">
   <view class="flex_r tab_l">
-    <view class="active">今日</view>
-    <view>近七日</view>
-    <view>近一月</view>
-    <view>近三月</view>
+    <view class="{{timetype==1?'active':''}}" data-id="{{1}}" bindtap="changeTab">今日</view>
+    <view class="{{timetype==2?'active':''}}" data-id="{{2}}" bindtap="changeTab">近七日</view>
+    <view class="{{timetype==3?'active':''}}" data-id="{{3}}" bindtap="changeTab">近一月</view>
+    <view class="{{timetype==4?'active':''}}" data-id="{{4}}" bindtap="changeTab">近三月</view>
   </view>
   <view class="flex_r tab_r">
-    <picker range="{{yearxl}}" bindchange="changeyear">
+    <picker range="{{times}}" range-key="time" bindchange="changeyear">
       <view class='pickerbox'>
         <text class='year' wx:if='{{year}}'>{{year}}</text>
-        <text class='year' wx:else>2019-11</text>
+        <text class='year' wx:else>请选择</text>
       </view>
     </picker>
     <text class="iconfont icon-xiala"></text>
@@ -22,19 +22,9 @@
   <view>总金额</view>
 </view>
 <view class="list">
-  <view class="td bg_fff p-w-24 flex_r_b">
-    <view>身体体龄定制</view>
-    <view>897</view>
-    <view class="money">12456.00</view>
-  </view>
-  <view class="td bg_fff p-w-24 flex_r_b">
-    <view>身体体龄定制</view>
-    <view>897</view>
-    <view class="money">12456.00</view>
-  </view>
-  <view class="td bg_fff p-w-24 flex_r_b">
-    <view>身体体龄定制</view>
-    <view>897</view>
-    <view class="money">12456.00</view>
-  </view>
+  <view class="td bg_fff p-w-24 flex_r_b" wx:for='{{list}}' wx:key='index'>
+    <view>{{item.store_name}}</view>
+    <view>{{item.count}}</view>
+    <view class="money">{{item.total_price}}</view>
+  </view>  
 </view>

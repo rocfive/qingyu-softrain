@@ -39,6 +39,11 @@ Page({
       }
     })
   },
+  detail: function (e) {
+    wx.navigateTo({
+      url: '../goods/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

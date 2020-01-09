@@ -1,18 +1,78 @@
 // pages/business/noticed.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    type:1
   },
+  getMsg: function (id) {
+    var that = this;
 
+    app.network.request({
+      url: url + "notice_detail",
+      method: "GET",
+      data: { id: that.data.id },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            title: res.data.data.title,
+            add_time: res.data.data.add_time
+          })
+          var content = res.data.data.content;
+          WxParse.wxParse('content', 'html', content, that, 5);
+
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  changeTab:function(e){
+    this.setData({
+      type:e.currentTarget.dataset.id
+    })
+    this.readnum();
+  },
+  readnum:function(){
+    var that=this;
+
+    app.network.request2({
+      url: url + "menshop/sel_logs",
+      method: "POST",
+      data: { aid: that.data.id, type: that.data.type},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            list:res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
+    this.getMsg();
+    this.readnum();
   },
 
   /**

@@ -1,21 +1,27 @@
 <!--pages/business/notice.wxml-->
 <view class="tab bg_fff p-w-24 flex_r_a">
-  <view class="active">门店</view>
-  <view>平台</view>
+  <view class="{{active==1?'active':''}}" data-id="{{1}}" bindtap="changeTab">门店</view>
+  <view class="{{active==2?'active':''}}" data-id="{{2}}" bindtap="changeTab">平台</view>
 </view>
 <view class="list bg_fff m-10">
-  <view class="item flex_r_b p-w-24" bindtap="detail">
-    <image src="../img/headlineimg.png" mode="aspectFill" class="pic"></image>
-    <view class="item_r">
-      <view class="title">这里是标题</view>
-      <view class="describe">韩国id5月初夏手术活动，折扣超级给力！</view>
+  <block wx:if='{{active==1}}'>
+    <view class="item flex_r_b p-w-24" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+      <image src="{{item.image_input}}" mode="aspectFill" class="pic"></image>
+      <view class="item_r">
+        <view class="title">{{item.title}}</view>
+        <view class="describe">{{item.synopsis}}</view>
+      </view>
     </view>
-  </view>
-  <view class="item flex_r_b p-w-24">
-    <image src="../img/headlineimg.png" mode="aspectFill" class="pic"></image>
-    <view class="item_r">
-      <view class="title">这里是标题</view>
-      <view class="describe">韩国id5月初夏手术活动，折扣超级给力！</view>
+  </block>
+  <block wx:elif='{{active==2}}'>
+    <view class="item flex_r_b p-w-24" bindtap="detail1" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+      <image src="{{item.image_input}}" mode="aspectFill" class="pic"></image>
+      <view class="item_r">
+        <view class="title">{{item.title}}</view>
+        <view class="describe">{{item.synopsis}}</view>
+      </view>
     </view>
-  </view>
+  </block>  
 </view>
+<view class="nomore" wx:if='{{list.length<1}}'>暂无公告</view>
+<view class="nomore" wx:if='{{nomore}}'>已经全部加载</view>

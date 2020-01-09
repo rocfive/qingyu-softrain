@@ -41,7 +41,7 @@
 }
 .scrollbox .item {
   display: inline-block;
-  width: 100rpx;
+  min-width: 100rpx;
   text-align: center;
   margin-right: 40rpx;
   font-size: 24rpx;  
@@ -53,7 +53,7 @@
 }
 .scrollbox .item text{
   display: block;
-  width: 100rpx;
+  /* width: 100rpx; */
   text-align: center;
   margin-top: 12rpx;
 }

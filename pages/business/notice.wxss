@@ -1,4 +1,5 @@
 /* pages/business/notice.wxss */
+@import "../../wxParse/wxParse.wxss";
 .tab{
   width: 100vw;
   height: 88rpx;

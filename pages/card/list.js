@@ -85,6 +85,15 @@ Page({
       hot:options.hot?options.hot:0
     })
     this.getMenu();
+    if (options.hot){
+      wx.setNavigationBarTitle({
+        title: '热门项目卡',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '项目卡',
+      })
+    }
   },
 
   /**

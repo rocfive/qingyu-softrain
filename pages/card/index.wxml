@@ -17,7 +17,7 @@
   </view>
 </navigator>
 <scroll-view scroll-x class="cardlist bg_fff">
-  <view class="item" wx:for='{{card}}' wx:key='index' data-id="{{item.id}}">
+  <view class="item" wx:for='{{card}}' wx:key='index' data-id="{{item.id}}" bindtap="detail">
     <image src="{{item.image}}" mode="aspectFill" class="pic"></image>
     <view class="name">{{item.store_name}}</view>
     <view class="price">￥<text>{{item.price}}</text></view>
@@ -33,7 +33,7 @@
   </view>
 </navigator>
 <scroll-view scroll-x class="cardlist bg_fff">
-  <view class="item" wx:for='{{hot_card}}' wx:key='index'>
+  <view class="item" wx:for='{{hot_card}}' wx:key='index' bindtap="detail" data-id="{{item.id}}">
     <image src="{{item.image}}" mode="aspectFill" class="pic"></image>
     <view class="name">{{item.store_name}}</view>
     <view class="price">￥<text>{{item.price}}</text></view>
