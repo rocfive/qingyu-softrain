@@ -113,14 +113,14 @@ page{
   clear: both;
   padding: 35rpx 0;
 }
-.menu1 navigator{
+.menu1 navigator,.menu1 view{
   width: 234rpx;
   height: 142rpx;
   float: left;
   font-size: 26rpx;
   color: #666666
 }
-.menu1 navigator .iconfont{
+.menu1 navigator .iconfont, .menu1 view .iconfont{
   color: #3f9aff;
   font-size: 52rpx;
   margin-bottom: 8rpx;

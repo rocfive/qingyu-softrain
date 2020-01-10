@@ -40,9 +40,39 @@ Page({
         }
       }
     })
-  }, 
+  },
+  // 扫码核销 
+  codescan:function(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        console.log(res)
+        var result = res.result;
 
-
+        app.network.request2({
+          url: url + "menshop/order/get_order_by_verific",
+          method: "POST",
+          data: { verify_code: result },
+          success: function (res) {
+            console.log(res)
+            if (res.data.status == 200) {
+              wx.navigateTo({
+                url: 'orderdetail?forms=scan&id=' + res.data.msg + '&verify_code=' + result,
+              })
+              // that.setData({
+              //   msg: res.data.data
+              // })
+            } else {
+              wx.showToast({
+                icon: "none",
+                title: res.data.msg,
+              })
+            }
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

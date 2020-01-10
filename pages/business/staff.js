@@ -73,16 +73,21 @@ Page({
   },
   // 员工禁止接单
   rest:function(e){
-    var that = this, id = e.currentTarget.dataset.id;
+    var that = this, id = e.currentTarget.dataset.id, status=e.currentTarget.dataset.status;
 
     app.network.request2({
       url: url + "menshop/ban_order",
       method: "POST",
-      data: { id: id, status:1 },
+      data: { id: id, status: (status==1?0:1) },
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          that.getList()
+          wx.showToast({
+            title: '设置成功',
+          })
+          timer=setTimeout(function(){
+            that.getList()
+          },2000)
         } else {
           wx.showToast({
             icon: "none",

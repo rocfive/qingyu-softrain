@@ -1,19 +1,21 @@
 <!--pages/business/txrecord.wxml-->
 <view class="tab bg_fff flex_r_a p-w-28">
-  <view class="active">待审核</view>
-  <view>已通过</view>
-  <view>已拒绝</view>
+  <view class="{{status=='0'?'active':''}}" data-id="0" bindtap="changeTab">待审核</view>
+  <view class="{{status=='1'?'active':''}}"  data-id="1" bindtap="changeTab">已通过</view>
+  <view class="{{status=='-1'?'active':''}}"  data-id="-1" bindtap="changeTab">已拒绝</view>
 </view>
 <view class="list">
-  <view class="item bg_fff flex_c p-w-24 m-10">
+  <view class="item bg_fff flex_c p-w-24 m-10" wx:for='{{list}}' wx:key='index'>
     <view class="flex_r_b">
-      <text>申请时间：2018-09-18 15:30</text>
-      <text class="types" wx:if='{{forms=="business"}}'>提现方式：微信</text>
+      <text>申请时间：{{item.add_time}}</text>
+      <text class="types" wx:if='{{item.extract_type=="banke"}}'>提现方式：银行卡</text>
+      <text class="types" wx:if='{{item.extract_type=="alipay"}}'>提现方式：支付宝</text>
+      <text class="types" wx:if='{{item.extract_type=="wx"}}'>提现方式：微信</text>
     </view>
-    <view class="status">等待审核</view>
-    <view>提现金额：100元</view>
-    <view class="money">预计到账金额：100元</view>
+    <view class="status" wx:if='{{status=="0"}}'>等待审核</view>
+    <view>提现金额：{{item.extract_price}}元</view>
+    <view class="money">预计到账金额：{{item.extract_price}}元</view>
   </view>
 </view>
-
-<view class="nomore">没有更多了</view>
+<view class="nomore" wx:if='{{list.length<1}}'>暂无数据</view>
+<view class="nomore" wx:if='{{nomore}}'>没有更多了</view>
