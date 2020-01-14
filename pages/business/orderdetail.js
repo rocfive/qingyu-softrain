@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    noscan:true
   },
   getDetail:function(){
     var that=this;
 
-    app.network.request1({
-      url: url + "order/detail",
+    app.network.request2({
+      url: url + "menshop/order/detail",
       method: "GET",
       data: { uni: that.data.uni },
       success: function (res) {
@@ -31,14 +31,48 @@ Page({
       }
     })
   },
+  // 点击核销
+  scan:function(){
+    var that=this;
+
+    app.network.request2({
+      url: url + "menshop/order/order_verific",
+      method: "POST",
+      data: { verify_code: that.data.options.verify_code, is_confirm:1 },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          wx.showToast({
+            title: '核销成功'
+          })
+          timer=setTimeout(function(){
+            that.setData({
+              noscan:false
+            })
+            that.getDetail();
+          },2000)
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  // 取消核销
+  toback:function(){
+    wx.navigateBack()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
+      options: options,
       uni: options.id
     })
-    this.getDetail();
+    this.getDetail();  
   },
 
   /**

@@ -1,27 +1,27 @@
 <!--pages/business/statistics.wxml-->
 <view class="tab flex_r_b bg_fff p-w-24">
   <view class="flex_r tab_l">
-    <view>今日</view>
-    <view class="active">近七日</view>
-    <view>近一月</view>
+    <view class="{{timetype==1?'active':''}}" data-id="{{1}}" bindtap="changeTab">今日</view>
+    <view class="{{timetype==2?'active':''}}" data-id="{{2}}" bindtap="changeTab">近七日</view>
+    <view class="{{timetype==3?'active':''}}" data-id="{{3}}" bindtap="changeTab">近一月</view>
   </view>
   <view class="flex_r tab_r">
-    <picker range="{{yearxl}}" bindchange="changeyear">
+    <picker mode="date" bindchange="changestime" end='{{etime?etime:""}}'>
       <view class='pickerbox'>
-        <text class='year' wx:if='{{year}}'>{{year}}</text>
-        <text class='year' wx:else>2019-11-10</text>
+        <text class='year' wx:if='{{stime}}'>{{stime}}</text>
+        <text class='year' wx:else>请选择</text>
       </view>
     </picker>
     <text style="margin:0 10rpx">至</text>
-    <picker range="{{yearxl}}" bindchange="changeyear">
+    <picker mode="date" bindchange="changeetime" start='{{stime?stime:""}}'>
       <view class='pickerbox'>
-        <text class='year' wx:if='{{year}}'>{{year}}</text>
-        <text class='year' wx:else>2019-11-10</text>
+        <text class='year' wx:if='{{etime}}'>{{etime}}</text>
+        <text class='year' wx:else>请选择</text>
       </view>
     </picker>
   </view>
 </view>
-<view class='group' style="margin-top:0">
+<view class='group' style="margin-top:0" wx:if='{{timetype==1}}'>
   <view class='tit'>
     <text class='iconfont icon-dingdantongji1' style='background:#f2aa56'></text>
     <text>今日收益</text>
@@ -29,23 +29,35 @@
   <view class='table'>
     <view>今日订单量</view>
     <view>成交金额(元)</view>
-    <view>{{today.ordernumber}}</view>
-    <view>{{today.earnings}}</view>
+    <view>{{today_count}}</view>
+    <view>{{today_money}}</view>
   </view>
 </view>
-<view class='group'>
+<view class='group' wx:elif='{{timetype==2}}'>
   <view class='tit'>
     <text class='iconfont icon-rili'></text>
     <text>近七日统计</text>
   </view>
   <canvas canvas-id="lineCanvas01" disable-scroll="true" class="canvas"></canvas>
 </view>
-<view class='group'>
+<view class='group' wx:elif='{{timetype==3}}'>
   <view class='tit tit01'>
     <view class='tit_l'>
       <text class='iconfont icon-rili' style='background:#f2aa56'></text>
       <text>近一月</text>
     </view>
   </view>
-  <canvas canvas-id="lineCanvas02" disable-scroll="true" class="canvas"></canvas>
+  <canvas canvas-id="lineCanvas02" class="canvas" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend"></canvas>
+</view>
+<view class='group' style="margin-top:0" wx:else>
+  <view class='tit'>
+    <text class='iconfont icon-dingdantongji1' style='background:#f2aa56'></text>
+    <text space='ensp'>{{stime}} 到 {{etime}}收益</text>
+  </view>
+  <view class='table'>
+    <view>订单量</view>
+    <view>成交金额(元)</view>
+    <view>{{today_count}}</view>
+    <view>{{today_money}}</view>
+  </view>
 </view>

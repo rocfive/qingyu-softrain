@@ -18,7 +18,8 @@
       </view>    
     </view>    
     <view class="item_b flex_r_r p-w-28">
-      <view class="btn" bindtap="rest" data-id="{{item.id}}">禁止接单</view>
+      <view class="btn" bindtap="rest" data-id="{{item.id}}" data-status="{{item.status}}" wx:if='{{item.status==1}}'>允许接单</view>
+      <view class="btn" bindtap="rest" data-id="{{item.id}}" data-status="{{item.status}}" wx:else>禁止接单</view>
       <view class="btn" bindtap="delstaff" data-id="{{item.id}}">删除技师</view>
     </view>
   </view>  

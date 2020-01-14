@@ -44,10 +44,10 @@
 <view class="p-w-24 bg_fff m-10">
   <view class="bt flex_r_b">我的服务</view>
   <view class="menu1">
-    <navigator url="" hover-class="none" class="flex_c_c">
+    <view bindtap="codescan" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-hexiao"></text>
       <text>扫码核销</text>
-    </navigator>
+    </view>
     <navigator url="charge" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-hexiaojilu1"></text>
       <text>扫码记录</text>

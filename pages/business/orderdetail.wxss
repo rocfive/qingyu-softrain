@@ -1,2 +1,21 @@
 /* pages/business/orderdetail.wxss */
 @import "../myzoe/orderdetail";
+page{
+  padding-bottom: 150rpx;
+}
+.btnbox{
+  border-top: none
+}
+.btnbox .btn{
+  width: 480rpx;
+}
+.btnbox .btn_cancle{
+  width: 178rpx;
+  height: 90rpx;
+  border: 1px solid #ddd;
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #777;
+  box-sizing: border-box
+}
