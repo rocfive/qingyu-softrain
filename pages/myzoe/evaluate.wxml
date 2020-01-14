@@ -12,7 +12,7 @@
   <view class="evaluate_t flex_c_c">
     <view class="title">您的评价让我们做得更好</view>
     <view class="star flex_r_b">
-      <text class="{{index<score?'iconfont icon-xingxingchengcopy light':'iconfont icon-xingxingchengcopy'}}" wx:for='{{5}}' wx:key='{{index}}' data-id="{{index+1}}" bindtap="rank"></text>
+      <text class="{{index<score?'iconfont icon-xingxingchengcopy light':'iconfont icon-xingxingchengcopy'}}" wx:for='{{5}}' wx:key='index' data-id="{{index+1}}" bindtap="rank"></text>
     </view>
     <view class="score"><text wx:if='{{score}}'>{{score}}分</text></view>
   </view>

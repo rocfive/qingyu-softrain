@@ -67,6 +67,7 @@ Page({
             wx.redirectTo({
               url: 'index',
             })
+            
           } else {
             wx.showToast({
               icon: "none",
@@ -76,7 +77,27 @@ Page({
         }
       })
     } else if (that.data.options.froms == "employee"){
+      // 员工登录
+      app.network.request({
+        url: url + "melogin",
+        method: "POST",
+        data: { account: that.data.account, password: that.data.password },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            wx.setStorageSync("metoken", res.data.data.metoken);
+            wx.redirectTo({
+              url: '../staff/index',
+            })
 
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
     }
   },
   /**
@@ -86,6 +107,15 @@ Page({
     this.setData({
       options: options
     })
+    if (options.froms == "shop"){
+      wx.setNavigationBarTitle({
+        title: '商家登录',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '员工登录',
+      })
+    }
   },
 
   /**

@@ -1,4 +1,6 @@
 // pages/staff/index.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -15,9 +17,10 @@ Page({
       url: '../business/notice?forms=staff',
     })
   },
-  toheadlinedetail:function(){
+  // 公告详情
+  toheadlinedetail:function(e){
     wx.navigateTo({
-      url: '../business/noticed?forms=staff',
+      url: '../business/noticed?forms=staff&id='+e.currentTarget.dataset.id,
     })
   },
   // 提现
@@ -26,11 +29,56 @@ Page({
       url: 'tx',
     })
   },
+  getMsg: function () {
+    var that = this;
+
+    app.network.request3({
+      url: url + "employee/info",
+      method: "GET",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            msg: res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  getnotice:function(){
+    var that=this;
+
+    app.network.request3({
+      url: url + "employee/hot_notice_list",
+      method: "GET",
+      data: { page: 0, limit:5},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            noticeList: res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMsg();
+    this.getnotice();
   },
 
   /**

@@ -42,6 +42,7 @@ Page({
     })
     this.readnum();
   },
+  // 阅读记录
   readnum:function(){
     var that=this;
 
@@ -64,15 +65,43 @@ Page({
       }
     })
   },
+  // 增加阅读记录
+  addread:function(){
+    var that=this;
+
+    app.network.request3({
+      url: url + "employee/add_log",
+      method: "POST",
+      data: { id: that.data.id},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            list: res.data.data
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
+      options:options,
       id: options.id
     })
     this.getMsg();
-    this.readnum();
+    if (options.forms == "staff"){
+      this.addread();
+    }else{
+      this.readnum();
+    }    
   },
 
   /**

@@ -15,7 +15,6 @@
         <view class="goods_title">{{item.title}}</view>
         <view>预约时间：{{item.yuyuetime}}</view>
         <view>规格：{{item.spec}}</view>
-        <view class="price">{{clothse.fuwu_price}}</view>
       </view>
     </view>
     <view class="line p-w-24 flex_r_b">

@@ -3,16 +3,16 @@
   <image src="../img/bg_business.png"></image>
 </view>
 <view class="head">
-  <view class="headpic bg_fff flex_c_c"><image src="../img/doctor.png"></image></view>
-  <view class="storename">科华路王府井店</view>
+  <view class="headpic bg_fff flex_c_c"><image src="{{msg.image}}"></image></view>
+  <view class="storename">{{msg.name}}</view>
   <view class="situation flex_r_b">
     <view class="flex_r">
       <text class="iconfont icon-shuju1"></text>
-      <text>接单:31</text>
+      <text>接单:{{msg.orderCount}}</text>
     </view>
     <view class="flex_r">
       <text class="iconfont icon-dengji"></text>
-      <text>收益:￥0.00</text>
+      <text>收益:￥{{msg.now_money}}</text>
       <view class="txbtn" bindtap="tx">提现</view>
     </view>    
   </view>
@@ -21,32 +21,32 @@
   <view class="headline_l"><image src="../img/notice.png" class="headlinebt"></image></view>
   <view class="newest">最新</view>
   <swiper vertical='true' autoplay='true' class="headline_r">
-    <swiper-item wx:for='{{notice}}' wx:key='{{index}}' catchtap='toheadlinedetail'>{{item.article_title}}</swiper-item>
+    <swiper-item wx:for='{{noticeList}}' wx:key='index' data-id='{{item.id}}' catchtap='toheadlinedetail'>{{item.title}}</swiper-item>
   </swiper>
   <text class="iconfont icon-gengduo"></text>
 </view>
 <view class="p-w-24 bg_fff m-10" style="margin-top:16rpx">
-  <view class="bt flex_r_b">
+  <navigator url="orderlist?active=0" hover-class="none" class="bt flex_r_b">
     <view>我的订单</view>
     <view class="bt_r">更多<text class="iconfont icon-gengduo"></text></view>
-  </view>
-  <view class="flex_r_b menu">
-    <navigator url="orderlist" hover-class="none" class="flex_c_c">
+  </navigator>
+  <view class="flex_r_a menu">
+    <navigator url="orderlist?active=2" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-i"></text>
       <text>待核销</text>
     </navigator>
-    <navigator url="" class="flex_c_c">
+    <navigator url="orderlist?active=4" class="flex_c_c">
       <text class="iconfont icon-hexiao"></text>
-      <text>已核销</text>
+      <text>待评价</text>
     </navigator>
-    <navigator url="" class="flex_c_c">
+    <navigator url="orderlist?active=5" class="flex_c_c">
       <text class="iconfont icon-daiyuyue"></text>
-      <text>已取消</text>
+      <text>已完成</text>
     </navigator>
-    <navigator url="" class="flex_c_c">
+    <!-- <navigator url="" class="flex_c_c">
       <text class="iconfont icon-pingjia"></text>
       <text>已逾期</text>
-    </navigator>
+    </navigator> -->
   </view>
 </view>
 <view class="p-w-24 bg_fff m-10">
@@ -56,11 +56,11 @@
       <text class="iconfont icon-hexiao"></text>
       <text>扫码核销</text>
     </navigator>
-    <navigator url="../business/charge" hover-class="none" class="flex_c_c">
+    <navigator url="../business/charge?forms=staff" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-hexiaojilu1"></text>
       <text>核销记录</text>
     </navigator>
-    <navigator url="../business/earnings" hover-class="none" class="flex_c_c">
+    <navigator url="../business/earnings?forms=staff" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-shouyimingxi"></text>
       <text>收益明细</text>
     </navigator>
@@ -68,7 +68,7 @@
       <text class="iconfont icon-tixianjilu"></text>
       <text>提现记录</text>
     </navigator>    
-    <navigator url="onoff" hover-class="none" class="flex_c_c">
+    <navigator url="onoff" hover-class="none" class="flex_c_c" wx:if='{{msg.is_free==1}}'>
       <text class="iconfont icon-shezhi11"></text>
       <text>接单开关</text>
     </navigator>

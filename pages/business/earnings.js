@@ -1,21 +1,124 @@
 // pages/business/earnings.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[
-      { order_name: "名称名称名称名称名称", add_time: "2018-08-21 12:14:54", store_profie:"67.24"},
-      { order_name: "名称名称名称名称名称", add_time: "2018-08-21 12:14:54", store_profie: "67.24" }
-    ]
   },
+  bindDate:function(e){
+    this.setData({
+      choseDate: e.detail.value
+    })
+    this.getTotal();
+    this.getList();
+  },
+  // 获取收益总额
+  getTotal:function(){
+    var that=this;
 
+    if (that.data.options.forms =="staff"){
+      app.network.request3({
+        url: url + "employee/earnings_total",
+        method: "POST",
+        data: { time: that.data.choseDate },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              total: res.data.msg
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }else{
+      app.network.request2({
+        url: url + "menshop/earnings_total",
+        method: "POST",
+        data: { time: that.data.choseDate },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              total: res.data.msg
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }
+    
+  },
+  getList:function(){
+    var that=this;
+
+    if (that.data.options.forms == "staff"){
+      app.network.request3({
+        url: url + "employee/earnings_log",
+        method: "POST",
+        data: { time: that.data.choseDate },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              list: res.data.data
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }else{
+      app.network.request2({
+        url: url + "menshop/earnings_log",
+        method: "POST",
+        data: { time: that.data.choseDate },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              list: res.data.data
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }    
+  },
+  appendZero:function(obj) {
+    if(obj<10) return "0" + "" + obj;
+    else return obj;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var oDate=new Date();
+    this.setData({
+      nowDate: oDate.getFullYear() + '-' + this.appendZero(oDate.getMonth()+1),
+      choseDate: oDate.getFullYear() + '-' + this.appendZero(oDate.getMonth() + 1),
+      options:options
+    })
+    this.getTotal();
+    this.getList();
   },
 
   /**

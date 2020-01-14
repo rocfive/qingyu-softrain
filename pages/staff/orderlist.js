@@ -1,4 +1,6 @@
 // pages/staff/orderlist.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -6,16 +8,59 @@ Page({
    */
   data: {
     active: 0,
-    list: [
-      { id: 4, state: 2, ordernum: 45655645565, title: "瘦脸针【国脸针】100u告别大咬肌...", img: "../img/goodsimg.png", yuyuetime: "2019-10-28  09:30", spec: "润百颜小分子玻尿酸", storename: "科华路王府井店", money: "481", addtime: "2019-05-24  14:30:12", technician: "谢宁", phone: "15298118194" },
-    ],
+    page: 1,
+    nomore: false
   },
+  changeacitve: function (e) {
+    this.setData({
+      page: 1,
+      active: e.currentTarget.dataset.id
+    })
+    this.getList()
+  },
+  getList: function () {
+    var that = this;
 
+    app.network.request3({
+      url: url + "employee/order/list",
+      method: "GET",
+      data: { type: 2, status: that.data.active, page: that.data.page, limit: 20 },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          var ress = res.data.data;
+          if (that.data.page == 1) {
+            that.setData({
+              list: ress
+            })
+          } else {
+            if (ress.length < 1) {
+              that.setData({
+                nomore: true
+              })
+            }
+            var list = that.data.list;
+            list.push.apply(list, ress);
+            that.setData({
+              list: list
+            })
+          }
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      active: options.active
+    })
   },
 
   /**
@@ -29,7 +74,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getList();
   },
 
   /**
@@ -57,7 +102,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.nomore) {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getList()
+    }    
   },
 
   /**

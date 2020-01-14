@@ -7,7 +7,7 @@
   color: #747474
 }
 .item{
-  height: 140rpx;
+  padding: 20rpx 24rpx;
   border-top: 1rpx solid #eee
 }
 .item .time{

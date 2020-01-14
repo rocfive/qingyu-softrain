@@ -90,7 +90,7 @@
     </navigator>
     <navigator url="../staff/index" class="item flex_c_c" hover-class="none">
       <text class="iconfont icon-jishi"></text>
-      <text>技师入口</text>
+      <text>员工入口</text>
     </navigator>
   </view>
 </view>

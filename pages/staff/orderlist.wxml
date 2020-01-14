@@ -1,13 +1,13 @@
 <!--pages/staff/orderlist.wxml-->
 <view class="bg_fff p-w-28 filtrate flex_r_b">
-  <picker mode='dete'>
+  <picker mode='date'>
     <view class="timebox">
       <text wx:if='{{date1}}'>2019-10-10</text>  
       <text wx:else>点击填写</text>
     </view>
   </picker>
   <text>至</text>
-  <picker mode='dete'>
+  <picker mode='date'>
     <view class="timebox">
       <text wx:if='{{date1}}'>2019-10-10</text>  
       <text wx:else>点击填写</text>
@@ -16,41 +16,36 @@
 </view>
 <view class="menustatus bg_fff p-w-24 flex_r_b m-10">
   <view class="{{active==0?'cur':''}}" bindtap="changeacitve" data-id="0">全部</view>
-  <view class="{{active==1?'cur':''}}" bindtap="changeacitve" data-id="1">待核销</view>
-  <view class="{{active==2?'cur':''}}" bindtap="changeacitve" data-id="2">已核销</view>
-  <view class="{{active==3?'cur':''}}" bindtap="changeacitve" data-id="3">已评价</view>
-  <view class="{{active==4?'cur':''}}" bindtap="changeacitve" data-id="4">已完成</view>
+  <view class="{{active==2?'cur':''}}" bindtap="changeacitve" data-id="2">待核销</view>
+  <view class="{{active==4?'cur':''}}" bindtap="changeacitve" data-id="4">待评价</view>
+  <view class="{{active==5?'cur':''}}" bindtap="changeacitve" data-id="5">已完成</view>
 </view>
 <view class="list">
-  <block wx:for='{{list}}' wx:key='{{index}}'>
-  <view class="item bg_fff" bindtap="detail">
+  <block wx:for='{{list}}' wx:key='index'>
+  <view class="item bg_fff" bindtap="detail" data-id="{{item.order_id}}">
     <view class="line01 flex_r_b p-w-24">
-      <view class="ordernum">订单：{{item.ordernum}}</view>
-      <view class="status" wx:if='{{item.state==1}}'>待核销</view>
-      <view class="status" wx:elif='{{item.state==2}}'>已核销</view>
-      <view class="status" wx:elif='{{item.state==3}}'>已评价</view>
-      <view class="status" wx:elif='{{item.state==4}}'>已完成</view>
+      <view class="ordernum">订单：{{item.order_id}}</view>
+      <view class="status">{{item._status._title}}</view>
     </view>
     <view bindtap="todetail" class="goods p-w-24 flex_r_b">
-      <image src='{{item.img}}'></image>
+      <image src='{{item.cartInfo[0].productInfo.image}}'></image>
       <view class="goods_r">
-        <view class="goods_title">{{item.title}}</view>
-        <view>预约时间：{{item.yuyuetime}}</view>
-        <view>规格：{{item.spec}}</view>
-        <view class="price">{{clothse.fuwu_price}}</view>
+        <view class="goods_title">{{item.cartInfo[0].productInfo.store_name}}</view>
+        <view>预约时间：{{item._order_time}}</view>
+        <view>规格：{{item.cartInfo[0].productInfo.attrInfo.suk}}</view>
       </view>
     </view>
     <view class="line p-w-24 flex_r_b">
       <view>
         <text class="iconfont icon-mendian"></text>
-        <text class="txt">{{item.storename}}</text>
+        <text class="txt">{{item._menshop.name}}</text>
       </view>
-      <text class="price">￥<text>{{item.money}}</text></text>
+      <text class="price">￥<text>{{item.pay_price}}</text></text>
     </view>
     <view class="line p-w-24 flex_r_b">
       <view>
         <text class="iconfont icon-shangcheng1"></text>
-        <text style="font-size:26rpx;">{{item.addtime}}</text>
+        <text style="font-size:26rpx;">{{item._add_time}}</text>
       </view>  
     </view> 
   </view>  
@@ -61,3 +56,4 @@
   <image src="../img/none.jpg" mode="widthFix"></image>
   <view>暂无订单</view>
 </view>
+<view class="nomore" wx:if='{{nomore}}'>没有更多了</view>

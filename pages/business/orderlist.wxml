@@ -18,7 +18,6 @@
         <view class="goods_title">{{item.cartInfo[0].productInfo.store_name}}</view>
         <view>预约时间：{{item._order_time}}</view>
         <view>规格：{{item.cartInfo[0].productInfo.attrInfo.suk}}</view>
-        <view class="price">{{clothse.fuwu_price}}</view>
       </view>
     </view>
     <view class="line p-w-24 flex_r_b">
@@ -35,3 +34,4 @@
   <image src="../img/none.jpg" mode="widthFix"></image>
   <view>暂无订单</view>
 </view>
+<view class="nomore" wx:if='{{nomore}}'>没有更多了</view>
