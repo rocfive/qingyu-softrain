@@ -13,7 +13,7 @@ Page({
   },
   detail:function(e){
     wx.navigateTo({
-      url: 'noticed?id=' + e.currentTarget.dataset.id,
+      url: 'noticed?id=' + e.currentTarget.dataset.id + "&forms=" + (this.data.options.forms == "staff" ?"staff":"business"),
     })
   },
   detail1:function(e){
@@ -33,30 +33,57 @@ Page({
     var that = this;
 
     if (that.data.active == 1){
-      // 门店公告
-      app.network.request2({
-        url: url + "menshop/notice_list",
-        method: "GET",
-        data: { page: that.data.page, limit: 20 },
-        success: function (res) {
-          console.log(res)
-          if (res.data.status == 200) {
-            that.setData({
-              list: res.data.data
-            })
-            if (that.data.page != 1 && res.data.data.length < 1) {
+      if (that.data.options.forms == "staff"){
+        // 门店公告 员工端
+        app.network.request3({
+          url: url + "employee/notice_list",
+          method: "GET",
+          data: { page: that.data.page, limit: 20 },
+          success: function (res) {
+            console.log(res)
+            if (res.data.status == 200) {
               that.setData({
-                nomore: true
+                list: res.data.data
+              })
+              if (that.data.page != 1 && res.data.data.length < 1) {
+                that.setData({
+                  nomore: true
+                })
+              }
+            } else {
+              wx.showToast({
+                icon: "none",
+                title: res.data.msg,
               })
             }
-          } else {
-            wx.showToast({
-              icon: "none",
-              title: res.data.msg,
-            })
           }
-        }
-      })
+        })
+      }else{
+        // 门店公告 商家端
+        app.network.request2({
+          url: url + "menshop/notice_list",
+          method: "GET",
+          data: { page: that.data.page, limit: 20 },
+          success: function (res) {
+            console.log(res)
+            if (res.data.status == 200) {
+              that.setData({
+                list: res.data.data
+              })
+              if (that.data.page != 1 && res.data.data.length < 1) {
+                that.setData({
+                  nomore: true
+                })
+              }
+            } else {
+              wx.showToast({
+                icon: "none",
+                title: res.data.msg,
+              })
+            }
+          }
+        })
+      }      
     }else if(that.data.active==2){
       // 平台公告
       app.network.request({
@@ -88,6 +115,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      options: options
+    })
     this.getList();
   },
 

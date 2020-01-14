@@ -50,7 +50,7 @@
     </view>
     <navigator url="charge" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-hexiaojilu1"></text>
-      <text>扫码记录</text>
+      <text>核销记录</text>
     </navigator>
     <navigator url="earnings" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-shouyimingxi"></text>

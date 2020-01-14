@@ -8,9 +8,9 @@
   <view class="item bg_fff flex_c p-w-24 m-10" wx:for='{{list}}' wx:key='index'>
     <view class="flex_r_b">
       <text>申请时间：{{item.add_time}}</text>
-      <text class="types" wx:if='{{item.extract_type=="banke"}}'>提现方式：银行卡</text>
-      <text class="types" wx:if='{{item.extract_type=="alipay"}}'>提现方式：支付宝</text>
-      <text class="types" wx:if='{{item.extract_type=="wx"}}'>提现方式：微信</text>
+      <text class="types" wx:if='{{item.extract_type=="bank"}}'>提现方式：银行卡</text>
+      <text class="types" wx:elif='{{item.extract_type=="alipay"}}'>提现方式：支付宝</text>
+      <text class="types" wx:elif='{{item.extract_type=="wx"}}'>提现方式：微信</text>
     </view>
     <view class="status" wx:if='{{status=="0"}}'>等待审核</view>
     <view>提现金额：{{item.extract_price}}元</view>

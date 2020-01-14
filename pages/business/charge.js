@@ -1,20 +1,70 @@
 // pages/business/charge.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [
-      { id: 4, state: 2, ordernum: 45655645565, title: "瘦脸针【国脸针】100u告别大咬肌...", img: "../img/goodsimg.png", yuyuetime: "2019-10-28  09:30", spec: "润百颜小分子玻尿酸", storename: "科华路王府井店", money: "481", addtime: "2019-05-24  14:30:12", technician: "谢宁", phone: "15298118194" },
-    ],
+    page:1
   },
+  getList:function(){
+    var that = this;
 
+    if (that.data.options.forms == "staff"){
+      app.network.request3({
+        url: url + "employee/verific_log",
+        method: "GET",
+        data: { page: that.data.page, limit: 20 },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              list: res.data.data
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }else{
+      app.network.request2({
+        url: url + "menshop/verific_log",
+        method: "GET",
+        data: { page: that.data.page, limit: 20 },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            that.setData({
+              list: res.data.data
+            })
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }    
+  },
+  detail: function (e) {
+    wx.navigateTo({
+      url: 'orderdetail?id=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      options:options
+    })
+    this.getList();
   },
 
   /**

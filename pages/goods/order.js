@@ -22,7 +22,7 @@ Page({
         store_teach_id: that.data.ordermsg.store_teach_id,
         key: that.data.orderKey, 
         couponId: that.data.couponId,
-        froms:"weixin",
+        froms:"routine",
         order_time: that.data.ordermsg.order_time,
         real_name: that.data.ordermsg.real_name,
         phone: that.data.ordermsg.user_phone,

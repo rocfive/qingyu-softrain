@@ -38,7 +38,7 @@ Page({
     app.network.request2({
       url: url + "menshop/order/order_verific",
       method: "POST",
-      data: { verify_code: that.data.options.verify_code, is_confirm:1 },
+      data: { verify_code: that.data.options.verify_code, is_confirm: 1, type: (that.data.options.role=="business"?1:2) },
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {

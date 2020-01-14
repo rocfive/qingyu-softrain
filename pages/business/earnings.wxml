@@ -1,38 +1,22 @@
 <!--pages/business/earnings.wxml-->
 <!--pages/store/earnings.wxml-->
 <view class="p-w-24 bt flex_c">
-  <picker>
+  <picker mode='date' fields='month' bindchange="bindDate" start='2020-01-01' end='{{nowDate}}'>
     <view>
-      <text>2018年5月</text>
+      <text>{{choseDate}}</text>
       <text class="iconfont icon-xiala"></text>
     </view>
   </picker>
-  <view class="earning">收入￥1001.00</view>
+  <view class="earning">收入￥{{total}}</view>
 </view>
-<view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='{{index}}' data-id="{{item.order_id}}">
+<view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.order_id}}">
   <view class="flex_c">
-    <text>{{item.order_name}}</text>
+    <text style="width:578rpx">{{item.mark}}</text>
     <text class="time m-10">{{item.add_time}}</text>
   </view>
   <view class="flex_r">
-    <text>￥{{item.store_profie}}</text>
-    <text class="iconfont icon-gengduo"></text>
+    <text>￥{{item.number}}</text>
+    <!-- <text class="iconfont icon-gengduo"></text> -->
   </view>
 </view>
-<!-- <block wx:else>
-<view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='{{index}}' data-id="{{item.o2o_fuwu_order_id}}">
-  <view class="flex_c">
-    <text>{{item.o2o_fuwu_order_sn}}</text>
-    <text class="time m-10">{{item.o2o_fuwu_order_arrange_time}}</text>
-  </view>
-  <view class="flex_r" wx:if='{{options.forms == "staff"}}'>
-    <text>+￥{{item.o2o_distributor_profit}}</text>
-    <text class="iconfont icon-gengduo"></text>
-  </view>
-  <view class="flex_r" wx:else>
-    <text>+￥{{item.o2o_fuwu_organization_profit}}</text>
-    <text class="iconfont icon-gengduo"></text>
-  </view>
-</view>
-</block> -->
 <view class="nomore" wx:if='{{list.length<1}}'>暂无收益</view>

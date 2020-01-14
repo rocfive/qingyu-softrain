@@ -14,38 +14,73 @@ Page({
   getList:function(){
     var that=this;
 
-    app.network.request2({
-      url: url + "menshop/withdraw_log",
-      method: "POST",
-      data: {page:that.data.page, limit:20, status:that.data.status},
-      success: function (res) {
-        console.log(res)
-        if (res.data.status == 200) {
-          var ress = res.data.data;
-          if (that.data.page == 0) {
-            that.setData({
-              list: ress
-            })
-          } else {
-            if (ress.length < 1) {
+    if (that.data.forms =="staff"){
+      app.network.request3({
+        url: url + "employee/withdraw_log",
+        method: "POST",
+        data: { page: that.data.page, limit: 20, status: that.data.status },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            var ress = res.data.data;
+            if (that.data.page == 0) {
               that.setData({
-                nomore: true
+                list: ress
+              })
+            } else {
+              if (ress.length < 1) {
+                that.setData({
+                  nomore: true
+                })
+              }
+              var list = that.data.list;
+              list.push.apply(list, ress);
+              that.setData({
+                list: list
               })
             }
-            var list = that.data.list;
-            list.push.apply(list, ress);
-            that.setData({
-              list: list
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
             })
           }
-        } else {
-          wx.showToast({
-            icon: "none",
-            title: res.data.msg,
-          })
         }
-      }
-    })
+      })
+    }else{
+      app.network.request2({
+        url: url + "menshop/withdraw_log",
+        method: "POST",
+        data: { page: that.data.page, limit: 20, status: that.data.status },
+        success: function (res) {
+          console.log(res)
+          if (res.data.status == 200) {
+            var ress = res.data.data;
+            if (that.data.page == 0) {
+              that.setData({
+                list: ress
+              })
+            } else {
+              if (ress.length < 1) {
+                that.setData({
+                  nomore: true
+                })
+              }
+              var list = that.data.list;
+              list.push.apply(list, ress);
+              that.setData({
+                list: list
+              })
+            }
+          } else {
+            wx.showToast({
+              icon: "none",
+              title: res.data.msg,
+            })
+          }
+        }
+      })
+    }
   },
   changeTab:function(e){
     this.setData({

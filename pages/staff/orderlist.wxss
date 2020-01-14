@@ -1,5 +1,8 @@
 /* pages/staff/orderlist.wxss */
 @import "../business/orderlist";
+.kong {
+  height: calc(100vh-216rpx);
+}
 .filtrate{
   height: 126rpx;
   font-size: 30rpx;

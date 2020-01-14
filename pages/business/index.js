@@ -57,7 +57,7 @@ Page({
             console.log(res)
             if (res.data.status == 200) {
               wx.navigateTo({
-                url: 'orderdetail?forms=scan&id=' + res.data.msg + '&verify_code=' + result,
+                url: 'orderdetail?forms=scan&role=business&id=' + res.data.msg + '&verify_code=' + result,
               })
               // that.setData({
               //   msg: res.data.data
