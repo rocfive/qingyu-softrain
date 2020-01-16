@@ -1,15 +1,15 @@
 <!--pages/staff/orderlist.wxml-->
 <view class="bg_fff p-w-28 filtrate flex_r_b">
-  <picker mode='date'>
+  <picker mode='date'  bindchange="changest">
     <view class="timebox">
-      <text wx:if='{{date1}}'>2019-10-10</text>  
+      <text wx:if='{{st}}'>{{st}}</text>  
       <text wx:else>点击填写</text>
     </view>
   </picker>
   <text>至</text>
-  <picker mode='date'>
+  <picker mode='date'  bindchange="changeet">
     <view class="timebox">
-      <text wx:if='{{date1}}'>2019-10-10</text>  
+      <text wx:if='{{et}}'>{{et}}</text>  
       <text wx:else>点击填写</text>
     </view>
   </picker>

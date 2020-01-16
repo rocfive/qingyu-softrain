@@ -103,6 +103,7 @@ Page({
       })
     }    
   },
+  // 不足两位补0
   appendZero:function(obj) {
     if(obj<10) return "0" + "" + obj;
     else return obj;

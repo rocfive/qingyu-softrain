@@ -9,14 +9,12 @@ Page({
   data: {
     active:-1,
     page:1,
-    list: [
-      { id: 0, state: 5, ordernum: 45655645565, title: "瘦脸针【国脸针】100u告别大咬肌...", img: "../img/goodsimg.png", yuyuetime: "2019-10-28  09:30", spec: "润百颜小分子玻尿酸", storename: "科华路王府井店", money: "481", addtime: "2019-05-24  14:30:12", technician: "谢宁", phone: "15298118194" }
-    ],
   },
   changeTab:function(e){
     this.setData({
       active:e.currentTarget.dataset.id
     })
+    this.getList();
   },
   getList: function () {
     var that = this;
@@ -28,9 +26,23 @@ Page({
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          that.setData({
-            list: res.data.data
-          })
+          var ress = res.data.data;
+          if (that.data.page == 1) {
+            that.setData({
+              list: ress
+            })
+          } else {
+            if (ress.length < 1) {
+              that.setData({
+                nomore: true
+              })
+            }
+            var list = that.data.list;
+            list.push.apply(list, ress);
+            that.setData({
+              list: list
+            })
+          }
         } else {
           wx.showToast({
             icon: "none",
@@ -38,6 +50,11 @@ Page({
           })
         }
       }
+    })
+  },
+  detail: function (e) {
+    wx.navigateTo({
+      url: 'orderdetail?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -86,7 +103,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.nomore) {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getList()
+    }
   },
 
   /**

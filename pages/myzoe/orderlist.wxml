@@ -24,7 +24,7 @@
     </view>
 
     <view class="line p-w-24 flex_r_b">
-      <view>
+      <view class="felx_r">
         <text class="iconfont icon-mendian" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'></text>
         <text class="txt" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>{{item._menshop.name}}</text>
       </view>
@@ -45,17 +45,17 @@
     
     <!-- 如果商品类型为项目卡则在未支付时只有取消订单或付款，没有其他操作按钮 -->
     <view class="line_b p-w-24 flex_r_r" wx:if='{{item._status._type==0}}'>
-      <view class="btn" bindtap="cancle_order" data-id="{{item.o2o_fuwu_order_id}}">取消订单</view>
-      <view class="btn btn01" bindtap="pay_order" data-id="{{item.o2o_fuwu_order_id}}">付款</view>
+      <view class="btn" catchtap="cancle_order" data-id="{{item.order_id}}">取消订单</view>
+      <view class="btn btn01" catchtap="pay_order" data-id="{{item.order_id}}">付款</view>
     </view>
 
     <view wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>
       <view class="line_b p-w-24 flex_r_r" wx:if='{{item._status._type==1}}'>
-        <view class="btn" catchtap="refund" data-id="{{item.o2o_fuwu_order_id}}">申请退款</view>
+        <view class="btn" catchtap="refund" data-id="{{item.order_id}}">申请退款</view>
         <view class="btn btn01" catchtap="charge" data-code="{{item._verify_code}}"  data-codeimg="{{item.code}}">生成核销码</view>
       </view>
       <view class="line_b p-w-24 flex_r_r" wx:elif='{{item._status._type==3}}'>
-        <view class="btn btn01" catchtap="evaluate" data-id="{{item.o2o_fuwu_order_id}}">评价</view>
+        <view class="btn btn01" catchtap="evaluate" data-id="{{item.order_id}}">评价</view>
       </view>
     </view>
   </view>  

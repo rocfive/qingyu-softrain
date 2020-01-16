@@ -24,3 +24,5 @@
     </view>  
   </block>  
 </view>
+<view wx:if='{{list.length<1}}' class="nomore">暂无记录</view>
+<view wx:if='{{nomore}}' class="nomore">没有更多了</view>

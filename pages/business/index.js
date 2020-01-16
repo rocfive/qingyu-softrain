@@ -59,9 +59,6 @@ Page({
               wx.navigateTo({
                 url: 'orderdetail?forms=scan&role=business&id=' + res.data.msg + '&verify_code=' + result,
               })
-              // that.setData({
-              //   msg: res.data.data
-              // })
             } else {
               wx.showToast({
                 icon: "none",

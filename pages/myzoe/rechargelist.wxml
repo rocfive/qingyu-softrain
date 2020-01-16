@@ -8,3 +8,9 @@
     <view class="money">+{{item.number}}</view>
   </view>
 </view>
+
+<view class="bg_fff kong flex_c_c" wx:if='{{list.length<1}}'> 
+  <image src="../img/none.jpg" mode="widthFix"></image>
+  <view>暂无记录~</view>
+</view>
+<view class="nomore"  wx:if='{{nomore}}'>没有更多了</view>

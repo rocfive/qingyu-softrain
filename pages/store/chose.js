@@ -27,6 +27,7 @@ Page({
           start_time: list[i].start_time,
           end_time: list[i].end_time
         })
+        prevPage.getSelectTime()
         wx.navigateBack();
       }
     }

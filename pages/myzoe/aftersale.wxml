@@ -4,25 +4,26 @@
   <view class="{{active=='-2'?'active':''}}" data-id="{{-2}}" bindtap="changeTab">已完成</view>
 </view>
 <view class="list">
-  <view class="item bg_fff" bindtap="detail" wx:for='{{list}}' wx:key='index'>
+  <view class="item bg_fff" bindtap="detail"  data-id="{{item.order_id}}" wx:for='{{list}}' wx:key='index'>
     <view class="line01 flex_r_b p-w-24">
-      <view class="ordernum">订单：{{item.ordernum}}</view>
-      <view class="status" wx:if='{{item.state==5}}'>退款中</view>
+      <view class="ordernum">订单：{{item.order_id}}</view>
+      <view class="status">{{item._status._title}}</view>
     </view>
     <view bindtap="todetail" class="goods p-w-24 flex_r_b">
-      <image src='{{item.img}}'></image>
+      <image src='{{item.cartInfo[0].productInfo.image}}'></image>
       <view class="goods_r">
-        <view class="goods_title">{{item.title}}</view>
-        <view>预约时间：{{item.yuyuetime}}</view>
-        <view>规格：{{item.spec}}</view>
+        <view class="goods_title">{{item.cartInfo[0].productInfo.store_name}}</view>
+        <view>预约时间：{{item._order_time}}</view>
+        <view>规格：{{item.cartInfo[0].productInfo.attrInfo.suk}}</view>
+        <view class="price">{{item.cartInfo[0].productInfo.price}}</view>
       </view>
     </view>
     <view class="line p-w-24 flex_r_b">
       <view>
-        <text class="iconfont icon-mendian"></text>
-        <text class="txt">{{item.storename}}</text>
+        <text class="iconfont icon-mendian" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'></text>
+        <text class="txt" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>{{item._menshop.name}}</text>
       </view>
-      <text class="price">￥<text>{{item.money}}</text></text>
+      <text class="price">￥<text>{{item.pay_price}}</text></text>
     </view>
   </view>  
 </view>
@@ -31,3 +32,4 @@
   <image src="../img/none.jpg" mode="widthFix"></image>
   <view>暂无内容，快去逛逛吧~</view>
 </view>
+<view class="nomore"  wx:if='{{nomore}}'>没有更多了</view>

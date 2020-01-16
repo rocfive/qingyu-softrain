@@ -1,4 +1,6 @@
 // pages/staff/tx.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -47,7 +49,7 @@ Page({
   },
   // 提现
   withdraw: function () {
-    var t = this;
+    var t = this, oDate;
 
     if (!t.data.o2o_fuwu_organization_freeze_money) {
       wx.showToast({
@@ -56,7 +58,7 @@ Page({
       })
       return false
     }
-    if (t.data.o2o_fuwu_organization_freeze_money > parseFloat(t.data.o2o_fuwu_organization_avaliable_money)) {
+    if (t.data.o2o_fuwu_organization_freeze_money > parseFloat(t.data.msg.now_money)) {
       wx.showToast({
         icon: "none",
         title: '提现金额不足',
@@ -99,21 +101,47 @@ Page({
       return false
     }
 
-    app.network.request1({
-      url: url + "index/member/member_rechage",
+    if (t.data.pay_type == 1){
+      oDate={
+        alipay_code:"",
+        extract_type:"weixin",
+        money: t.data.o2o_fuwu_organization_freeze_money,
+        name: "",
+        bankname:"",
+        cardnum:"",
+        weixin:"",
+        froms: "routine"
+      }
+    } else if (t.data.pay_type == 2){
+      oDate = {
+        alipay_code: "",
+        extract_type: "bank",
+        money: t.data.o2o_fuwu_organization_freeze_money,
+        name: t.data.bank_name,
+        bankname: t.data.bank_address,
+        cardnum: t.data.o2o_fuwu_money_log_desc,
+        weixin: "",
+        froms: "routine"
+      }
+    } else if (t.data.pay_type == 3){
+      oDate = {
+        alipay_code: t.data.o2o_fuwu_money_log_desc,
+        extract_type: "alipay",
+        money: t.data.o2o_fuwu_organization_freeze_money,
+        name: t.data.bank_name,
+        bankname: "",
+        cardnum: "",
+        weixin: "",
+        froms: "routine"
+      }
+    }
+    app.network.request3({
+      url: url + "employee/employee_withdraw",
       method: "POST",
-      data: {
-        token: wx.getStorageSync("token"),
-        rechage_money: t.data.o2o_fuwu_organization_freeze_money,
-        pdc_member_name: t.data.person.member_name,
-        pdc_bank_name: t.data.bank_address,
-        pdc_bank_no: t.data.o2o_fuwu_money_log_desc,
-        pdc_bank_user: t.data.bank_name,
-        type: t.data.options.forms == 'distribution' ? 1 : 2
-      },
+      data: oDate,
       success: function (res) {
         console.log(res)
-        if (res.data.code == 1) {
+        if (res.data.status == 200) {
           wx.showModal({
             title: '提示',
             content: '提现申请提交成功，请等待审核',
@@ -135,19 +163,18 @@ Page({
     })
   },
   // 获取个人信息
-  getPerson: function () {
+  getMoney: function () {
     var that = this;
 
-    app.network.request1({
-      url: url + "/index/member/member_message",
-      method: "POST",
-      data: { token: wx.getStorageSync("token") },
+    app.network.request3({
+      url: url + "employee/withdraw",
+      method: "GET",
+      data: {},
       success: function (res) {
         console.log(res)
-        if (res.data.code == 1) {
+        if (res.data.status == 200) {
           that.setData({
-            person: res.data.data,
-            balance: res.data.data.available_rc_balance
+            msg:res.data.data
           })
         } else {
           wx.showToast({
@@ -162,7 +189,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMoney();
   },
 
   /**

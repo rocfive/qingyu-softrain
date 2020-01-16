@@ -1,6 +1,6 @@
 // pages/myzoe/orderlist.js
 const app = getApp()
-var url = getApp().globalData.url;
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -86,12 +86,76 @@ Page({
     })
   },
   // 取消订单
-  cancle_order:function(){
+  cancle_order:function(e){
+    var that = this;
 
+    wx.showModal({
+      title: '提示',
+      content: '确定要取消订单',
+      success:function(res){
+        if(res.confirm){
+          app.network.request1({
+            url: url + "order/cancel",
+            method: "POST",
+            data: { id: e.currentTarget.dataset.id },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 200) {
+                wx.showToast({
+                  title: '已取消',
+                })
+                timer=setTimeout(function(){
+                  that.setData({
+                    page: 1,
+                    nomore: false,
+                  })
+                  that.getList();
+                },2000)
+              } else {
+                wx.showToast({
+                  icon: "none",
+                  title: res.data.msg,
+                })
+              }
+            }
+          })
+        }
+      }
+    })    
   },
   // 申请退款
   refund:function(e){
+    var that = this;
 
+    wx.showModal({
+      title: '提示',
+      content: '申请退款？',
+      success: function (res) {
+        if (res.confirm) {
+          app.network.request1({
+            url: url + "order/refund/verify",
+            method: "POST",
+            data: { uni: e.currentTarget.dataset.id },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 200) {
+                wx.showToast({
+                  title: '已取消',
+                })
+                timer = setTimeout(function () {
+                  that.getList();
+                }, 2000)
+              } else {
+                wx.showToast({
+                  icon: "none",
+                  title: res.data.msg,
+                })
+              }
+            }
+          })
+        }
+      }
+    })  
   },
   // 付款
   pay_order:function(e){
@@ -132,7 +196,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearTimeout(timer)
   },
 
   /**
@@ -151,7 +215,7 @@ Page({
         page: this.data.page + 1
       })
       this.getList()
-    }    
+    }
   },
 
   /**

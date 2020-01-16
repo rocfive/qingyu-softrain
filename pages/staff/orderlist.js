@@ -24,7 +24,7 @@ Page({
     app.network.request3({
       url: url + "employee/order/list",
       method: "GET",
-      data: { type: 2, status: that.data.active, page: that.data.page, limit: 20 },
+      data: { type: 2, status: that.data.active, page: that.data.page, limit: 20, stime: that.data.st, etime: that.data.et},
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
@@ -53,6 +53,35 @@ Page({
         }
       }
     })
+  },
+  // 订单详情
+  detail: function (e) {
+    wx.navigateTo({
+      url: '../business/orderdetail?forms=staff&id=' + e.currentTarget.dataset.id,
+    })
+  },
+  // 开始时间
+  changest: function (e) {
+    this.setData({
+      st: e.detail.value
+    })
+    this.judge();
+  },
+  // 结束时间
+  changeet: function (e) {
+    this.setData({
+      et: e.detail.value
+    })
+    this.judge();
+  },
+  judge:function(){
+    if (this.data.st && this.data.et){
+      this.setData({
+        page:1,
+        nomore: false
+      })
+      this.getList();
+    }
   },
   /**
    * 生命周期函数--监听页面加载

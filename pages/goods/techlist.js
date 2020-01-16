@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page:1,
     active:1,
     order:"sort asc",
     premium:"none",
@@ -108,13 +109,33 @@ Page({
     app.network.request({
       url: url + "teach_list",
       method: "GET",
-      data: { store_id: that.data.store_id, order: that.data.order},
+      data: { 
+        store_id: that.data.store_id, 
+        order: that.data.order, 
+        order_time: that.data.ordermsg.order_time, 
+        limit:20, 
+        page:that.data.page
+      },
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
-          that.setData({
-            list:res.data.data
-          })
+          var ress = res.data.data;
+          if (that.data.page == 1) {
+            that.setData({
+              list: ress
+            })
+          } else {
+            if (ress.length < 1) {
+              that.setData({
+                nomore: true
+              })
+            }
+            var list = that.data.list;
+            list.push.apply(list, ress);
+            that.setData({
+              list: list
+            })
+          }
         } else {
           wx.showToast({
             icon: "none",
@@ -139,6 +160,7 @@ Page({
       ordermsg: order,
       store_id: order.store_id
     })
+    console.log(order)
     this.getList();
   },
   
@@ -181,7 +203,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (!this.data.nomore) {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getList()
+    }   
   },
 
   /**

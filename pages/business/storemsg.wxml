@@ -1,23 +1,23 @@
 <!--pages/business/storemsg.wxml-->
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店名称</label>
-  <input type="text" value="{{msg.name}}"></input>
+  <input type="text" value="{{msg.name}}" bindinput="changename"></input>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店电话</label>
-  <input type="text" value="{{msg.phone}}" placeholder="请输入联系方式"></input>
+  <input type="text" value="{{msg.phone}}" placeholder="请输入联系方式" bindinput="changephone"></input>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>营业时间</label>
   <view class="flex_r_r">
-    <picker mode="time">
+    <picker mode="time" bindchange="start_time">
       <view class="timebox">
         <text wx:if='{{msg.start_time}}'>{{msg.start_time}}</text>
         <text wx:else style="color: #a0a0a0;">请选择</text>
       </view>
     </picker>
     <text style="color:#a0a0a0; margin:0 4rpx">-</text>
-    <picker mode="time">
+    <picker mode="time" bindchange="end_time">
       <view class="timebox">
         <text wx:if='{{msg.end_time}}'>{{msg.end_time}}</text>
         <text wx:else style="color: #a0a0a0;">请选择</text>
@@ -27,17 +27,17 @@
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>门店地址</label>
-  <picker mode='region'>
+  <picker mode='region' bindchange="city">
     <view class="item_r">{{msg.province}}   {{msg.city}}  {{msg.district}}</view>
   </picker>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>详细地址</label>
-  <input type="text" value="{{msg.address}}" placeholder="请输入联系方式"></input>
+  <input type="text" value="{{msg.address}}" placeholder="请输入联系方式" bindinput="address"></input>
 </view>
 <view class="flex_c bg_fff m-10 p-w-28 intro">
   <label>门店简介</label>
-  <textarea placeholder="请输入门店简介" class="textarea" value="{{msg.introduction}}"></textarea>
+  <textarea placeholder="请输入门店简介" class="textarea" value="{{msg.introduction}}" bindinput="intro"></textarea>
 </view>
 <view class="item bg_fff p-w-28 flex_r_b m-10">
   <label>获取经纬度</label>
@@ -63,6 +63,6 @@
 <view class="item bg_fff p-w-28 flex_r_b m-10">
   <label wx:if='{{msg.status==1}}'>歇业中</label>
   <label wx:else>营业中</label>
-  <switch color="#3d9aff" checked="{{msg.status!=1}}"></switch>
+  <switch color="#3d9aff" checked="{{msg.status!=1}}" bindchange="status"></switch>
 </view>
-<view class="btn">保存</view>
+<view class="btn" bindtap="save">保存</view>

@@ -73,12 +73,40 @@ Page({
       }
     })
   },
+  // 扫码核销 
+  codescan: function () {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        console.log(res)
+        var result = res.result;
+
+        app.network.request3({
+          url: url + "employee/order/get_order_by_verific",
+          method: "POST",
+          data: { verify_code: result },
+          success: function (res) {
+            console.log(res)
+            if (res.data.status == 200) {
+              wx.navigateTo({
+                url: '../business/orderdetail?forms=scan&role=staff&id=' + res.data.msg + '&verify_code=' + result,
+              })
+            } else {
+              wx.showToast({
+                icon: "none",
+                title: res.data.msg,
+              })
+            }
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMsg();
-    this.getnotice();
+    
   },
 
   /**
@@ -92,7 +120,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getMsg();
+    this.getnotice();
   },
 
   /**

@@ -34,3 +34,4 @@
   <view class="btn" bindtap="takeorder">立即下单</view>
 </view>
 
+<view class="nomore" wx:if='{{nomore}}'>没有更多了</view>
