@@ -69,6 +69,7 @@ Page({
       user_phone: that.data.phone,
       secKillId: that.data.secKillId,
       cardId: that.data.cardId,
+      duration: that.data.duration,
       order_time: that.data.choseyear + "年" + that.data.chosemonth + "月" + that.data.choseday + "日 " + that.data.chosehour + "时" + that.data.chosemin+"分"
     }
     if (that.data.product_type=="1"){
@@ -311,7 +312,8 @@ Page({
       product_type: options.product_type,
       checkval: options.checkval,
       money: options.money,
-      secKillId: options.secKillId
+      secKillId: options.secKillId,
+      duration: options.duration
     })    
   },
 

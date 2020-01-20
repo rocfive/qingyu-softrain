@@ -45,7 +45,7 @@ Component({
         return false;
       }
       wx.navigateTo({
-        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId,
+        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId + '&duration=' + that.data.duration,
       })
     },
     closespec:function(){
@@ -68,7 +68,8 @@ Component({
               productAttr: res.data.data.productAttr,
               productValue: res.data.data.productValue,
               msg: res.data.data.storeInfo,
-              money: res.data.data.storeInfo.price
+              money: res.data.data.storeInfo.price,
+              duration: res.data.data.storeInfo.duration
             })
           } else {
             wx.showToast({
@@ -123,7 +124,8 @@ Component({
           if (productValue[i].name == checkbox.join(',')){
             that.setData({
               money: productValue[i].value.price,
-              unique: productValue[i].value.unique
+              unique: productValue[i].value.unique,
+              duration: productValue[i].value.duration
             })
           }
         }

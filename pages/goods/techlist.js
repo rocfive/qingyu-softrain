@@ -114,7 +114,8 @@ Page({
         order: that.data.order, 
         order_time: that.data.ordermsg.order_time, 
         limit:20, 
-        page:that.data.page
+        page:that.data.page,
+        duration: that.data.ordermsg.duration
       },
       success: function (res) {
         console.log(res)
