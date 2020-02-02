@@ -58,23 +58,23 @@
   <!-- 待付款 -->
   <block wx:if='{{msg._status._type==0}}'>
     <view class="item bg_fff flex_r_r p-w-24">
-      <view class="btn" catchtap="cancle" data-id="{{msg.o2o_fuwu_order_id}}">取消订单</view>
-      <view class="btn btn01" catchtap="pay" data-id="{{msg.o2o_fuwu_order_id}}">立即支付</view>
+      <view class="btn" catchtap="cancle" data-id="{{msg.order_id}}">取消订单</view>
+      <view class="btn btn01" catchtap="pay" data-id="{{msg.order_id}}">立即支付</view>
     </view>
   </block>
   
   <!-- 待核销 -->
   <block wx:if='{{msg._status._type==1 && msg.cartInfo[0].productInfo.product_type==0}}'>
     <view class="item bg_fff flex_r_r p-w-24">
-      <view class="btn" catchtap="cancle" data-id="{{msg.o2o_fuwu_order_id}}">取消订单</view>
-      <view class="btn btn01" catchtap="" data-id="{{msg.o2o_fuwu_order_id}}">申请退款</view>
+      <!-- <view class="btn" catchtap="cancle" data-id="{{msg.o2o_fuwu_order_id}}">取消订单</view> -->
+      <view class="btn btn01" catchtap="" data-id="{{msg.order_id}}">申请退款</view>
       <view class="btn btn01" catchtap="charge" data-num="{{msg.write_off_num}}">生成核销码</view>
     </view>
   </block>
   <!-- 待评价 -->
   <block wx:if='{{msg._status._type==3 && msg.cartInfo[0].productInfo.product_type==0}}'>
     <view class="item bg_fff flex_r_r p-w-24">
-      <view class="btn btn01" catchtap="evaluate" data-id="{{msg.o2o_fuwu_order_id}}">评价</view>
+      <view class="btn btn01" catchtap="evaluate" data-id="{{msg.order_id}}">评价</view>
     </view>
   </block>
 </view>

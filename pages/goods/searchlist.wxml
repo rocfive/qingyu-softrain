@@ -25,77 +25,71 @@
 
 <!-- 项目列表 -->
 <view class="list" wx:if='{{index==0 && !nolist}}'>
-  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail">
-    <image src="../img/goodsimg.png" class="listimg" mode="aspectFill"></image>
-    <view class="item_r flex_c_b">
-      <view class="h2">瘦脸针】国产衡力肉毒素小V脸瘦脸针100u告别大咬别别别肌</view>
-      <view class="item_r_b flex_r_b">
-         <view>
-          <text class="price">￥<text>481</text></text>
-          <text class="oldprice">￥962</text>
-         </view>
-         <view class="flex_r">
-          <text>已售145</text>
-          <view class="buybtn">抢购</view>
-         </view>
+  <block wx:for="{{list}}" wx:key='index'>
+    <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" data-id="{{item.id}}">
+      <image src="{{item.image}}" class="listimg" mode="aspectFill"></image>
+      <view class="item_r flex_c_b">
+        <view class="h2">{{item.store_name}}</view>
+        <view class="item_r_b flex_r_b">
+          <view>
+            <text class="price">￥<text>{{item.price}}</text></text>
+            <text class="oldprice">￥{{item.ot_price}}</text>
+          </view>
+          <view class="flex_r">
+            <text>已售{{item.sales}}</text>
+            <view class="buybtn" catchtap="chosespec" data-id="{{item.id}}">抢购</view>
+          </view>
+        </view>
       </view>
     </view>
-  </view>
+  </block>
 </view>
 <!-- 项目卡列表 -->
 <view class="cardlist" wx:if='{{index==1 && !nolist}}'>
-  <view class="item p-w-24" bindtap="detail">
-    <image src="../img/cardimg.png"></image>
-    <view class="flex_r_b p-w-12">
-      <view class="name">项目分类一</view>
-      <view class="price">￥<text>481</text></view>
+  <block wx:for="{{list}}" wx:key='index'>
+    <view class="item p-w-24" bindtap="todetail" data-id="{{item.id}}">
+      <image src="{{item.image}}"></image>
+      <view class="flex_r_b p-w-12">
+        <view class="name">{{item.cate_name}}</view>
+        <view class="price">￥<text>{{item.price}}</text></view>
+      </view>
     </view>
-  </view>
+  </block>
 </view>
+
 <!-- 门店列表 -->
 <view class="storelist" wx:elif='{{index==2 && !nolist}}'>
-  <view class="item p-w-24 flex_r_b bg_fff" bindtap="detail">
-    <image src="../img/storeimg.png" class="storeimg"></image>
-    <view class="item_c">
-      <view class="name">科华路王府井店</view>
-      <view class="adddress">科华中路2号王府井购物中心二楼35号</view>
-    </view>
-    <view class="item_r flex_r_b">
-      <view class="flex_c_c">
-        <text class="iconfont icon-ditu3"></text>
-        <text>3.7km</text>
+  <block wx:for="{{list}}" wx:key='index'>
+    <view class="item p-w-24 flex_r_b bg_fff" bindtap="detail">
+      <image src="{{item.image}}" class="storeimg"></image>
+      <view class="item_c">
+        <view class="name">{{item.name}}</view>
+        <view class="adddress">{{item.address}}</view>
       </view>
-      <view class="flex_c_c">
-        <text class="iconfont icon-dianhua1"></text>
-        <text>咨询</text>
+      <view class="item_r flex_r_b">
+        <view class="flex_c_c" data-lat="{{item.lat}}" data-lng="{{item.lng}}" bindtap="toMap">
+          <text class="iconfont icon-ditu3"></text>
+          <text>到这去</text>
+        </view>
+        <view class="flex_c_c" data-tel="{{item.phone}}"  catchtap="toCall">
+          <text class="iconfont icon-dianhua1"></text>
+          <text>咨询</text>
+        </view>
       </view>
     </view>
-  </view>
+  </block>
 </view>
 <!-- 技师列表 -->
 <view class="techlist"  wx:elif='{{index==3 && !nolist}}'>
-  <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail">
-    <image src="../img/doctor.png" class="pic"></image>
-    <view class="item_r">
-      <view class="name">刘茂平</view>
-      <view class="grade">评分：<text class="num">4.6分</text></view>
-      <view class="info">3D明星隐形矫正、Smile V脸正畸钻石牙美白、时星隐形尚美容冠时星隐形尚美容冠</view>
-      <view class="item_btn flex_c_b_r">
-        <view class="waittime">等待10分钟</view>
-        <view class="btn chose" catchtap="">选择</view>
+  <block wx:for="{{list}}" wx:key='index'>
+    <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" data-id="{{item.id}}">
+      <image src="{{item.image}}" class="pic"></image>
+      <view class="item_r">
+        <view class="name">{{item.name}}</view>
+        <view class="grade">评分：<text class="num">{{item.service_score}}分</text></view>
+        <view class="info" style="width:552rpx">{{item.introduction}}</view>
       </view>
     </view>
-  </view>
-  <view class="item bg_fff p-w-24 flex_r_b">
-    <image src="../img/doctor.png" class="pic"></image>
-    <view class="item_r">
-      <view class="name">刘茂平<text class="rank">技术首席</text><text class="money">￥50元(服务费)</text></view>
-      <view class="grade">评分：<text class="num">4.6分</text></view>
-      <view class="info">3D明星隐形矫正、Smile V脸正畸钻石牙美白、时星隐形尚美容冠时星隐形尚美容冠</view>
-      <view class="item_btn flex_c_b_r">
-        <view class="waittime">等待10分钟</view>
-        <view class="btn">选择</view>
-      </view>
-    </view>
-  </view>
+  </block>
 </view>
+<spec id='spec' goodsid='{{goodsid}}'></spec>

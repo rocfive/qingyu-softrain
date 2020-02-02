@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "spec": "../goods/spec"
+  }
 }

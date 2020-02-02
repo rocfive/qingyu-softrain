@@ -26,6 +26,7 @@ Page({
         order_time: that.data.ordermsg.order_time,
         real_name: that.data.ordermsg.real_name,
         phone: that.data.ordermsg.user_phone,
+        duration: that.data.ordermsg.duration
       },
       success: function (res) {
         console.log(res)

@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isremember:true
+    isremember:true,
+    froms:'',
   },
   account:function(e){
     this.setData({

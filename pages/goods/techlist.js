@@ -115,7 +115,9 @@ Page({
         order_time: that.data.ordermsg.order_time, 
         limit:20, 
         page:that.data.page,
-        duration: that.data.ordermsg.duration
+        duration: that.data.ordermsg.duration,
+        product_id: that.data.ordermsg.productId,
+        unique: that.data.ordermsg.uniqueId
       },
       success: function (res) {
         console.log(res)
@@ -147,9 +149,12 @@ Page({
     })
   },
   chose:function(e){
+    var ordermsg = this.data.ordermsg;
+    ordermsg.order_time = e.currentTarget.dataset.ordertime;
     this.setData({
       store_teach_id:e.currentTarget.dataset.id,
-      store_teach_name:e.currentTarget.dataset.name
+      store_teach_name:e.currentTarget.dataset.name,
+      ordermsg: ordermsg
     })
   },
   /**

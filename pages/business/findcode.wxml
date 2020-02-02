@@ -4,20 +4,20 @@
   <view class="formbox bg_fff">
     <view class="title">找回密码</view>
     <view class="item">
-      <input type="number" placeholder="请输入手机号码"></input>
+      <input type="number" placeholder="请输入手机号码" name="username" bindinput='usernameInput' value='{{username}}'></input>
     </view>
     <view class="item">      
-      <input type="text" password='true' placeholder="请输入短信验证码"></input>
-      <text class="getcode">获取验证码</text>
+      <input style="width:445rpx" type="text" placeholder="请输入短信验证码" name="code" bindinput='codeInput' value='{{code}}'></input>
+      <text class="getcode" bindtap="getcode">获取验证码</text>
     </view>
     <view class="item">      
-      <input type="text" password='true' placeholder="请输入密码"></input>
+      <input type="text" password='true' placeholder="请输入密码" name="password" bindinput='passwordInput' value='{{password}}'></input>
     </view>
     <view class="item">      
-      <input type="text" password='true' placeholder="请重复输入密码"></input>
+      <input type="text" password='true' placeholder="请重复输入密码" name="repassword" bindinput='repasswordInput' value='{{repassword}}'></input>
     </view>
     <view class="flex_c_c formbox_b">
-      <view class="logbtn">确定</view>
+      <view class="logbtn" bindtap="resetPassword">确定</view>
     </view>
   </view>
 </form>

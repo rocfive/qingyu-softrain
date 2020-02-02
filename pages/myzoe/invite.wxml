@@ -1,5 +1,7 @@
 <!--pages/myzoe/invite.wxml-->
 <swiper class="invitelist" previous-margin='60rpx' next-margin='60rpx'  current='{{index_current}}' bindchange="change">
-  <swiper-item class='{{index==index_current?"":"other"}}' wx:for='{{imglist}}' wx:key='{{index}}'><image src="{{item}}" mode='aspectFill'></image></swiper-item>
+  <swiper-item class='{{index==index_current?"":"other"}}' wx:for='{{imglist}}' wx:key='{{index}}'>
+    <image src="{{item.poster}}" mode='aspectFill'></image>
+  </swiper-item>
 </swiper>
-<view class="savebtn">保存图片</view>
+<view class="savebtn" bindtap="saveImage">保存图片</view>

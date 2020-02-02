@@ -15,15 +15,15 @@
   </view>
 </view>
 <view class="techlist">
-  <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="detail" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}" >
     <image src="{{item.image}}" class="pic"></image>
     <view class="item_r">
       <view class="name"><text space="nbsp">{{item.name}}</text><text class="money" wx:if='{{item.premium}}'>￥{{item.premium}}元(服务费)</text></view>
       <view class="grade">评分：<text class="num">{{item.service_score}}分</text></view>
       <view class="info">{{item.introduction}}</view>
       <view class="item_btn flex_c_b_r">
-        <view class="waittime">等待{{item.wait_time}}分钟</view>
-        <view class="{{store_teach_id==item.id?'btn chose':'btn'}}" catchtap="chose" data-id="{{item.id}}" data-name="{{item.name}}">选择</view>
+        <view class="waittime" wx:if="{{item.wait_time>0}}">等待{{item.wait_time}}分钟</view>
+        <view class="{{store_teach_id==item.id?'btn chose':'btn'}}" catchtap="chose" data-id="{{item.id}}" data-name="{{item.name}}" data-ordertime="{{item.order_time}}">选择</view>
       </view>
     </view>
   </view>

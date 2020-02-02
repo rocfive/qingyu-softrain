@@ -159,7 +159,10 @@ Page({
   },
   // 付款
   pay_order:function(e){
-
+    let uni = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../goods/pay?orderId=' + uni + '&key=' + uni,
+    })
   },
   /**
    * 生命周期函数--监听页面加载

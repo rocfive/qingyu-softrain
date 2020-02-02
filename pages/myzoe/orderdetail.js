@@ -49,6 +49,56 @@ Page({
       }
     })
   },
+
+  // 付款
+  pay: function (e) {
+    let uni = e.currentTarget.dataset.id
+    console.log(uni)
+    wx.navigateTo({
+      url: '../goods/pay?orderId=' + uni + '&key=' + uni,
+    })
+  },
+
+
+  // 取消订单
+  cancle: function (e) {
+    var that = this;
+
+    wx.showModal({
+      title: '提示',
+      content: '确定要取消订单',
+      success: function (res) {
+        if (res.confirm) {
+          app.network.request1({
+            url: url + "order/cancel",
+            method: "POST",
+            data: { id: e.currentTarget.dataset.id },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 200) {
+                wx.showToast({
+                  title: '已取消',
+                })
+                timer = setTimeout(function () {
+                  that.setData({
+                    page: 1,
+                    nomore: false,
+                  })
+                  that.getList();
+                }, 2000)
+              } else {
+                wx.showToast({
+                  icon: "none",
+                  title: res.data.msg,
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

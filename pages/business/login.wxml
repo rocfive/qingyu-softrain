@@ -12,7 +12,7 @@
       <label>密码</label>
       <input type="text" password='true' placeholder="请输入密码" value='{{password}}' bindinput="password" bindfocus="focus_pass" bindblur="blur_pass"></input>
     </view>
-    <view class="flex_r_r"><navigator url="findcode" class="forget">忘记密码？</navigator></view>
+    <view class="flex_r_r"><navigator url="findcode?froms={{options.froms}}" class="forget" data->忘记密码？</navigator></view>
     <view class="flex_r_b formbox_b">
       <view bindtap="remember"><radio checked="{{isremember}}" color="#3d9aff"></radio>记住账号</view>
       <view class="logbtn" bindtap="tolgin">登录</view>
