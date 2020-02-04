@@ -16,7 +16,8 @@
     </view>
     <view class="item_f flex_r_b">
       <view>有效期至{{item._end_time}}</view>
-      <view class="use_btn" bindtap="useit" data-pid="{{item.pid}}" data-id="{{item.id}}">立即使用</view>
+      <view class="use_btn" bindtap="useit" data-pid="{{item.pid}}" data-id="{{item.id}}" wx:if='{{active=="1" || active=="2"}}'>立即使用</view>
+      <view wx:else>{{item._msg}}</view>
     </view>
     <image src="../img/card_b.jpg" class="card_b"></image>
     <view class="expire">
@@ -24,4 +25,8 @@
       <text>{{item._msg}}</text>
     </view>
   </view>
+</view>
+<view class="bg_fff kong flex_c_c" wx:if='{{list.length<1}}'> 
+  <image src="../img/none.jpg" mode="widthFix"></image>
+  <view>暂无内容，快去逛逛吧~</view>
 </view>

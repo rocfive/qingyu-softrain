@@ -5,7 +5,7 @@
       <image src="{{msg.slider_image[0]}}"></image>
       <view class="fixed_head_r">
         <view class="h1">{{msg.store_name}}</view>
-        <view class="selected"><text class="price" wx:if='{{money}}'>￥{{money}}</text> <text wx:if='{{checkbox}}'>已选：{{checkval}}</text></view>
+        <view class="selected"><text class="price" wx:if='{{money}}'>￥{{money}}</text> <text wx:if='{{checkbox.length>0}}'>已选：{{checkval}}</text></view>
       </view>
       <text class="iconfont icon-guanbi" bindtap="closespec"></text>
     </view>

@@ -1,4 +1,5 @@
 <!--pages/goods/coupon.wxml-->
+<view class="p-w-28 notuse" bindtap="notuse">不使用优惠券</view>
 <view class="couponlist">
   <view class='item bg_fff flex_r' wx:for='{{list}}' wx:key='index'>    
     <view class="coupon-dots flex_c_b"><text></text><text></text><text></text><text></text><text></text><text></text><text></text>

@@ -23,6 +23,6 @@
     </view>
     <view class="usebtn flex_c_c" wx:if='{{item.status==1}}'>已使用</view>
     <view class="usebtn flex_c_c" wx:elif='{{item.status==2}}'>已过期</view>
-    <view class="usebtn flex_c_c" wx:else>立即使用</view>
+    <view class="usebtn flex_c_c" wx:else bindtap="use">立即使用</view>
   </view> 
 </view>

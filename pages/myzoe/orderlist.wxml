@@ -1,4 +1,8 @@
 <!--pages/myzoe/orderlist.wxml-->
+<block wx:if='{{nologin}}'>
+  <view class="nologin" bindtap="tolog">点击登录</view>
+</block>
+<block wx:else>
 <view class="menustatus bg_fff p-w-24 flex_r_b">
   <view class="{{active==0?'cur':''}}" bindtap="changeacitve" data-id="0">全部</view>
   <view class="{{active==1?'cur':''}}" bindtap="changeacitve" data-id="1">待付款</view>
@@ -76,3 +80,4 @@
   <view>暂无内容，快去逛逛吧~</view>
 </view>
 <view class="nomore"  wx:if='{{nomore}}'>没有更多了</view>
+</block>

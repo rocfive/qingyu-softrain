@@ -21,3 +21,4 @@
     </view>
   </view>
 </view>
+<view wx:if='{{list.length<1}}' class='nomore'>暂无门店</view>

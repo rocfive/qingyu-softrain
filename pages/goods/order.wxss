@@ -72,6 +72,15 @@ page{
   -webkit-background-clip:text;
   color: transparent;
 }
+.group .item.gray{
+  color: #999;
+}
+.group .item.gray label .iconfont{
+  color: #ccc;
+}
+.group .item.gray label {
+  color: #999;  
+}  
 .group1{
   padding-top: 20rpx;
   padding-bottom: 20rpx;

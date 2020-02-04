@@ -129,3 +129,6 @@ page{
   line-height: 50rpx;
   font-size: 30rpx;
 }
+.list .item .item_r .buy.gray{
+  background: #ccc;
+}

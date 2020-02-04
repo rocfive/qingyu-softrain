@@ -12,8 +12,12 @@ Component({
     },
     cardId:{
       type: String,
-      value: '',   
-    }
+      value: '',  
+    },
+    secKillId: {
+      type: String,
+      value: '',      
+    },
   },
   
   /**
@@ -45,12 +49,15 @@ Component({
         return false;
       }
       wx.navigateTo({
-        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId + '&duration=' + that.data.duration,
+        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId + '&duration=' + that.data.duration+'&secKillId='+that.data.secKillId,
       })
     },
     closespec:function(){
       this.setData({
-        hidespec: true
+        hidespec: true,
+        checkbox: [],
+        checkval: '',
+        unique:""
       })
     },
     getMsg: function () {

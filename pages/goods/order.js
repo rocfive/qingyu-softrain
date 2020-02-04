@@ -8,7 +8,10 @@ Page({
    */
   data: {
     couponId:"",
-    price:[]
+    cardId:"",
+    couponoption:true,
+    cardoption:true,
+    price:[],
   },
   pay:function(){    
     var that = this;
@@ -22,6 +25,7 @@ Page({
         store_teach_id: that.data.ordermsg.store_teach_id,
         key: that.data.orderKey, 
         couponId: that.data.couponId,
+        cardId:that.data.cardId,
         froms:"routine",
         order_time: that.data.ordermsg.order_time,
         real_name: that.data.ordermsg.real_name,
@@ -50,7 +54,7 @@ Page({
     app.network.request1({
       url: url + "order/computed",
       method: "POST",
-      data: { product_type: that.data.ordermsg.product_type, store_id: that.data.ordermsg.store_id, store_teach_id: that.data.ordermsg.store_teach_id, key: that.data.orderKey, couponId: that.data.couponId, cardId: that.data.usableCard.id},
+      data: { product_type: that.data.ordermsg.product_type, store_id: that.data.ordermsg.store_id, store_teach_id: that.data.ordermsg.store_teach_id, key: that.data.orderKey, couponId: that.data.couponId, cardId: that.data.cardId},
       success: function (res) {
         console.log(res)
         if (res.data.status == 200) {
@@ -82,10 +86,12 @@ Page({
             cartInfo: ress.cartInfo,
             teach: ress.teach,
             menshop: ress.menshop,
-            coupon_price: ress.usableCoupon?ress.usableCoupon.coupon_price:"",
-            orderKey: ress.orderKey,
-            couponId: ress.usableCoupon?ress.usableCoupon.id:"",
-            usableCard: ress.usableCard ? ress.usableCard:""
+            coupon_choosable:ress.usableCoupon?true:false,  //优惠券是否可选
+            card_choosable:ress.usableCard ?true:false,   //项目卡是否可选
+            // coupon_price: ress.usableCoupon?ress.usableCoupon.coupon_price:"",
+            // couponId: ress.usableCoupon?ress.usableCoupon.id:"",
+            // usableCard: ress.usableCard ? ress.usableCard:"",
+            orderKey: ress.orderKey, 
           })   
           that.computed();
         } else {
@@ -106,7 +112,7 @@ Page({
   // 点击项目卡更多
   card:function(){
     wx.navigateTo({
-      url: 'cardlist?pid=' + this.data.ordermsg.productId + '&order_time=' + this.data.ordermsg.order_time + '&unique=' + this.data.ordermsg.niqueId,
+      url: 'cardlist?pid=' + this.data.ordermsg.productId + '&order_time=' + this.data.ordermsg.order_time + '&unique=' + this.data.ordermsg.uniqueId,
     })
   },
   /**

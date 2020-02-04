@@ -31,6 +31,32 @@ Page({
       }
     })
   },
+  // 选择项目卡
+  choseCard:function(e){
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+
+    prevPage.setData({
+      cardId:this.data.list[e.currentTarget.dataset.id].id,
+      usableCard: this.data.list[e.currentTarget.dataset.id],
+      couponoption:false  //设置优惠券不可选
+    })
+    prevPage.computed();
+    wx.navigateBack()
+  },
+  // 不使用项目卡
+  notuse:function(){
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+
+    prevPage.setData({
+      cardId:"",
+      usableCard:"",
+      couponoption:true  //设置优惠券可选
+    })
+    prevPage.computed();
+    wx.navigateBack()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
