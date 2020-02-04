@@ -1,4 +1,13 @@
 /* pages/myzoe/orderlist.wxss */
+.nologin{
+  width: 100vw;
+  height: 100vh;
+  font-size: 36rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
 .tabbox{
   height: 130rpx;
   border-bottom: 1rpx solid #eee;

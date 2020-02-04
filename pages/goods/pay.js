@@ -85,7 +85,7 @@ Page({
                   title: res.msg,
                 })
                 timer = setTimeout(function () {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '/pages/myzoe/orderdetail?id=' + uni,
                   })
                 }, 2000)
@@ -97,7 +97,7 @@ Page({
                   title: "取消支付",
                 })
                 timer = setTimeout(function () {
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '/pages/myzoe/orderdetail?id=' + uni,
                   })
                 }, 2000)
@@ -109,8 +109,8 @@ Page({
                     icon: "success",
                     title: "取消支付",
                   })
-                  timer = setTimeout(function () {
-                    wx.navigateTo({
+                  timer = setTimeout(function () {                    
+                    wx.redirectTo({
                       url: '/pages/myzoe/orderdetail?id=' + uni,
                     })
                   }, 2000)
@@ -125,7 +125,7 @@ Page({
                 title: res.data.msg,
               })
               timer = setTimeout(function () {
-                wx.navigateTo({
+                wx.redirectTo({
                   url: '/pages/myzoe/orderdetail?id=' + uni,
                 })
               }, 2000)

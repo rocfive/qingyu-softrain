@@ -1,2 +1,7 @@
 /* pages/goods/coupon.wxss */
 @import "../myzoe/coupon";
+.notuse{
+  line-height: 48rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}

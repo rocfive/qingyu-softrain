@@ -38,7 +38,12 @@
     <template is="wxParse" data="{{wxParseData:content.nodes}}" />
   </view>
   <view class="btnbox flex_c_c bg_fff">
-    <view class="btn" bindtap="seckillbuy">立即预约</view>
+    <block wx:if='{{contro.status==1}}'>
+      <view class="btn" wx:if='{{msg.type==1}}' bindtap="takeorder">立即购买</view>
+      <view class="btn" wx:else bindtap="chosespec">立即预约</view>
+    </block>
+    <view wx:elif='{{contro.status==2}}' class="btn gray">即将开始</view>
+    <view wx:else class="btn gray">即已结束将开始</view>
   </view>
 </block>
 <!-- 普通商品 -->
@@ -51,8 +56,8 @@
     <view class="title">{{msg.store_name}}</view>
     <view class="subhead">{{msg.store_info}}</view>
     <view class="pricebox" wx:if='{{!isseckill}}'>
-      <text class="price">￥<text>{{msg.ot_price}}</text></text>
-      <text class="oldprice">￥{{msg.price}}</text>
+      <text class="price">￥<text>{{msg.price}}</text></text>
+      <text class="oldprice">￥{{msg.ot_price}}</text>
     </view>
     <view class="share flex_c_c">
       <text class="iconfont icon-ziyuan"></text>
@@ -69,9 +74,11 @@
     <template is="wxParse" data="{{wxParseData:content.nodes}}" />
   </view>
   <view class="btnbox flex_c_c bg_fff">
-    <view class="btn" bindtap="chosespec">立即预约</view>
+    <view class="btn" wx:if='{{msg.type==1}}' bindtap="takeorder">立即购买</view>
+    <view wx:else class="btn" bindtap="chosespec">立即预约</view>
   </view>
 </block>
 
 <!-- 选择规格 -->
-<spec id='spec' goodsid='{{id}}' cardId='{{options.cardId?options.cardId:""}}'></spec>
+<spec id='spec' goodsid='{{id}}' cardId='{{options.cardId?options.cardId:""}}' secKillId='{{secKillId}}'></spec>
+

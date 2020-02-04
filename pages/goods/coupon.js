@@ -9,6 +9,19 @@ Page({
   data: {
 
   },
+  // 不使用优惠券
+  notuse:function(){
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+
+    prevPage.setData({
+      couponId:"",
+      coupon_price:"",
+      cardoption:true  //设置项目卡可选
+    })
+    prevPage.computed();
+    wx.navigateBack()
+  },
   getList: function (price){
     var that=this;
 
@@ -33,13 +46,15 @@ Page({
       }
     })
   },
+  // 选择优惠券
   usecoupon:function(e){
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2];  //上一个页面
 
     prevPage.setData({
       couponId:e.currentTarget.dataset.id,
-      coupon_price: e.currentTarget.dataset.num
+      coupon_price: e.currentTarget.dataset.num,
+      cardoption:false  //设置项目卡不可选
     })
     prevPage.computed();
     wx.navigateBack()

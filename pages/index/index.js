@@ -169,7 +169,7 @@ Page({
   chosespec:function(e){
     this.setData({
       goodsid:e.currentTarget.dataset.id
-    })
+    })    
     let myComponent = this.selectComponent('#spec');
     myComponent.getMsg();
   },
@@ -178,8 +178,12 @@ Page({
       url: '../store/detail?id=' + e.currentTarget.dataset.id,
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {    
     var that=this;
+
+    if(options.scene && !wx.getStorageSync('spread_spid')){
+      wx.setStorageSync('spread_spid', options.scene)
+    }
     qqmapsdk = new qqmapwx({
       key: 'DSHBZ-SCWW4-OHHUF-DRND6-C57GS-SXBUH'
     });

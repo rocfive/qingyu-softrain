@@ -1,6 +1,8 @@
 <!--pages/goods/cardlist.wxml-->
+
+<view class="p-w-28 notuse" bindtap="notuse">不使用项目卡</view>
 <view class="list">
-  <view class="item" wx:for='{{list}}' wx:key='index'>    
+  <view class="item" wx:for='{{list}}' wx:key='index' bindtap="choseCard" data-id="{{index}}">    
     <view class="item_t flex_c">
       <view class="name">{{item.title}}</view>
       <view class="flex_r">
@@ -13,9 +15,10 @@
       <view class="use_btn" bindtap="useit" data-pid="{{item.pid}}" data-id="{{item.id}}">立即使用</view>
     </view>
     <image src="../img/card_b.jpg" class="card_b"></image>
-    <view class="expire">
+
+    <!-- <view class="expire">
       <image src="../img/card_t_r.png"></image>
       <text>{{item._msg}}</text>
-    </view>
+    </view> -->
   </view>
 </view>

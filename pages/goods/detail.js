@@ -13,6 +13,8 @@ Page({
     countDownHour: '00',
     countDownMinute: '00',
     countDownSecond: '00',
+    secKillId:0, //秒杀id默认为零
+    productAttr:[],
   },
   // 立即预约
   chosespec:function(){
@@ -65,6 +67,8 @@ Page({
           var ress=res.data.data;
           that.setData({
             msg: ress.storeInfo,
+            secKillId:ress.storeInfo.id,
+            contro:ress.contro
           })
           var content = res.data.data.storeInfo.description;
           WxParse.wxParse('content', 'html', content, that, 5);
@@ -123,6 +127,61 @@ Page({
       }
     }.bind(that), 1000);
     that.setData({ interval: interval });
+  },
+  // 购买项目卡
+  takeorder: function () {
+    var that=this;
+
+    if (!wx.getStorageSync('token')) {
+      wx.navigateTo({
+        url: '/pages/logs/logs',
+      })
+      return false;
+    }
+    if (that.data.productAttr.length != 0 && (!that.data.checkbox || (that.data.checkbox.length < that.data.productAttr.length))){
+      wx.showToast({
+        icon:"none",
+        title: '请选择规格！',
+      })
+      return false;
+    }    
+    var order={
+      productId: that.data.id,
+      product_type: that.data.msg.type,
+      store_id: "",
+      store_name: "",      
+      uniqueId:"",
+      checkval: "",
+      money: that.data.msg.price,
+      real_name:"",
+      user_phone: "",
+      secKillId: that.data.secKillId,
+      cardId: that.data.options.cardId?that.data.options.cardId:"",
+      duration: that.data.msg.duration,
+      order_time: ""
+    }
+    app.network.request1({
+      url: url + "cart/add",
+      method: "POST",
+      data: order,
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          order.cartId = res.data.data.cartId;
+          wx.navigateTo({
+            url: 'order?ordermsg=' + JSON.stringify(order),
+          })
+          // wx.reLaunch({
+          //   url: 'order?ordermsg=' + JSON.stringify(ordermsg),
+          // })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

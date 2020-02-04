@@ -9,8 +9,8 @@
     </view> 
   </view>
 </view>
-<view class="group m-10">
-  <block wx:if='{{ordermsg.product_type !="1"}}'>
+<block wx:if='{{ordermsg.product_type !="1"}}'>
+  <view class="group m-10">  
     <view class="item flex_r_b p-w-24 bg_fff">
       <label>预约门店</label>
       <view>{{menshop.name}}</view>
@@ -23,32 +23,50 @@
       <label>预约时间</label>
       <view>{{ordermsg.order_time}}</view>
     </view>
-  </block>  
-  <view class="item flex_r_b p-w-24 bg_fff">
-    <label>预留姓名</label>
-    <view>{{ordermsg.real_name}}</view>
-  </view>
-  <view class="item flex_r_b p-w-24 bg_fff">
-    <label>预留手机号</label>
-    <view>{{ordermsg.user_phone}}</view>
-  </view>
-</view>
-<view class="group m-10">
-  <view class="item item01 flex_r_b p-w-24 bg_fff" wx:if='{{coupon_price}}' bindtap="coupon">
-    <label class="flex_r"><text class="iconfont icon-youhuiquan1"></text> 优惠券</label>
-    <view>
-      <text>省{{coupon_price}}元：优惠券</text>
-      <text class="iconfont icon-gengduo"></text>
+    <view class="item flex_r_b p-w-24 bg_fff">
+      <label>预留姓名</label>
+      <view>{{ordermsg.real_name}}</view>
+    </view>
+    <view class="item flex_r_b p-w-24 bg_fff">
+      <label>预留手机号</label>
+      <view>{{ordermsg.user_phone}}</view>
     </view>
   </view>
-  <view class="item item02 flex_r_b p-w-24 bg_fff" wx:if='{{usableCard}}' bindtap="card">
-    <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
-    <view>
-      <text>{{usableCard.title}}</text>
-      <text class="iconfont icon-gengduo"></text>
+  <view class="group m-10">
+    <view class="item item01 flex_r_b p-w-24 bg_fff" wx:if='{{coupon_choosable && couponoption}}' bindtap="coupon">
+      <label class="flex_r"><text class="iconfont icon-youhuiquan1"></text> 优惠券</label>
+      <view>
+        <text wx:if='{{coupon_price}}'>省{{coupon_price}}元：优惠券</text>
+        <text wx:else>请选择</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </view>
+    <view class="item item01 flex_r_b p-w-24 bg_fff gray" wx:else>
+      <label class="flex_r"><text class="iconfont icon-youhuiquan1"></text> 优惠券</label>
+      <view>
+        <text wx:if='{{!couponoption}}'>不可选</text>
+        <text wx:else>无</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </view>
+    <view class="item item02 flex_r_b p-w-24 bg_fff" wx:if='{{card_choosable && cardoption}}' bindtap="card">
+      <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
+      <view>
+        <text wx:if='{{usableCard}}'>{{usableCard.title}}</text>
+        <text wx:else>请选择</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </view>
+    <view class="item item02 flex_r_b p-w-24 bg_fff gray" wx:else>
+      <label class="flex_r"><text class="iconfont icon-qia"></text> 项目卡</label>
+      <view>
+        <text wx:if='{{!cardoption}}'>不可选</text>
+        <text wx:else>无</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
     </view>
   </view>
-</view>
+</block>  
 <view class="group group1 bg_fff m-10 p-w-24">
   <view class="flex_r_b item03">
     <label>商品价</label>

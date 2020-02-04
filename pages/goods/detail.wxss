@@ -113,3 +113,6 @@ page{
 .bt{
   border-bottom: 1rpx solid #f2f2f2
 }
+.btnbox .btn.gray{
+  background: #ccc;
+}

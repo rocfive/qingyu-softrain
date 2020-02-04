@@ -1,5 +1,5 @@
 <view class="pages flex_c_c">
-  <view class="logo"><image src="../img/goodspic.png" mode="aspectFill"></image></view>
+  <view class="logo"><image src="{{logoimg}}" mode="aspectFill"></image></view>
   <button class="wechat_btn" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">微信一键登录</button>
 </view>
 

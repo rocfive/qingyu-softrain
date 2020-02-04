@@ -73,7 +73,7 @@ Page({
       order_time: that.data.choseyear + "年" + that.data.chosemonth + "月" + that.data.choseday + "日 " + that.data.chosehour + "时" + that.data.chosemin+"分"
     }
     if (that.data.product_type=="1"){
-      // 如果商品类型是项目
+      // 如果商品类型是项目卡
       if (!order.real_name) {
         wx.showToast({
           icon: "none",

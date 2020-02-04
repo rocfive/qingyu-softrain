@@ -1,2 +1,7 @@
 /* pages/goods/cardlist.wxss */
 @import "../myzoe/card";
+.notuse{
+  line-height: 48rpx;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}

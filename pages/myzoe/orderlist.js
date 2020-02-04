@@ -51,7 +51,16 @@ Page({
   },
   getList:function(){
     var that=this;
-
+    
+    if(!wx.getStorageSync('token')){
+      that.setData({
+        nologin:true
+      })
+      return false;
+    }
+    that.setData({
+      nologin:false
+    })
     app.network.request1({
       url: url + "order/list",
       method: "GET",
@@ -162,6 +171,12 @@ Page({
     let uni = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../goods/pay?orderId=' + uni + '&key=' + uni,
+    })
+  },
+  // 点击登录
+  tolog:function(){
+    wx.navigateTo({
+      url: '/pages/logs/logs',
     })
   },
   /**
