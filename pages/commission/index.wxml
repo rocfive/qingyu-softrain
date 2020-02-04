@@ -48,7 +48,7 @@
   </navigator>
   <navigator url='../myzoe/invite' class='menu_item'>
     <text class='iconfont icon-erweima'></text>
-    <text>推广二维码</text>
+    <text>分享海报</text>
   </navigator>
 </view>
 <view class='fixed'>

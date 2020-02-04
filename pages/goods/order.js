@@ -12,7 +12,7 @@ Page({
   },
   pay:function(){    
     var that = this;
-
+    
     app.network.request1({
       url: url + "order/create",
       method: "POST",
@@ -22,6 +22,7 @@ Page({
         store_teach_id: that.data.ordermsg.store_teach_id,
         key: that.data.orderKey, 
         couponId: that.data.couponId,
+        cardId: that.data.usableCard.id,
         froms:"routine",
         order_time: that.data.ordermsg.order_time,
         real_name: that.data.ordermsg.real_name,
@@ -106,7 +107,7 @@ Page({
   // 点击项目卡更多
   card:function(){
     wx.navigateTo({
-      url: 'cardlist?pid=' + this.data.ordermsg.productId + '&order_time=' + this.data.ordermsg.order_time + '&unique=' + this.data.ordermsg.niqueId,
+      url: 'cardlist?pid=' + this.data.ordermsg.productId + '&order_time=' + this.data.ordermsg.order_time + '&unique=' + this.data.ordermsg.uniqueId,
     })
   },
   /**
