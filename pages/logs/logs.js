@@ -6,17 +6,18 @@ Page({
     logs: []
   },
   // 微信一键登录
-  wxchat:function(){
-    wx.navigateTo({
-      url: 'wechatTel',
-    })
+  getPhoneNumber:function(e){
+    console.log(e)
+    // wx.navigateTo({
+    //   url: 'getTel',
+    // })
   },
   // 手机号验证登录
-  // gettel:function(){
-  //   wx.navigateTo({
-  //     url: 'getTel',
-  //   })
-  // },  
+  gettel:function(){
+    wx.navigateTo({
+      url: 'getTel?logoimg='+this.data.logoimg+"&token="+this.data.token,
+    })
+  },  
   closepop:function(){
     wx.navigateBack()
   },
