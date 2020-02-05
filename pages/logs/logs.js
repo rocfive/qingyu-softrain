@@ -7,10 +7,30 @@ Page({
   },
   // 微信一键登录
   getPhoneNumber:function(e){
-    console.log(e)
-    // wx.navigateTo({
-    //   url: 'getTel',
-    // })
+    var that=this;
+
+    console.log(e)    
+    app.network.request({
+      url: url + "wechat/getWechatUserPhone",
+      method: "POST",
+      data: {iv:e.detail.iv, encryptedData:e.detail.encryptedData,cache_key:that.data.cache_key},
+      success: function (res) {
+        if (res.data.status == 400) {
+          console.log(res)
+          // that.setData({
+          //   phone:res.data.data.phoneNumber
+          // })
+          wx.navigateTo({
+            url: 'getTel?types=wechat&logoimg='+that.data.logoimg+"&token="+that.data.token+"&phone="+res.data.data.phoneNumber,
+          })
+        }else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
   },
   // 手机号验证登录
   gettel:function(){
@@ -70,10 +90,17 @@ Page({
                   if (res.data.status == "200") {
                     var ress = res.data.data;
                     
-                    that.setData({
-                      pop_User:true,
-                      token:ress.token
-                    })
+                    if(!ress.userInfo.phone){
+                      that.setData({
+                        pop_User:true,
+                        token:ress.token,
+                        cache_key:ress.cache_key
+                      })                      
+                    }else{
+                      wx.setStorageSync('token', ress.token);
+                      wx.navigateBack()
+                    }
+                    
                   }
                 }
               })

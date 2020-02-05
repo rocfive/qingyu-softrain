@@ -41,8 +41,9 @@ Page({
       success: function (res) {
         wx.hideLoading();
         if (res.data.status == 200) {
-          that.setData({
-            logoimg:res.data.data.logo_url
+          wx.setStorageSync('token', that.data.options.token);
+          wx.navigateBack({
+            delta:2
           })
         }else {
           wx.showToast({
@@ -86,7 +87,7 @@ Page({
     app.network.request({
       url: url + "register/verify",
       method: "POST",
-      data: {phone:that.data.phone, type:'register'},
+      data: {phone:that.data.phone, type:'binding'},
       success: function (res) {
         if (res.data.status == 200) {
           wx.showToast({
@@ -124,7 +125,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      options:options
+      options:options,
+      phone:options.phone?options.phone:"",
+      disabled:options.phone?true:false
     })
   },
 

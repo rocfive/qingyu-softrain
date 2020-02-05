@@ -1,7 +1,8 @@
 <view class="pages flex_c_c">
   <view class="logo"><image src="{{logoimg}}" mode="aspectFill"></image></view>
-  <button class="wechat_btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信一键登录</button>
-  <button bindtap="gettel">手机号登录</button>
+  <!-- <button class="wechat_btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信一键登录</button>
+  <button bindtap="gettel">手机号登录</button> -->
+  <button bindtap="login" class="wechat_btn">点击登录</button>
 </view>
 
 <!-- 授权按钮 -->

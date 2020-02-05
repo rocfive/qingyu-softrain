@@ -4,7 +4,7 @@
   <block wx:if='{{islogin}}'>
     <view class="line01 flex_r_b"> 
       <image src="{{msg.avatar}}" class="headpic"></image>
-      <view class="flex_c identity {{!msg.recharge_switch ? 'norecharge' : ''}}" bindtap="login">
+      <view class="flex_c identity {{!msg.recharge_switch ? 'norecharge' : ''}}">
         <view class="nickname">{{msg.nickname}}</view>
         <view class="vip" wx:if='{{msg.vip}}'>{{msg.vip_name}}</view>
       </view>
