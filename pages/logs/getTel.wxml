@@ -11,7 +11,7 @@
     <view class="item flex_r_b">
       <input placeholder="请输入手机验证码" class="codeinput" name='captcha'></input>
       <view class="codebtn" bindtap="bindcode" wx:if='{{!showdjs}}'>获取验证码</view>
-      <view class="codebtn" wx:else>{{djs}}S</view>
+      <view class="codebtn" wx:else>{{djs}}</view>
     </view>
     <button class="btn" form-type="submit">确定</button>
   </view>

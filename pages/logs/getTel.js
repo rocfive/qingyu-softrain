@@ -93,23 +93,23 @@ Page({
           wx.showToast({
             title: '发送成功',
           })
-          that.setData({
-            showdjs:true
-          })
           var djs=60;
-           
+          that.setData({
+            showdjs:true,
+            djs:djs+'s'
+          })
           timer=setInterval(function(){
-            if(djs<1){
+            djs--;            
+            if(djs==0){
               clearInterval(timer)
               that.setData({
                 showdjs:false
               })
               return false;
             }
-            djs--;
             that.setData({
-              djs:djs
-            })
+              djs:djs+'s'
+            })            
           },1000)          
         }else {
           wx.showToast({

@@ -28,6 +28,30 @@ Page({
             yue_pay: ress.yue_pay,
             wechat_pay: ress.wechat_pay
           })
+          if(that.data.is_pay==1){
+            // 如果支付金额为零，自动支付
+            app.network.request1({
+              url: url + "order/pay2",
+              method: "POST",
+              data: {uni: ress.ordersn, paytype: "yue"},
+              success: function (res) {
+                console.log(res)
+                if (res.data.status == 200) {
+                  wx.showToast({
+                    title: res.data.msg,
+                  })
+                  wx.redirectTo({
+                    url: '/pages/myzoe/orderdetail?id=' + ress.ordersn,
+                  })
+                } else {
+                  wx.showToast({
+                    icon: "none",
+                    title: res.data.msg,
+                  })
+                }
+              }
+            })
+          }
         } else {
           wx.showToast({
             icon: "none",
@@ -147,7 +171,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       orderId: options.orderId,
-      key: options.key
+      key: options.key,
+      is_pay:options.is_pay?options.is_pay:0
     })
     this.getgopay();
   },

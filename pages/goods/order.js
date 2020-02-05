@@ -25,7 +25,7 @@ Page({
         store_teach_id: that.data.ordermsg.store_teach_id,
         key: that.data.orderKey, 
         couponId: that.data.couponId,
-        cardId: that.data.usableCard.id,
+        cardId: that.data.cardId,
         froms:"routine",
         order_time: that.data.ordermsg.order_time,
         real_name: that.data.ordermsg.real_name,
@@ -37,7 +37,7 @@ Page({
         if (res.data.status == 200) {
           var ress=res.data.data.result;
           wx.reLaunch({
-            url: 'pay?orderId=' + ress.orderId + '&key=' + ress.key,
+            url: 'pay?orderId=' + ress.orderId + '&key=' + ress.key+'&is_pay='+that.data.price.is_pay,
           })
         } else {
           wx.showToast({
@@ -87,7 +87,7 @@ Page({
             teach: ress.teach,
             menshop: ress.menshop,
             coupon_choosable:ress.usableCoupon?true:false,  //优惠券是否可选
-            card_choosable:ress.usableCard ?true:false,   //项目卡是否可选
+            card_choosable:ress.usableCard?true:false,   //项目卡是否可选
             // coupon_price: ress.usableCoupon?ress.usableCoupon.coupon_price:"",
             // couponId: ress.usableCoupon?ress.usableCoupon.id:"",
             // usableCard: ress.usableCard ? ress.usableCard:"",

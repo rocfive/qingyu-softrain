@@ -8,7 +8,8 @@
     </view>
     <view class="item">      
       <input style="width:445rpx" type="text" placeholder="请输入短信验证码" name="code" bindinput='codeInput' value='{{code}}'></input>
-      <text class="getcode" bindtap="getcode">获取验证码</text>
+      <text class="getcode" bindtap="getcode" wx:if='{{!showdjs}}'>获取验证码</text>
+      <text class="getcode" wx:else>{{djs}}</text>
     </view>
     <view class="item">      
       <input type="text" password='true' placeholder="请输入密码" name="password" bindinput='passwordInput' value='{{password}}'></input>

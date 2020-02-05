@@ -12,6 +12,7 @@ Page({
     password:'',
     repassword:'',
     ajxtrue: false,
+    showdjs:false
   },
 
   //实时获取商家手机号
@@ -58,7 +59,8 @@ Page({
   //获取验证码
   getcode:function(e){
     let phone=this.data.username;
-    let ajxtrue = this.data.ajxtrue
+    let ajxtrue = this.data.ajxtrue;
+    let that=this;
     //手机号正确
     if (ajxtrue){
       if (this.options.froms == 'shop'){
@@ -74,6 +76,7 @@ Page({
                 title: res.data.msg,
                 duration: 2000
               })
+              that.countdown()
             } else {
               wx.showToast({
                 icon: "none",
@@ -95,6 +98,7 @@ Page({
                 title: res.data.msg,
                 duration: 2000
               })
+              that.countdown()
             } else {
               wx.showToast({
                 icon: "none",
@@ -205,6 +209,27 @@ Page({
       })
     }
   },
+  // 倒计时
+  countdown:function(params) {
+    var that=this, djs=60;
+    that.setData({
+      showdjs:true,
+      djs:djs+'s'
+    })
+    timer=setInterval(function(){
+      djs--;            
+      if(djs==0){
+        clearInterval(timer)
+        that.setData({
+          showdjs:false
+        })
+        return false;
+      }
+      that.setData({
+        djs:djs+'s'
+      })     
+    },1000)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -239,7 +264,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(timer)
   },
 
   /**
