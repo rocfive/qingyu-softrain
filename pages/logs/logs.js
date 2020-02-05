@@ -97,7 +97,7 @@ Page({
                         cache_key:ress.cache_key
                       })                      
                       wx.navigateTo({
-                        url: 'getTel?logoimg='+this.data.logoimg+"&token="+this.data.token,
+                        url: 'getTel?logoimg='+that.data.logoimg+"&token="+that.data.token,
                       })
                     }else{
                       wx.setStorageSync('token', ress.token);

@@ -65,6 +65,30 @@ Page({
       url: '/pages/logs/logs',
     })
   },
+  // 商家入口
+  business:function(){
+    if(!wx.getStorageSync('mstoken')){
+      wx.navigateTo({
+        url: '/pages/business/login?froms=shop',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../business/index',
+      })
+    }
+  },
+  // 员工入口
+  staff:function(){
+    if(!wx.getStorageSync('metoken')){
+      wx.navigateTo({
+        url: '/pages/business/login?froms=employee',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../staff/index',
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

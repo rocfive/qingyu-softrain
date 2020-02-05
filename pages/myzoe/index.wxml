@@ -84,14 +84,14 @@
 <view class="bg_fff m-10">
   <view class="bt p-w-24">后台入口</view>
   <view class="w702 flex_r_a menubox1">
-    <navigator url="../business/index" class="item flex_c_c" hover-class="none">
+    <view bindtap="business" class="item flex_c_c" >
       <text class="iconfont icon-shangjia"></text>
       <text>商家入口</text>
-    </navigator>
-    <navigator url="../staff/index" class="item flex_c_c" hover-class="none">
+    </view>
+    <view bindtap="staff" url="../staff/index" class="item flex_c_c" hover-class="none">
       <text class="iconfont icon-jishi"></text>
       <text>员工入口</text>
-    </navigator>
+    </view>
   </view>
 </view>
 
