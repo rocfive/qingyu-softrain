@@ -29,13 +29,16 @@ Page({
     })
   },
   // 点击我的分销
-  commission:function(){
-    // wx.navigateTo({
-    //   url: 'retail',
-    // })
-    wx.navigateTo({
-      url: '../commission/index',
-    })
+  commission:function(){    
+    if(this.data.msg.is_promoter==1){
+      wx.navigateTo({
+        url: '../commission/index',
+      })
+    }else{
+      wx.navigateTo({
+        url: 'retail',
+      })      
+    }    
   },
   getUser:function(){
     var that=this;
