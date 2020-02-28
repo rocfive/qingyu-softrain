@@ -1,4 +1,6 @@
 // pages/myzoe/retail.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -7,12 +9,37 @@ Page({
   data: {
 
   },
+  getMsg:function(){
+    var that=this;
 
+    app.network.request1({
+      url: url + "user/level/minlevel",
+      method: "GET",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            list: res.data.data.task
+          })
+          // that.vipList = res.data.list;
+          // that.vipRequire = res.data.task.list;
+          // that.vipComplete = res.data.task.task;
+          // that.taskCount = res.data.task.reach_count;
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMsg();
   },
 
   /**

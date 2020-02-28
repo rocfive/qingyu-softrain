@@ -1,5 +1,5 @@
 /* pages/myzoe/retail.wxss */
-.m-t{
+/* .m-t{
   padding-bottom:48rpx; 
 }
 .m-t .cardimg{
@@ -91,4 +91,43 @@
   color: #fff;
   font-size: 32rpx;
   margin: 80rpx auto 40rpx;
+} */
+page{
+  background: #fff
+}
+.list .item{
+  background: #f9f9f9;
+  width: 702rpx;
+  border-radius: 24rpx;
+  margin-bottom: 20rpx;
+}
+.list .item .top{
+  height: 80rpx;
+}
+.list .item .top .name{
+  font-size: 30rpx;
+  font-weight: 600
+}
+.list .item .top .marks{
+  color: #999
+}
+.list .item .cu-progress{
+  width: 654rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  display: block;
+  background: #eeeeee;
+  overflow: hidden;
+}
+.list .item .cu-progress .bg-red{
+  height: 20rpx;
+  background: #4694ff;
+}
+.list .item .experience{
+  height: 80rpx;
+  font-size: 24rpx;
+  color: #999
+}
+.list .item .experience .num{
+  color: #4694ff
 }

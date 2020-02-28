@@ -46,7 +46,8 @@ Page({
   tx:function(e){
     var that=this, oData=e.detail.value;
 
-    console.log(oData)
+    // console.log(oData)
+    oData.wechat ="routine";
     if (!oData.money) {
       wx.showToast({
         icon: "none",

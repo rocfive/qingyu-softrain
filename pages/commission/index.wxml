@@ -1,6 +1,6 @@
 <!--pages/commission/index.wxml-->
 <view class='head'>
-  <image src='../img/doctor.png' class='headpic'></image>
+  <image src='{{msg.avatar}}' class='headpic'></image>
   <view class='head_m'>
     <view class='name'>{{msg.nickname}}</view>
     <view class='btn'>{{msg.vip_name}}</view>
