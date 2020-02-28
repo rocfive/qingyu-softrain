@@ -3,7 +3,7 @@
   <view class="gorup">
     <view class="item bg_fff p-w-24 flex_r_b">
       <label>服务门店</label>
-      <view class="item_r flex_r_r" bindtap="chosestore">{{store_name}}</view>
+      <view class="item_r flex_r_r" bindtap="chosestore"><text wx:if='{{store_name}}'>{{store_name}}</text><text wx:else>选择门店</text></view>
     </view>
   </view>
   <view class="gorup m-10" wx:if='{{start_time && end_time}}'>

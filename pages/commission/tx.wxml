@@ -1,20 +1,50 @@
 <!--pages/commission/tx.wxml-->
 <form class='form' bindsubmit="tx">
-  <view class='tit'>可提现佣金 <text>￥100.00 </text></view>
+  <view class='tit'>可提现佣金 <text>￥{{commissionCount}} </text></view>
   <view class='inputbox'>
     <text>￥</text>
-    <input type='digit' placeholder='0.00' bindinput='money'></input>
+    <input type='digit' placeholder='0.00' name='money'></input>
   </view>  
   <view class='type'>
     <label>提现方式</label>
-    <picker mode='selector' bindchange="bindPickerChange" value="{{typeindex}}" range="{{txtypearr}}" range-key="name">
+    <picker mode='selector' bindchange="bindPickerChange" value="{{txtype}}" range="{{with_way}}" range-key="name" name='extract_type'>
       <view class='picker'>
-        <text wx:if='{{txtype}}'>提现到{{txtypearr[typeindex].name}}</text>
+        <text wx:if='{{txtype}}'>提现到{{typename}}</text>
         <text wx:else>请选择</text>
         <text class='iconfont icon-gengduo'></text>
       </view>
     </picker>
   </view>
 
-  <view form-type='submit' class='submit'>下一步</view>
+  <view class="m-10 bg_fff p-w-24 group01" wx:if='{{txtype=="bank"}}'>    
+    <view class="item flex_r">
+      <label>卡号</label>
+      <input type="number" placeholder="卡号" style="width:630rpx" name='cardnum'></input>
+    </view>
+    <view class="item flex_r">
+      <label>持卡人</label>
+      <input type="text" placeholder="持卡人姓名" style="width:600rpx" name='name'></input>
+    </view>
+    <view class="item flex_r">
+      <label>开户银行</label>
+      <input type="text" placeholder="开户银行" style="width:542rpx" name='bankname'></input>
+    </view>
+  </view>
+
+  <view class="m-10 bg_fff p-w-24 group01" wx:if='{{txtype=="alipay"}}'>    
+    <view class="item flex_r">
+      <label>支付宝账号</label>
+      <input type="number" placeholder="支付宝账号" style="width:520rpx" name='alipay_code'></input>
+    </view>
+    <view class="item flex_r">
+      <label>姓名</label>
+      <input type="text" placeholder="姓名" style="width:600rpx" name='name'></input>
+    </view>
+  </view>
+
+  <button form-type='submit' class='submit'>提现</button>
 </form>
+
+
+
+

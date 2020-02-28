@@ -1,4 +1,6 @@
 // pages/commission/money.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -12,11 +14,41 @@ Page({
       showtips: this.data.showtips ? false : true
     })
   },
+  getMsg: function () {
+    var that = this;
+
+    app.network.request1({
+      url: url + "commission",
+      method: "GET",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            commissionCount: res.data.data.commissionCount,
+            extractCount: res.data.data.extractCount,
+            lastDayCount: res.data.data.lastDayCount,
+            totalcommission: res.data.data.totalcommission
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  tx:function(){
+    wx.navigateTo({
+      url: 'tx',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMsg();
   },
 
   /**
@@ -30,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getMsg();
   },
 
   /**

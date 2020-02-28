@@ -10,7 +10,7 @@
     <view class="flex_r_s_b">
       <view class="goods_title">{{msg.cartInfo[0].productInfo.store_name}}</view>
     </view>
-    <view  wx:if='{{msg.cartInfo[0].productInfo.product_type==0}}'>规格：{{msg.cartInfo[0].productInfo.attrInfo.suk}}</view>
+    <view  wx:if='{{msg.cartInfo[0].productInfo.product_type==0 && msg.cartInfo[0].productInfo.attrInfo.suk}}'>规格：{{msg.cartInfo[0].productInfo.attrInfo.suk}}</view>
   </view>
 </view>
 

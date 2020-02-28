@@ -119,6 +119,7 @@ Page({
     if(options.id){
       that.getColumn();
     } else if (options.ishot==1){
+      that.getHotlist();
       wx.setNavigationBarTitle({
         title: '热门项目',
       })

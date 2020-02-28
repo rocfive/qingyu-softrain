@@ -59,6 +59,17 @@ page{
   font-size: 22rpx;
   color: #444444
 }
+.item{
+  height: 88rpx;
+  border-bottom: 1rpx solid #eee
+}
+.item label{
+  margin-right: 10rpx
+}
+.group01 .item:last-child{
+  border-bottom: none
+}
+
 .submit{
   width: 712rpx;
   height: 88rpx;

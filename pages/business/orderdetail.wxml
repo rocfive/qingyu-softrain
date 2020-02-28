@@ -53,7 +53,7 @@
   </view>
 </view>
 
-<view class="btnbox flex_r_b p-w-28" wx:if='{{options.forms =="scan" && noscan}}'>
+<view class="btnbox flex_r_b p-w-28 bg_fff" wx:if='{{options.forms =="scan" && noscan}}'>
   <view class="btn_cancle" bindtap="toback">放弃核销</view>
   <view class="btn" bindtap="scan">确定核销</view>
 </view>

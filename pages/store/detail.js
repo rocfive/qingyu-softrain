@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current:0    
+    current:0,        
   },
   engineerchange:function(e){
     this.setData({

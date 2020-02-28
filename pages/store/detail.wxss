@@ -82,6 +82,9 @@
   width: 116rpx;
   height: 116rpx;
 }
+.engineerlist swiper-item text{
+  height: 78rpx
+}
 .engineerlist1{
   overflow: hidden
 }
@@ -107,7 +110,7 @@
   height: 12rpx;
   background: #93c4ff;
   margin-right: 14rpx;
-  border-radius: 50%
+  border-radius: 50%;
 }
 .engineer .indicator .dot.cur{
   background: #418dfd

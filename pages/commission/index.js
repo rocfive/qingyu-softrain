@@ -1,4 +1,6 @@
 // pages/commission/index.js
+const app = getApp()
+var url = getApp().globalData.url, timer;
 Page({
 
   /**
@@ -12,11 +14,60 @@ Page({
       url: 'tx',
     })
   },
+  getMsg:function(){
+    var that=this;
+
+    app.network.request1({
+      url: url + "commission",
+      method: "GET",
+      data: {  },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            commissionCount: res.data.data.commissionCount,
+            extractCount: res.data.data.extractCount,
+            lastDayCount: res.data.data.lastDayCount,
+            totalcommission: res.data.data.totalcommission
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
+  getUser: function () {
+    var that = this;
+
+    app.network.request1({
+      url: url + "user",
+      method: "GET",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          that.setData({
+            msg: res.data.data,
+            islogin: true
+          })
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUser();
+    this.getMsg();
   },
 
   /**
@@ -30,7 +81,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUser();
+    this.getMsg();
   },
 
   /**

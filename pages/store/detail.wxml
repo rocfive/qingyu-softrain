@@ -55,7 +55,7 @@
       </swiper-item>
     </swiper>
     <view class="indicator flex_r_c">
-      <text class="{{current==index?'dot cur':'dot'}}" wx:for='{{engineerlist}}' wx:key='{{index}}'></text>
+      <text class="{{current==index?'dot cur':'dot'}}" wx:for='{{teach_list}}' wx:key='{{index}}'> </text>
     </view>
   </block>
   <view class="engineerlist engineerlist1" wx:else>

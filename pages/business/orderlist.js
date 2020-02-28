@@ -56,7 +56,7 @@ Page({
   },
   detail:function(e){
     wx.navigateTo({
-      url: 'orderdetail?id='+e.currentTarget.dataset.id,
+      url: 'orderdetail?role=business&id='+e.currentTarget.dataset.id,
     })
   },
   /**

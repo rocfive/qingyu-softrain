@@ -6,7 +6,7 @@
   </view>
 </block>
 <view class="list m-10">
-  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" wx:for='{{list}}' wx:key='{{index}}' data-id="{{item.gid}}">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" wx:for='{{list}}' wx:key='{{index}}' data-id="{{item.id}}">
     <image src="{{item.image}}" class="listimg" mode="aspectFill"></image>
     <view class="item_r flex_c_b">
       <view class="h2">{{item.store_name}}</view>
@@ -17,7 +17,7 @@
          </view>
          <view class="flex_r">
           <text>已售{{item.sales}}</text>
-          <view class="buybtn"  catchtap="chosespec" data-id="{{item.gid}}">抢购</view>
+          <view class="buybtn"  catchtap="chosespec" data-id="{{item.id}}">抢购</view>
          </view>
       </view>
     </view>

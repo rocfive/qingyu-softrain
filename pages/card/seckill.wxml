@@ -25,11 +25,11 @@
       </view>
       <view class="flex_r_b">
         <view class="supply">限量<text>{{item.stock}}份</text></view>
-        <block wx:if='{{status==1}}'>
+        <block wx:if='{{item.status==1}}'>
           <view class="buy" catchtap="panicbuy" data-id="{{item.product_id}}" data-types="{{item.product_type}}" data-money="{{item.price}}" data-sid="{{item.id}}" wx:if='{{item.stock>0}}'>立即抢购</view>
           <view class="buy gray" wx:else>已售罄</view>
         </block>
-        <block wx:elif='{{status==2}}'>
+        <block wx:elif='{{item.status==2}}'>
           <view class="buy gray">即将开始</view>
         </block>
         <block wx:else>

@@ -2,45 +2,44 @@
 <view class='head'>
   <image src='../img/doctor.png' class='headpic'></image>
   <view class='head_m'>
-    <view class='name'>用户昵称</view>
-    <view class='btn'>普通等级</view>
+    <view class='name'>{{msg.nickname}}</view>
+    <view class='btn'>{{msg.vip_name}}</view>
   </view>
   <view class='head_r'>
-    <view class='money'>￥24359.00</view>
-    <view>总销售额</view>
+    <view class='money'>￥{{totalcommission}}</view>
+    <view>总佣金</view>
   </view>
 </view>
 <!-- <view class='yqm'>我的邀请码：2156</view> -->
 <view class='yongj'>
-  <view class='money'>￥1.00</view>
+  <view class='money'>￥{{extractCount}}</view>
   <view>成功提现佣金(元）</view>
 </view>
 <view class='yongj' style='margin-top:0'>
-  <view class='money'>￥1.00</view>
+  <view class='money'>￥{{commissionCount}}</view>
   <view>可提现佣金(元）</view>
-  <view class='tx_btn' bindtap='tx' wx:if='{{msg.tixian_status==1}}'>佣金提现</view>
   <view class='tx_btn' bindtap='tx'>佣金提现</view>
 </view>
 <view class='menu'>
-  <navigator url='daily' class='menu_item'>
+  <view class='menu_item'>
     <text class='iconfont icon-shouru'></text>
-    <text>今日收入</text>
-    <text class='num'>0.00元</text>
-  </navigator>
+    <text>昨日佣金</text>
+    <text class='num'>{{lastDayCount}}元</text>
+  </view>
   <navigator url='money' class='menu_item'>
     <text class='iconfont icon-yongjin'></text>
     <text>分销佣金</text>
-    <text class='num'>0.00元</text>
+    <text class='num'>{{totalcommission}}元</text>
   </navigator>
   <navigator url='order' class='menu_item'>
     <text class='iconfont icon-dingdan1'></text>
     <text>分销订单</text>
-    <text class='num'>0.00元</text>
+    <!-- <text class='num'>0.00元</text> -->
   </navigator>
   <navigator url='tx_record' class='menu_item'>
     <text class='iconfont icon-tixianmingxi'></text>
     <text>提现明细</text>
-    <text class='num'>0.00元</text>
+    <!-- <text class='num'>0.00元</text> -->
   </navigator>
   <navigator url='team' class='menu_item'>
     <text class='iconfont icon-wodetuandui-copy'></text>
