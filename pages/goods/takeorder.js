@@ -296,8 +296,37 @@ Page({
         chosemin: hour[0].minute[0],
       }) 
     }
-    
-    
+  },
+  getstorelist: function (storeid) {
+    var that = this;
+
+    app.network.request({
+      url: url + "shop_list",
+      method: "GET",
+      data: { lat: wx.getStorageSync('latitude'), lng: wx.getStorageSync('longitude'), },
+      success: function (res) {
+        console.log(res)
+        if (res.data.status == 200) {
+          var ress=res.data.data;
+          for(var i=0; i<ress.length; i++){
+            if(ress[i].id==storeid){
+              that.setData({
+                store_id: storeid,
+                store_name: ress[i].name,
+                start_time: ress[i].start_time,
+                end_time: ress[i].end_time
+              })
+              that.getSelectTime()
+            }
+          }
+        } else {
+          wx.showToast({
+            icon: "none",
+            title: res.data.msg,
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -312,6 +341,15 @@ Page({
       secKillId: options.secKillId,
       duration: options.duration
     })    
+    console.log(options)
+    if (options.storeid){
+      this.getstorelist(options.storeid)
+    }
+    if (wx.getStorageSync("phone")){
+      this.setData({
+        phone: wx.getStorageSync("phone")
+      })
+    }
   },
 
   /**
@@ -360,6 +398,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })

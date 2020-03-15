@@ -81,6 +81,7 @@
 .engineerlist swiper-item image{
   width: 116rpx;
   height: 116rpx;
+  border-radius: 50%
 }
 .engineerlist swiper-item text{
   height: 78rpx
@@ -99,6 +100,7 @@
 .engineerlist .item-noswiper image{
   width: 116rpx;
   height: 116rpx;
+  border-radius: 50%
 }
 .engineer .indicator{
   width: 702rpx;

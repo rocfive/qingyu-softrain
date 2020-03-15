@@ -10,13 +10,6 @@ Page({
   data: {
     active:0,
     page:1
-    // menus:[
-    //   { id: 0, name: "项目分类一"},
-    //   { id: 1, name: "项目分类二" },
-    //   { id: 2, name: "项目分类三" },
-    //   { id: 3, name: "项目分类四" },
-    //   { id: 4, name: "项目分类五" }
-    // ]
   },
   changeTab:function(e){
     this.setData({
@@ -142,6 +135,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })

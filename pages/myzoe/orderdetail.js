@@ -98,7 +98,50 @@ Page({
       }
     })
   },
+  // 申请退款
+  refund: function (e) {
+    var that = this;
 
+    wx.showModal({
+      title: '提示',
+      content: '申请退款？',
+      success: function (res) {
+        if (res.confirm) {
+          app.network.request1({
+            url: url + "order/refund/verify",
+            method: "POST",
+            data: { uni: e.currentTarget.dataset.id },
+            success: function (res) {
+              console.log(res)
+              if (res.data.status == 200) {
+                wx.showToast({
+                  title: '已提交',
+                })
+                timer = setTimeout(function () {
+                  that.setData({
+                    page: 1,
+                    nomore: false,
+                  })
+                  that.getList();
+                }, 2000)
+              } else {
+                wx.showToast({
+                  icon: "none",
+                  title: res.data.msg,
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+  // 评价
+  evaluate: function (e) {
+    wx.navigateTo({
+      url: 'evaluate?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -155,6 +198,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })

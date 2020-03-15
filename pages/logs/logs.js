@@ -101,9 +101,10 @@ Page({
                       })
                     }else{
                       wx.setStorageSync('token', ress.token);
+                      wx.setStorageSync('phone', ress.userInfo.phone);
                       wx.navigateBack()
                     }
-                    
+                    wx.setStorageSync("shareid", ress.userInfo.uid)
                   }
                 }
               })

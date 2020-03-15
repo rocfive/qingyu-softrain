@@ -183,6 +183,12 @@ Page({
       url: '/pages/logs/logs',
     })
   },
+  // 拨打电话
+  toCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.tel,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -244,6 +250,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })

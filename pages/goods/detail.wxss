@@ -108,7 +108,14 @@ page{
   position: absolute;
   right: 24rpx;
   top: 24rpx;
-  color: #4694ff
+  color: #4694ff;
+  background: none;
+  font-size: 28rpx;
+  font-weight: normal;
+  padding: 0
+}
+.share:not([size='mini']) {
+  width: 56rpx
 }
 .share .iconfont{
   font-size: 32rpx;

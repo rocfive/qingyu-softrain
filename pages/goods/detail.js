@@ -190,6 +190,10 @@ Page({
       options: options,
       id:options.id
     })
+    console.log(options)
+    if (options.scene && !wx.getStorageSync('spread_spid')) {
+      wx.setStorageSync('spread_spid', options.scene)
+    }
     wx.setNavigationBarTitle({
       title: wx.getStorageSync("appname"),
     })
@@ -245,6 +249,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var that=this;
+    return {
+      path: '/pages/goods/detail?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "") + "&id=" + that.data.id
+    }
   }
 })

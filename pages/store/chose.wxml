@@ -1,7 +1,7 @@
 <!--pages/store/chose.wxml-->
 <view class="storelist">
-  <view class="item p-w-24 flex_r_b bg_fff" bindtap="detail"  data-id="{{item.id}}" wx:for='{{list}}' wx:key='index'>
-    <view class="{{store_id==item.id?'chosebox':'chosebox1'}}" catchtap="chose" data-id="{{item.id}}">
+  <view class="item p-w-24 flex_r_b bg_fff" bindtap="chose"  data-id="{{item.id}}" wx:for='{{list}}' wx:key='index'>
+    <view class="{{store_id==item.id?'chosebox':'chosebox1'}}">
       <image src="../img/success.png" wx:if='{{store_id==item.id}}'></image>
     </view>
     <image src="{{item.image}}" class="storeimg" mode="aspectFill"></image>
@@ -10,7 +10,7 @@
       <view class="adddress">{{item.introduction}}</view>
     </view>
     <view class="item_r flex_r_b">
-      <view class="flex_c_c">
+      <view class="flex_c_c" data-lat="{{item.lat}}" data-lng="{{item.lng}}" catchtap="toMap">
         <text class="iconfont icon-ditu3"></text>
         <text>{{item.distance}}km</text>
       </view>

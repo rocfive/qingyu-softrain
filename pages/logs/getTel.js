@@ -42,6 +42,7 @@ Page({
         wx.hideLoading();
         if (res.data.status == 200) {
           wx.setStorageSync('token', that.data.options.token);
+          wx.setStorageSync('phone', fData.phone);
           wx.navigateBack({
             delta:2
           })
@@ -172,11 +173,4 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

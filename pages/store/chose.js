@@ -33,6 +33,7 @@ Page({
     }
     
   },
+  // 门店详情
   detail: function (e) {
     wx.navigateTo({
       url: 'detail?id=' + e.currentTarget.dataset.id,
@@ -64,6 +65,26 @@ Page({
   toCall: function (e) {
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.tel,
+    })
+  },
+  // 导航
+  toMap: function (e) {
+    var that = this;
+    var lx = JSON.parse(e.currentTarget.dataset.lat),
+      ly = JSON.parse(e.currentTarget.dataset.lng);
+
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        console.log(res)
+        wx.openLocation({
+          latitude: lx,
+          longitude: ly,
+          scale: 18
+        })
+      }
     })
   },
   /**
@@ -122,6 +143,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })

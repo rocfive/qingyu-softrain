@@ -10,6 +10,10 @@ Component({
       type: String,
       value: '',      
     },
+    storeid: {
+      type: String,
+      value: '',
+    },
     cardId:{
       type: String,
       value: '',  
@@ -49,7 +53,7 @@ Component({
         return false;
       }
       wx.navigateTo({
-        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId + '&duration=' + that.data.duration+'&secKillId='+that.data.secKillId,
+        url: '/pages/goods/takeorder?uniqueId=' + that.data.unique + '&productId=' + that.data.goodsid + '&checkval=' + that.data.checkval + '&money=' + that.data.money + '&product_type=' + that.data.msg.type + '&cardId=' + that.data.cardId + '&duration=' + that.data.duration + '&secKillId=' + that.data.secKillId + "&storeid=" + (that.data.storeid ? that.data.storeid:""),
       })
     },
     closespec:function(){

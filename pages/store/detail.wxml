@@ -31,7 +31,7 @@
   </view>
 </view>
 <view class="p-w-24 environment flex_r bg_fff">
-  <image src="{{item}}" mode="aspectFill" wx:for='{{slider_image}}' wx:key='{{index}}'></image>
+  <image src="{{item}}" mode="aspectFill" wx:for='{{slider_image}}' wx:key='index'></image>
 </view>
 <view class="bt p-w-24 bg_fff flex_r_b m-10">
   <view class="bt_l flex_r">
@@ -49,18 +49,18 @@
 <view class="engineer p-w-24 bg_fff">
   <block wx:if='{{teach_list.length>3}}'>
     <swiper class="engineerlist" display-multiple-items="4" bindchange="engineerchange" current="{{current}}">
-      <swiper-item class='flex_c_c' wx:for='{{teach_list}}' wx:key='{{index}}'>
-        <image src="{{item.image}}"></image>
+      <swiper-item class='flex_c_c' wx:for='{{teach_list}}' wx:key='index' catchtap="techdetail" data-id="{{item.id}}">
+        <image src="{{item.image}}" mode="aspectFill"></image>
         <text>{{item.name}}</text>
       </swiper-item>
     </swiper>
     <view class="indicator flex_r_c">
-      <text class="{{current==index?'dot cur':'dot'}}" wx:for='{{teach_list}}' wx:key='{{index}}'> </text>
+      <text class="{{current==index?'dot cur':'dot'}}" wx:for='{{teach_list}}' wx:key='index'> </text>
     </view>
   </block>
   <view class="engineerlist engineerlist1" wx:else>
-    <view class='flex_c_c item-noswiper' wx:for='{{teach_list}}' wx:key='{{index}}'>
-      <image src="{{item.image}}"></image>
+    <view class='flex_c_c item-noswiper' wx:for='{{teach_list}}' wx:key='index'  catchtap="techdetail" data-id="{{item.id}}">
+      <image src="{{item.image}}" mode="aspectFill"></image>
       <text>{{item.name}}</text>
     </view>
   </view>
@@ -71,7 +71,7 @@
   </view>  
 </view>
 <view class="list">
-  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" wx:for='{{hot_product}}' wx:key='{{index}}' data-id="{{item.id}}">
+  <view class="item bg_fff p-w-24 flex_r_b" bindtap="todetail" wx:for='{{hot_product}}' wx:key='index' data-id="{{item.id}}">
     <image src="{{item.image}}" class="listimg" mode="aspectFill"></image>
     <view class="item_r flex_c_b">
       <view class="h2">{{item.store_name}}</view>
@@ -88,4 +88,4 @@
     </view>
   </view>  
 </view>
-<spec id='spec' goodsid='{{goodsid}}'></spec>
+<spec id='spec' goodsid='{{goodsid}}' storeid="{{id}}"></spec>

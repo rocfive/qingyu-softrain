@@ -190,4 +190,9 @@ Page({
     });
     that.getCity();
   },
+  onShareAppMessage: function () {
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
+  }
 })

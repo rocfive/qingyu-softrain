@@ -26,7 +26,6 @@
         <view class="price">{{item.cartInfo[0].productInfo.price}}</view>
       </view>
     </view>
-
     <view class="line p-w-24 flex_r_b">
       <view class="felx_r">
         <text class="iconfont icon-mendian" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'></text>
@@ -42,11 +41,9 @@
       </view>        
       <view>
         <text class="time">技师：{{item._teach.name}}</text>
-        <text class="btntel" data-tel="{{item._teach.phone}}">联系电话</text>
+        <text class="btntel"  data-tel="{{item._menshop.phone}}" catchtap="toCall">联系电话</text>
       </view>
     </view>   
-    
-    
     <!-- 如果商品类型为项目卡则在未支付时只有取消订单或付款，没有其他操作按钮 -->
     <view class="line_b p-w-24 flex_r_r" wx:if='{{item._status._type==0}}'>
       <view class="btn" catchtap="cancle_order" data-id="{{item.order_id}}">取消订单</view>

@@ -40,11 +40,11 @@
   </view>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>订单状态</label>
-    <!-- <view>已付款</view> -->
     <view wx:if='{{msg._status._type==0}}'>待付款</view>
     <view wx:elif='{{msg._status._type==1}}'>待核销</view>
     <view wx:elif='{{msg._status._type==3}}'>待评价</view>
     <view wx:elif='{{msg._status._type==4}}'>已完成</view>
+    <view wx:else>{{msg._status._title}}</view>
   </view>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>订单价格</label>
@@ -67,7 +67,7 @@
   <block wx:if='{{msg._status._type==1 && msg.cartInfo[0].productInfo.product_type==0}}'>
     <view class="item bg_fff flex_r_r p-w-24">
       <!-- <view class="btn" catchtap="cancle" data-id="{{msg.o2o_fuwu_order_id}}">取消订单</view> -->
-      <view class="btn btn01" catchtap="" data-id="{{msg.order_id}}">申请退款</view>
+      <view class="btn btn01" catchtap="refund" data-id="{{msg.order_id}}">申请退款</view>
       <view class="btn btn01" catchtap="charge" data-num="{{msg.write_off_num}}">生成核销码</view>
     </view>
   </block>

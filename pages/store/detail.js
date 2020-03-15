@@ -10,6 +10,11 @@ Page({
   data: {
     current:0,        
   },
+  techdetail:function(e){
+    wx.navigateTo({
+      url: '../goods/techdetail?id='+e.currentTarget.dataset.id,
+    })
+  },
   engineerchange:function(e){
     this.setData({
       current: e.detail.current
@@ -144,6 +149,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/index/index?scene=' + (wx.getStorageSync("shareid") ? wx.getStorageSync("shareid") : "")
+    }
   }
 })
