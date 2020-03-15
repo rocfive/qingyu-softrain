@@ -181,6 +181,7 @@ Page({
   onLoad: function (options) {    
     var that=this;
 
+    console.log(options.scene)
     if(options.scene && !wx.getStorageSync('spread_spid')){
       wx.setStorageSync('spread_spid', options.scene)
     }

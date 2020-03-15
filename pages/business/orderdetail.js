@@ -121,7 +121,7 @@ Page({
       options: options,
       uni: options.id
     })
-    this.getDetail();  
+    this.getDetail();
   },
 
   /**

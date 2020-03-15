@@ -76,8 +76,30 @@ Page({
       data: { id: that.data.chargeid, price: that.data.price, type:0},
       success: function (res) {
         console.log(res)
-        if (res.data.status == 200) {          
-          
+        if (res.data.status == 200) {   
+          var ress=res.data.data;       
+          wx.requestPayment({
+            timeStamp: ress.timestamp,
+            nonceStr: ress.nonceStr,
+            package: ress.package,
+            signType: ress.signType,
+            paySign: ress.paySign,
+            success: function (res) {
+              wx.showToast({
+                icon: "success",
+                title: res.msg,
+              })
+              timer = setTimeout(function () {
+                that.getnowmoney();
+              }, 2000)
+            },
+            fail: function (res) {
+              wx.showToast({
+                icon:"none",
+                title: "取消支付",
+              })
+            }          
+          });
         } else {
           wx.showToast({
             icon: "none",

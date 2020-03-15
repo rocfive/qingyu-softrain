@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pay_type: 1,
+    pay_type: 2,
     balance:10.00
   },
   // 持卡人

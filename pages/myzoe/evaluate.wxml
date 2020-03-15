@@ -1,11 +1,11 @@
 <!--pages/myzoe/evaluate.wxml-->
 <view class="goods p-w-24 flex_r_b">
-  <image src='{{goods.img}}'></image>
+  <image src='{{msg.cartInfo[0].productInfo.image}}'></image>
   <view class="goods_r">
-    <view class="goods_title">{{goods.title}}</view>
-    <view>预约时间：{{goods.yuyuetime}}</view>
-    <view>规格：{{goods.spec}}</view>
-    <view class="price">￥<text>481</text></view>
+    <view class="goods_title">{{msg.cartInfo[0].productInfo.store_name}}</view>
+    <view>预约时间：{{msg._order_time}}</view>
+    <view>规格：{{msg.cartInfo[0].productInfo.attrInfo.suk}}</view>
+    <view class="price">￥<text>{{msg.pay_price}}</text></view>
   </view>
 </view>
 <view class="bg_fff evaluatebox">
@@ -21,4 +21,4 @@
   </textarea>
 </view>
 
-<view class="btn">提交评价</view>
+<view class="btn" bindtap="btnsubmit">提交评价</view>

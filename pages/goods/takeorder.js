@@ -106,9 +106,6 @@ Page({
             wx.navigateTo({
               url: 'order?ordermsg=' + JSON.stringify(order),
             })
-            // wx.reLaunch({
-            //   url: 'order?ordermsg=' + JSON.stringify(ordermsg),
-            // })
           } else {
             wx.showToast({
               icon: "none",
@@ -273,7 +270,7 @@ Page({
         end_time = that.end_time.substring(0,2);
 
     // console.log(thisHour)
-    console.log(this.data.hour)
+    // console.log(this.data.hour)
     if (that.choseyear == thisYear && that.chosemonth == thisMonth && that.choseday == thisDay){
       for (var i = 0; i < that.times.length; i++) {
         var obj = that.times[i];

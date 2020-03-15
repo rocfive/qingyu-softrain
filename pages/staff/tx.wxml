@@ -10,10 +10,10 @@
     <text class="record" bindtap="record">提现记录</text>
   </view>
 </view>
-<view class="types bg_fff m-10 flex_r_b">  
-  <view class="{{pay_type==2?'active':''}}" data-id="{{2}}" bindtap="changetype">提现到银行卡</view>
-  <view class="{{pay_type==3?'active':''}}" data-id="{{3}}" bindtap="changetype">提现到支付宝</view>
-  <view class="{{pay_type==1?'active':''}}" data-id="{{1}}" bindtap="changetype">提现到微信</view>
+<view class="types bg_fff m-10 flex_r_a">  
+  <view class="{{pay_type==2?'active':''}}" wx:if="{{msg.bank}}" data-id="{{2}}" bindtap="changetype">提现到银行卡</view>
+  <view class="{{pay_type==3?'active':''}}" wx:if="{{msg.alipay}}" data-id="{{3}}" bindtap="changetype">提现到支付宝</view>
+  <view class="{{pay_type==1?'active':''}}" wx:if="{{msg.weixin}}" data-id="{{1}}" bindtap="changetype">提现到微信</view>
 </view>
 <view class="m-10 bg_fff p-w-24 group01" wx:if='{{pay_type==2}}'>
   <view class="item flex_r">

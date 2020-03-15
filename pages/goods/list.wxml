@@ -2,7 +2,10 @@
 <block wx:if='{{options.ishot!=1}}'>
   <view class="banner"><image src="{{banner}}" mode="aspectFill"></image> </view>
   <view class="menu bg_fff">
-    <view class="item" wx:for='{{menu}}' wx:key='{{index}}' bindtap="clickmenu" data-id="{{item.id}}" data-name="{{item.cate_name}}"><image src="{{item.pic}}"></image></view>
+    <view class="{{curid==item.id?'item active':'item'}}" wx:for='{{menu}}' wx:key='{{index}}' bindtap="clickmenu" data-id="{{item.id}}" data-name="{{item.cate_name}}">
+      <image src="{{item.pic}}"></image>
+      <image src="../img/triangle.png" class="triangle" wx:if="{{curid==item.id}}"></image>
+    </view>
   </view>
 </block>
 <view class="list m-10">

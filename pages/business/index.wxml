@@ -48,7 +48,7 @@
       <text class="iconfont icon-hexiao"></text>
       <text>扫码核销</text>
     </view>
-    <navigator url="charge" hover-class="none" class="flex_c_c">
+    <navigator url="charge?forms=business" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-hexiaojilu1"></text>
       <text>核销记录</text>
     </navigator>

@@ -126,7 +126,6 @@ Page({
         });
       }
     }.bind(that), 1000);
-    that.setData({ interval: interval });
   },
   // 购买项目卡
   takeorder: function () {
@@ -200,7 +199,6 @@ Page({
       this.getMsg();
     }    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

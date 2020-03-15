@@ -44,9 +44,9 @@ Page({
     })
   },
   // 评价
-  evaluate:function(){
+  evaluate:function(e){
     wx.navigateTo({
-      url: 'evaluate',
+      url: 'evaluate?id=' + e.currentTarget.dataset.id,
     })
   },
   getList:function(){
@@ -149,9 +149,13 @@ Page({
               console.log(res)
               if (res.data.status == 200) {
                 wx.showToast({
-                  title: '已取消',
+                  title: '已提交',
                 })
                 timer = setTimeout(function () {
+                  that.setData({
+                    page: 1,
+                    nomore: false,
+                  })
                   that.getList();
                 }, 2000)
               } else {

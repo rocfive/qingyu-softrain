@@ -62,7 +62,9 @@ Page({
 
     this.setData({
       msg: msg
-    })
+    })    
+  },
+  addressblur:function(){
     this.getLatAndLng();
   },
   // 获取经纬度
@@ -241,7 +243,7 @@ Page({
   status:function(){
     var msg=this.data.msg;
 
-    msg.status = (msg.status == 1?0:0);
+    msg.status = (msg.status == 1?0:1);
     this.setData({
       msg: msg
     })

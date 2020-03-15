@@ -14,6 +14,8 @@
   width: 172rpx;
   height: 114rpx;
   margin-right: 6rpx;
+  position: relative;
+  border-radius: 5rpx;
 }
 .menu .item:last-child{
   margin-right: 0
@@ -21,4 +23,22 @@
 .menu .item image{
   width: 172rpx;
   height: 114rpx;
+}
+.menu .item.active{
+  border: 2rpx solid #418dfd;
+  border-radius: 5rpx;
+  box-sizing: border-box
+}
+.menu .item.active image{
+  width: 168rpx;
+  height: 110rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+}
+.menu .item.active .triangle{
+  width: 32rpx;
+  height: 18rpx;
+  position: absolute;
+  left: 70rpx;
+  bottom: -24rpx;
 }

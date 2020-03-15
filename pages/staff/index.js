@@ -11,6 +11,11 @@ Page({
       { article_title: "这里是内容或您想写的内容!!!" }
     ]
   },
+  toback(){
+    wx.switchTab({
+      url: '../myzoe/index',
+    })
+  },
   // 公告列表
   toheadlinelist:function(){
     wx.navigateTo({

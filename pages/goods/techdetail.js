@@ -34,7 +34,7 @@ Page({
       }
     })
   },
-  // 获取技术详情
+  // 获取技师详情
   getMsg:function(){
     var that=this;
 

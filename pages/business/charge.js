@@ -83,7 +83,7 @@ Page({
   },
   detail: function (e) {
     wx.navigateTo({
-      url: 'orderdetail?id=' + e.currentTarget.dataset.id
+      url: 'orderdetail?id=' + e.currentTarget.dataset.id + '&role=' + this.data.options.forms
     })
   },
   /**

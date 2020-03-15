@@ -210,7 +210,7 @@ Page({
     }
   },
   // 倒计时
-  countdown:function(params) {
+  countdown:function() {
     var that=this, djs=60;
     that.setData({
       showdjs:true,

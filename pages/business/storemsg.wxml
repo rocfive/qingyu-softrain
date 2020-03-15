@@ -33,7 +33,7 @@
 </view>
 <view class="item bg_fff p-w-28 flex_r_b">
   <label>详细地址</label>
-  <input type="text" value="{{msg.address}}" placeholder="请输入联系方式" bindinput="address"></input>
+  <input type="text" value="{{msg.address}}" placeholder="请输入联系方式" bindinput="address" bindblur="addressblur"></input>
 </view>
 <view class="flex_c bg_fff m-10 p-w-28 intro">
   <label>门店简介</label>

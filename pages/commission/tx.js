@@ -52,7 +52,7 @@ Page({
       wx.showToast({
         icon: "none",
         title: '请填写提现金额',
-      })
+      })      
       return false
     }
     if (parseFloat(oData.money) > parseFloat(that.data.commissionCount)){

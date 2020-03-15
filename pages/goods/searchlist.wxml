@@ -9,7 +9,7 @@
     </picker>
     <view class="searchbox p-w-24 flex_r_b">
       <text class="iconfont icon-sousuo"></text>
-      <input type="text" placeholder="搜索" value="" confirm-type='search' bindconfirm='search' focus="{{isfocus}}"></input>
+      <input type="text" placeholder="搜索" value="" bindinput="keyword" confirm-type='search' bindconfirm='search' focus="{{isfocus}}"></input>
     </view>
   </view>
   <view class="cancle" bindtap="cancle">取消</view>
@@ -93,3 +93,4 @@
   </block>
 </view>
 <spec id='spec' goodsid='{{goodsid}}'></spec>
+<view class="nomore" wx:if="{{!list || list.length<1}}">暂无数据</view>

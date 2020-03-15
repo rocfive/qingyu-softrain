@@ -2,7 +2,9 @@
 <!-- 秒杀商品 -->
 <block  wx:if='{{options.isseckill==1}}'>
   <swiper class="goodsimg" current="{{current}}" bindchange="changebanner">
-    <swiper-item wx:for='{{msg.images}}' wx:key='index'><image src="{{item}}"></image></swiper-item>
+    <swiper-item wx:for='{{msg.images}}' wx:key='index'>
+      <image mode="aspectfill" src="{{item}}"></image>
+    </swiper-item>
   </swiper>
   <view class="progress">{{current+1}}/{{msg.images.length}}</view>
   <view class="seckillbar p-w-24 bg_fff flex_r_b">
@@ -23,10 +25,10 @@
   <view class="goodsmsg p-w-24 bg_fff">
     <view class="title">{{msg.title}}</view>
     <view class="subhead">{{msg.info}}</view>
-    <view class="share flex_c_c">
+    <button open-type="share" class="share flex_c_c">
       <text class="iconfont icon-ziyuan"></text>
       <text>分享</text>
-    </view>
+    </button>
   </view>
   <view class="bt p-w-24 bg_fff flex_r_b m-12">
     <view class="bt_l flex_r">

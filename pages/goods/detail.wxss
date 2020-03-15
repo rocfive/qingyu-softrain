@@ -3,9 +3,13 @@
 page{
   padding-bottom: 150rpx;
 }
-.goodsimg, .goodsimg swiper-item, .goodsimg swiper-item image{
-  width: 100vw;
+.goodsimg,.goodsimg .swiper, .goodsimg swiper-item{
+  width: 750rpx;
   height: 750rpx;
+}
+.goodsimg image{
+  width: 750rpx;
+  height: 750rpx
 }
 .progress{
   width: 78rpx;
@@ -59,7 +63,7 @@ page{
 }
 .seckillbar .bar_r .flag{
   display: inline-block;
-  width: 38rpx;
+  min-width: 38rpx;
   height: 38rpx;
   background: #3d9aff;
   border-radius: 10rpx;

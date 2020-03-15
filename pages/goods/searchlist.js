@@ -20,16 +20,23 @@ Page({
   bindtypes:function(e){
     this.setData({
       index: e.detail.value
-    })
+    },()=>{
+      this.search();
+    })    
   },
   // 点击取消
   cancle:function(){
     wx.navigateBack()
   },
-  search:function(e){
+  keyword:function(e){
+    this.setData({
+      keyword: e.detail.value,
+    })
+  },
+  search:function(){
     var that=this;
     var postData={
-      keyword:e.detail.value,
+      keyword: that.data.keyword,
       type:that.data.index
     }
     app.network.request({

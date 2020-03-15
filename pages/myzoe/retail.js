@@ -22,10 +22,6 @@ Page({
           that.setData({
             list: res.data.data.task
           })
-          // that.vipList = res.data.list;
-          // that.vipRequire = res.data.task.list;
-          // that.vipComplete = res.data.task.task;
-          // that.taskCount = res.data.task.reach_count;
         } else {
           wx.showToast({
             icon: "none",

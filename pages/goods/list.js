@@ -60,7 +60,8 @@ Page({
         console.log(res)
         if (res.data.status == 200) {
           that.setData({
-            list: res.data.data
+            list: res.data.data,
+            curid: e.currentTarget.dataset.id
           }) 
         } else {
           wx.showToast({

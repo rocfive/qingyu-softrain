@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    page:0,
+    page:1,
     status:"0",
     nomore:false
   },
@@ -23,7 +23,7 @@ Page({
           console.log(res)
           if (res.data.status == 200) {
             var ress = res.data.data;
-            if (that.data.page == 0) {
+            if (that.data.page == 1) {
               that.setData({
                 list: ress
               })
@@ -56,7 +56,7 @@ Page({
           console.log(res)
           if (res.data.status == 200) {
             var ress = res.data.data;
-            if (that.data.page == 0) {
+            if (that.data.page == 1) {
               that.setData({
                 list: ress
               })
@@ -84,7 +84,7 @@ Page({
   },
   changeTab:function(e){
     this.setData({
-      page:0,
+      page:1,
       status:e.currentTarget.dataset.id
     })
     this.getList();
