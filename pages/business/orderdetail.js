@@ -107,7 +107,6 @@ Page({
         }
       })
     }
-    
   },
   // 取消核销
   toback:function(){

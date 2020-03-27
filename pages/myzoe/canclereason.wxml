@@ -1,0 +1,18 @@
+<!--pages/myzoe/canclereason.wxml-->
+<view class='pop'  hidden='{{cancle}}'>
+  <view class='pop_main'>
+    <view class='pop_tit'>退款理由:</view>
+    <scroll-view scroll-y class='pop_bk'>
+      <view class='pop_istel isreason'>
+        <view data-id='{{item}}' bindtap='can_rea' wx:for='{{list}}' wx:key="index">
+          <view class='circle' style='{{can_rea==item?"border:none":""}}'>
+            <image wx:if='{{can_rea==item}}' src='../img/success.png'></image>
+          </view>
+          <text>{{item}}</text>
+        </view>        
+      </view>      
+    </scroll-view>  
+    <view class='btn' bindtap='confrim_can'><text>提交</text></view>  
+    <text class="iconfont icon-guanbi" bindtap="closeBtn"></text>
+  </view>
+</view>

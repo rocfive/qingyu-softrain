@@ -129,7 +129,7 @@ page{
   width: 712rpx;
   height: 88rpx;
   background: linear-gradient(90deg,#3e9aff,#9d95fb);
-  margin:56rpx auto 0;
+  margin-top:56rpx;
   border-radius: 44rpx;
   text-align: center;
   line-height: 88rpx;

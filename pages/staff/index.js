@@ -16,6 +16,23 @@ Page({
       url: '../myzoe/index',
     })
   },
+  // 退出登录
+  esc: function () {
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出登录',
+      success: function (res) {
+        if (res.confirm) {
+          wx.showLoading();
+          wx.removeStorageSync("metoken");
+          wx.switchTab({
+            url: '../myzoe/index',
+          })
+          wx.hideLoading();
+        }
+      }
+    })
+  },
   // 公告列表
   toheadlinelist:function(){
     wx.navigateTo({

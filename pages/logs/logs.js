@@ -37,7 +37,7 @@ Page({
     wx.navigateTo({
       url: 'getTel?logoimg='+this.data.logoimg+"&token="+this.data.token,
     })
-  },  
+  },
   closepop:function(){
     wx.navigateBack()
   },
@@ -104,7 +104,9 @@ Page({
                       wx.setStorageSync('phone', ress.userInfo.phone);
                       wx.navigateBack()
                     }
-                    wx.setStorageSync("shareid", ress.userInfo.uid)
+                    if (ress.userInfo.is_promoter==1){
+                      wx.setStorageSync("shareid", ress.userInfo.uid)
+                    }                    
                   }
                 }
               })

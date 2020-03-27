@@ -2,6 +2,7 @@
 <view class="banner">
   <image src="{{lovely}}"></image>
 </view>
+<view class="hidescrollbar">
 <scroll-view scroll-x class="seckill_time p-w-28">
   <block wx:for='{{seckillTime}}' wx:key='index' wx:if='{{item.status}}'>
     <view class="{{item.id==timeid?'item cur':'item'}}" data-id="{{item.id}}" bindtap="changeTab" data-status="{{item.status}}">
@@ -10,6 +11,8 @@
     </view>
   </block>
 </scroll-view>
+</view>
+
 <view class="seckillbt flex_r_c">
   <image src="../img/seckillbt.png" mode="widthFix"></image>
   <text class="after"></text>

@@ -101,7 +101,7 @@
         <view class="name">{{item.name}}</view>
         <view class="address">{{item.introduction}}</view>
         <view class="item_b flex_r_a">
-          <view class="flex_c_c">
+          <view class="flex_c_c" data-lat="{{item.lat}}" data-lng="{{item.lng}}" catchtap="toMap">
             <text class="iconfont icon-ditu3"></text>
             <text>{{item.distance}}km</text>
           </view>

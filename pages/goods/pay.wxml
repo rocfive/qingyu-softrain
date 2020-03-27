@@ -9,18 +9,18 @@
     <view class="money">￥{{pay_price}}</view>
   </view>
 </view>
-<view class="m-10 flex_r_b bg_fff payitem p-w-24" wx:if='{{yue_pay}}'>
+<view class="m-10 flex_r_b bg_fff payitem p-w-24" wx:if='{{yue_pay}}' bindtap="chosetype" data-id="yue">
   <image src="../img/icon_pay_balance.png" class="payicon" mode="widthFix"></image>
   <view class="payname flex_c">
     <text>余额支付</text>
     <text class="tips">当前余额：{{no_money}}</text>
   </view>
-  <view data-id="yue" bindtap="chosetype" class="{{paytype=='yue'?'checkbox':'checkbox1'}}"><image wx:if="{{paytype=='yue'}}" src="../img/success.png"></image></view>
+  <view class="{{paytype=='yue'?'checkbox':'checkbox1'}}"><image wx:if="{{paytype=='yue'}}" src="../img/success.png"></image></view>
 </view>
-<view class="m-10 flex_r_b bg_fff payitem p-w-24" wx:if='{{wechat_pay}}'>
+<view class="m-10 flex_r_b bg_fff payitem p-w-24" wx:if='{{wechat_pay}}' data-id="weixin" bindtap="chosetype">
   <image src="../img/icon_pay_wechat.png" class="payicon" mode="widthFix"></image>
   <view class="payname">微信支付</view>
-  <view data-id="weixin" bindtap="chosetype" class="{{paytype=='weixin'?'checkbox':'checkbox1'}}"><image wx:if="{{paytype=='weixin'}}" src="../img/success.png"></image></view>
+  <view class="{{paytype=='weixin'?'checkbox':'checkbox1'}}"><image wx:if="{{paytype=='weixin'}}" src="../img/success.png"></image></view>
 </view>
 <view class="btnbox flex_c_c bg_fff">
   <view class="btn" bindtap="takeorder">确认支付￥{{pay_price}}</view>

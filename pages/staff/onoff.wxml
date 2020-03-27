@@ -6,22 +6,22 @@
 <view class="group m-10" wx:if='{{open==1}}'>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>开始时间</label>
-    <picker mode='date' bindchange="changest" start='{{nowDate}}'>
-      <view>
-        <text wx:if='{{st}}'>{{st}}</text>
-        <text wx:else>请选择</text>
-        <text class="iconfont icon-gengduo"></text>
-      </view>
+    <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <view class="text">
+          <text wx:if='{{st}}'>{{st}}</text>
+          <text wx:else>请选择</text>
+          <text class="iconfont icon-gengduo"></text>
+        </view>
     </picker>
   </view>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>结束时间</label>
-    <picker mode='date' bindchange="changeet" start='{{nowDate}}'>
-      <view>
-        <text wx:if='{{et}}'>{{et}}</text>
-        <text wx:else>请选择</text>
-        <text class="iconfont icon-gengduo"></text>
-      </view>
+    <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <view class="text">
+          <text wx:if='{{et}}'>{{et}}</text>
+          <text wx:else>请选择</text>
+          <text class="iconfont icon-gengduo"></text>
+        </view>
     </picker>
   </view>
 </view>

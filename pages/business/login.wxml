@@ -5,7 +5,7 @@
     <view class="title">登录</view>
     <view class="{{focus_account?'item success':'item'}}">
       <label>账户手机号</label>
-      <input type="number" placeholder="请输入账户手机号" value='{{account}}' bindinput="account" bindfocus="focus_account" bindblur="blur_account"></input>
+      <input type="text" placeholder="请输入账户手机号" value='{{account}}' bindinput="account" bindfocus="focus_account" bindblur="blur_account"></input>
       <icon type="success" color='#4e99fe' wx:if='{{accountsta==1}}'></icon>
     </view>
     <view class="{{focus_pass?'item success':'item'}}">

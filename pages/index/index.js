@@ -66,10 +66,12 @@ Page({
         fail: function (res) {
           setting();
         },
-        complete: function (res) { },
+        complete: function (res) {
+        },
       })
     };
     function setting() {
+      console.log("获取经纬度失败")
       wx.getSetting({
         success: function (res) {
           var statu = res.authSetting;
@@ -176,6 +178,26 @@ Page({
   storedetail:function(e){
     wx.navigateTo({
       url: '../store/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  // 导航
+  toMap: function (e) {
+    var that = this;
+    var lx = JSON.parse(e.currentTarget.dataset.lat),
+      ly = JSON.parse(e.currentTarget.dataset.lng);
+
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        console.log(res)
+        wx.openLocation({
+          latitude: lx,
+          longitude: ly,
+          scale: 18
+        })
+      }
     })
   },
   onLoad: function (options) {    

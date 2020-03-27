@@ -190,3 +190,43 @@
   color: #e35a7b;
   font-size: 26rpx;
 }
+.pickerbg{
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height:100vh;
+  background: rgba(0,0,0,0.7);
+  border-top: 1rpx solid #f2f2f2;
+  padding: 0 30rpx;
+}
+.pickerbg .btnbox{
+  position: absolute;
+  bottom: 400rpx;
+  left: 0;
+  height: 80rpx;
+  color: #418dfd
+}
+.pick_qux, .pick_quqd{
+  position: absolute;
+  bottom: 270px;
+  background: none;
+  height: 20px;
+  line-height: 20px;
+  width: 60rpx;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+  border: none;
+  font-size: 28rpx;
+}
+.pick_qux::after, .pick_quqd::after{
+  border: none
+}
+.pick_qux{
+  left: 28rpx;
+}
+.pick_quqd{
+  right: 28rpx;
+  color: #01dbaa
+}

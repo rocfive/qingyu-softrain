@@ -67,6 +67,7 @@
   <block wx:if='{{msg._status._type==1 && msg.cartInfo[0].productInfo.product_type==0}}'>
     <view class="item bg_fff flex_r_r p-w-24">
       <!-- <view class="btn" catchtap="cancle" data-id="{{msg.o2o_fuwu_order_id}}">取消订单</view> -->
+      <view class="btn" catchtap="showpicker" data-id="{{msg.order_id}}" data-storeid="{{msg.store_id}}" data-startime="{{msg._menshop.start_time}}" data-endtime="{{msg._menshop.end_time}}">修改时间</view>
       <view class="btn btn01" catchtap="refund" data-id="{{msg.order_id}}">申请退款</view>
       <view class="btn btn01" catchtap="charge" data-num="{{msg.write_off_num}}">生成核销码</view>
     </view>
@@ -87,3 +88,36 @@
     <view class="tips">温馨提示：为了更好的保护您利益,请不要轻易将您的核销二维码泄露给他人</view>
   </view>
 </view>
+<canclereason id='canbox' o_id='{{uni}}' bind:callSomeFun="orderDetail"></canclereason>
+
+<view class="pickerbg bg_fff" hidden="{{hidepicker}}">
+    <view class="p-w-24 flex_r_b btnbox bg_fff">
+      <view class="btn_l" catchtap="hidepicker">取消</view>
+      <view class="btn_r" catchtap="changetime">确定</view> 
+    </view>     
+    <picker-view indicator-style="height: 80rpx;" style="width: 150rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0; left:0rpx; " value="{{index_y}}" bindchange="bindChange1">
+      <picker-view-column>
+        <view wx:for="{{year}}" wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.year}}</view>
+      </picker-view-column>    
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 150rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 150rpx; " value="{{index_m}}" bindchange="bindChange2">
+      <picker-view-column>
+        <view wx:for="{{month}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.month}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 150rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 300rpx;  " value="{{index_d}}" bindchange="bindChange3">
+      <picker-view-column>
+        <view wx:for="{{day}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 150rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 450rpx;  " value="{{index_h}}" bindchange="bindChange4">
+      <picker-view-column>
+        <view wx:for="{{hour}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item.hour}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 80rpx;" style="width: 150rpx; height: 400rpx; background:#fff;position: absolute; bottom: 0;left: 600rpx; " value="{{index_min}}" bindchange="bindChange5">
+      <picker-view-column>
+        <view wx:for="{{minute}}"  wx:key='index' style="line-height: 80rpx;text-align: center;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>

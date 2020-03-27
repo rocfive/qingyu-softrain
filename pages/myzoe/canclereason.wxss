@@ -1,0 +1,101 @@
+/* pages/myzoe/canclereason.wxss */
+@import "../../app";
+.pop{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.48);
+}
+.pop_main{
+  width: 100vw;
+  height: 720rpx;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  position: absolute;
+  display: flex;
+  flex-flow: column;  
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.pop_tit{
+  width: 100%;
+  height: 86rpx;
+  padding: 0 24px;
+  box-sizing: border-box;
+  /* border-bottom: 1rpx solid #eeeeee; */
+  text-align: left;
+  line-height: 120rpx;
+  font-size: 30rpx;
+  color: #333333
+}
+.pop_bk{
+  width: 100vw;
+  height: 500rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.pop_istel{
+  display: flex;
+  flex-flow: row;
+  font-size: 28rpx;
+  color: #888888;
+  height: 80rpx;
+  align-items: center;
+  margin-top: 14rpx
+}
+.pop_istel>view{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.pop_istel .circle{
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid #c8c8c8;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+}
+.pop_istel .circle image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.pop_bk .h2{
+  font-size:26rpx; 
+  color:#333333;
+  line-height: 30rpx;
+}
+.isreason{
+  height: auto;
+  flex-flow: column;
+  align-items: flex-start;
+}
+.isreason>view{
+  height:72rpx;
+  justify-content: center
+}
+.pop .btn{
+  position: absolute;
+  bottom: 16rpx;
+  left: 24rpx;
+  width: 702rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg, #3c9aff, #9e95fb);
+  border-radius: 45rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.icon-guanbi{
+  position: absolute;
+  top: 28rpx;
+  right: 28rpx;
+  font-size: 48rpx;
+  color: #a1a1a1
+}

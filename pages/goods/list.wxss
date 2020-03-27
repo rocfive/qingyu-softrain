@@ -25,16 +25,16 @@
   height: 114rpx;
 }
 .menu .item.active{
-  border: 2rpx solid #418dfd;
-  border-radius: 5rpx;
-  box-sizing: border-box
+  /* border: 2rpx solid #418dfd; */
+  /* border-radius: 5rpx;
+  box-sizing: border-box */
 }
-.menu .item.active image{
+/* .menu .item.active image{
   width: 168rpx;
   height: 110rpx;
   box-sizing: border-box;
   border-radius: 5rpx;
-}
+} */
 .menu .item.active .triangle{
   width: 32rpx;
   height: 18rpx;

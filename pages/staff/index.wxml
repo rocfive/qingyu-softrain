@@ -74,5 +74,8 @@
     </navigator>
   </view>
 </view>
-<view class="btn" bindtap='toback'>返回到个人中心</view>
+<view class="flex_r_b p-w-24">
+  <view class="btn" bindtap='esc' style="width:272rpx">退出登录</view>
+  <view class="btn" bindtap='toback' style="width:400rpx">返回到个人中心</view>
+</view>
 

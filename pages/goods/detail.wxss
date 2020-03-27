@@ -37,11 +37,12 @@ page{
   top: 0
 }
 .seckillbar .bar_l{
-  width: 300rpx;
+  width: 400rpx;
   height: 100rpx;
   line-height:100rpx;
   position: relative;
   color: #fff;
+  overflow: hidden
 }
 .seckillbar .seckillprice{
   font-size: 32rpx;
