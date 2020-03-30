@@ -207,6 +207,13 @@
   height: 80rpx;
   color: #418dfd
 }
+.pickerbg .pickerbgfff{
+  width:100vw; 
+  height:400rpx;
+  position: absolute; 
+  bottom: 0; 
+  left:0rpx
+}
 .pick_qux, .pick_quqd{
   position: absolute;
   bottom: 270px;

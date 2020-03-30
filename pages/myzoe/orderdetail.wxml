@@ -79,7 +79,6 @@
     </view>
   </block>
 </view>
-
 <view class="pop flex_c_c" wx:if='{{msg.cartInfo[0].productInfo.product_type==0}}' hidden="{{verification}}" bindtap="cancle_charge">
   <view class="popmain bg_fff flex_c_c" catchtap="">
     <view class="title">请将二维码出示给核销员</view>
