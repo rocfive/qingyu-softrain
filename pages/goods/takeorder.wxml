@@ -29,11 +29,11 @@
     </view>
   </view>
 </view>
-<block  wx:if='{{product_type!="1"}}'>
+<block  wx:if='{{product_type!="1" && store_id}}'>
   <view class="gorup m-10">
     <view class="item bg_fff p-w-24 flex_r_b">
       <label>预约开始时间</label>
-      <view class="item_r flex_r_r" wx:if='{{store_id}}'>{{choseyear}}年{{chosemonth}}月{{choseday}}日 {{chosehour}}时{{chosemin}}分</view>
+      <view class="item_r flex_r_r">{{choseyear}}年{{chosemonth}}月{{choseday}}日 {{chosehour}}时{{chosemin}}分</view>
     </view>
   </view>
   <view  class="pickerbg bg_fff" wx:if='{{store_id}}'>      

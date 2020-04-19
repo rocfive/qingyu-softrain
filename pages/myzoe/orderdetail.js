@@ -57,16 +57,26 @@ Page({
     })
   },
   showpicker: function (e) {
-    var that = this, start_time = e.currentTarget.dataset.startime, end_time = e.currentTarget.dataset.endtime;
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '订单时间仅可修改一次，请谨慎修改',
+      confirmText: "确认修改",
+      success: function (res) {
+        if (res.confirm) {
+          var start_time = e.currentTarget.dataset.startime, end_time = e.currentTarget.dataset.endtime;
 
-    that.setData({
-      store_id: e.currentTarget.dataset.storeid,
-      start_time: start_time.substring(0, 5),
-      end_time: end_time.substring(0, 5),
-      uni: e.currentTarget.dataset.id,
-      hidepicker: false
-    })
-    that.getSelectTime()
+          that.setData({
+            store_id: e.currentTarget.dataset.storeid,
+            start_time: start_time.substring(0, 5),
+            end_time: end_time.substring(0, 5),
+            uni: e.currentTarget.dataset.id,
+            hidepicker: false
+          })
+          that.getSelectTime()
+        }
+      }
+    })    
   },
   getSelectTime: function () {
     var that = this;

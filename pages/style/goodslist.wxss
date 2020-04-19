@@ -41,9 +41,11 @@
   height: 55rpx;
   text-align: center;
   line-height: 55rpx;
-  border: 2rpx solid #418dfd;
+  /* border: 2rpx solid #418dfd; */
   border-radius: 28rpx;
-  color: #4694ff;
+  /* color: #4694ff; */
+  background: #418dfd;
+  color: #fff;
   font-size: 26rpx;
   margin-left: 15rpx;
 }

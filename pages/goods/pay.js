@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    paytype: "weixin"
   },
   getgopay:function(){
     var that=this;
@@ -26,7 +26,8 @@ Page({
             pay_price: ress.pay_price,
             no_money: ress.no_money,
             yue_pay: ress.yue_pay,
-            wechat_pay: ress.wechat_pay
+            wechat_pay: ress.wechat_pay,
+            wait_time: ress.wait_time
           })
           if(that.data.is_pay==1){
             // 如果支付金额为零，自动支付
@@ -117,7 +118,7 @@ Page({
               fail: function (e) {
                 wx.hideLoading();
                 wx.showToast({
-                  icon: "success",
+                  icon: "none",
                   title: "取消支付",
                 })
                 timer = setTimeout(function () {
@@ -130,7 +131,7 @@ Page({
                 wx.hideLoading();
                 if (e.errMsg == 'requestPayment:cancel') {
                   wx.showToast({
-                    icon: "success",
+                    icon: "none",
                     title: "取消支付",
                   })
                   timer = setTimeout(function () {                    

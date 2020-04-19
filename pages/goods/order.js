@@ -90,7 +90,8 @@ Page({
             card_choosable:ress.usableCard?true:false,   //项目卡是否可选
             // coupon_price: ress.usableCoupon?ress.usableCoupon.coupon_price:"",
             // couponId: ress.usableCoupon?ress.usableCoupon.id:"",
-            // usableCard: ress.usableCard ? ress.usableCard:"",
+            usableCard: ress.usableCard ? ress.usableCard:"",
+            cardId: ress.usableCard ? ress.usableCard.id:"",
             orderKey: ress.orderKey, 
           })   
           that.computed();

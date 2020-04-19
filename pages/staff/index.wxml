@@ -34,14 +34,17 @@
     <navigator url="orderlist?active=2" hover-class="none" class="flex_c_c">
       <text class="iconfont icon-i"></text>
       <text>待核销</text>
+      <text class="badge" wx:if='{{msg.orderStatusNum.received_count>0}}'>{{msg.orderStatusNum.received_count}}</text>
     </navigator>
     <navigator url="orderlist?active=4" class="flex_c_c">
       <text class="iconfont icon-hexiao"></text>
       <text>待评价</text>
+      <text class="badge" wx:if='{{msg.orderStatusNum.evaluated_count>0}}'>{{msg.orderStatusNum.evaluated_count}}</text>
     </navigator>
     <navigator url="orderlist?active=5" class="flex_c_c">
-      <text class="iconfont icon-daiyuyue"></text>
+      <text class="iconfont icon-daiyuyue"></text>      
       <text>已完成</text>
+      <text class="badge" wx:if='{{msg.orderStatusNum.complete_count>0}}'>{{msg.orderStatusNum.complete_count}}</text>
     </navigator>
     <!-- <navigator url="" class="flex_c_c">
       <text class="iconfont icon-pingjia"></text>

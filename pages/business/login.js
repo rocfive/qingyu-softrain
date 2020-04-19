@@ -67,8 +67,7 @@ Page({
             wx.setStorageSync("mstoken", res.data.data.mstoken);
             wx.redirectTo({
               url: 'index',
-            })
-            
+            })            
           } else {
             wx.showToast({
               icon: "none",
@@ -90,7 +89,6 @@ Page({
             wx.redirectTo({
               url: '../staff/index',
             })
-
           } else {
             wx.showToast({
               icon: "none",

@@ -59,6 +59,12 @@ Page({
       url: 'orderdetail?role=business&id='+e.currentTarget.dataset.id,
     })
   },
+  // 拨打电话
+  toCall: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.tel,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

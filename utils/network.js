@@ -103,6 +103,7 @@ function request2(requestHandler) {
       wx.hideLoading();
       requestHandler.success(res)
       if (res.data.status == "410000") {
+        wx.removeStorageSync("mstoken")
         wx.redirectTo({
           url: '/pages/business/login?froms=shop',
         })
@@ -143,6 +144,7 @@ function request3(requestHandler) {
       wx.hideLoading();
       requestHandler.success(res)
       if (res.data.status == "410000") {
+        wx.removeStorageSync("metoken")
         wx.redirectTo({
           url: '/pages/business/login?froms=employee',
         })

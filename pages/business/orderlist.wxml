@@ -21,11 +21,21 @@
       </view>
     </view>
     <view class="line p-w-24 flex_r_b">
-      <view>
-        <text style="font-size:26rpx;">{{item._add_time}}</text>
+      <view class="felx_r">
+        <text class="iconfont icon-mendian" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'></text>
+        <text class="txt" wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>{{item._menshop.name}}</text>
       </view>
       <text class="price">￥<text>{{item.pay_price}}</text></text>
-    </view>    
+    </view>
+    <view class="line p-w-24 flex_r_b">
+      <view>
+        <text style="font-size:26rpx;">{{item._add_time}}</text>
+      </view>        
+      <view  wx:if='{{item.cartInfo[0].productInfo.product_type==0}}'>
+        <text class="time">技师：{{item._teach.name}}</text>
+        <text class="btntel" data-tel="{{item._teach.phone}}" catchtap="toCall">联系电话</text>
+      </view>
+    </view>
   </view>  
   </block>  
 </view>

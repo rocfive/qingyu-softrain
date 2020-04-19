@@ -18,10 +18,14 @@
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>营业时间</label>
     <view>{{msg._menshop.start_time}}-{{msg._menshop.end_time}}</view>
-  </view>
+  </view>  
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>预约时间</label>
     <view>{{msg._order_time}}</view>
+  </view>
+  <view class="item bg_fff p-w-24 flex_r_b">
+    <label>预约技师</label>
+    <view>{{msg._teach.name}}</view>
   </view>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>预留姓名</label>
@@ -29,7 +33,7 @@
   </view>
   <view class="item bg_fff p-w-24 flex_r_b">
     <label>预留手机号</label>
-    <view>{{msg.user_phone}}</view>
+    <view data-tel="{{msg.user_phone}}" catchtap="toCall" style="text-decoration: underline; color:#4694ff">{{msg.user_phone}}</view>
   </view>
 </view>
 

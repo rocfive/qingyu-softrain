@@ -40,14 +40,22 @@ Page({
           method: "GET",
           data: { page: that.data.page, limit: 20 },
           success: function (res) {
-            console.log(res)
+            console.log(res)            
             if (res.data.status == 200) {
-              that.setData({
-                list: res.data.data
-              })
-              if (that.data.page != 1 && res.data.data.length < 1) {
+              if (that.data.page == 1) {
                 that.setData({
-                  nomore: true
+                  list: res.data.data
+                })
+              } else {
+                if (res.data.data.length < 1) {
+                  that.setData({
+                    nomore: true
+                  })
+                }
+                var list = that.data.list;
+                list.push.apply(list, res.data.data);
+                that.setData({
+                  list: list
                 })
               }
             } else {
@@ -67,12 +75,20 @@ Page({
           success: function (res) {
             console.log(res)
             if (res.data.status == 200) {
-              that.setData({
-                list: res.data.data
-              })
-              if (that.data.page != 1 && res.data.data.length < 1) {
+              if (that.data.page == 1) {
                 that.setData({
-                  nomore: true
+                  list: res.data.data
+                })
+              } else {
+                if (res.data.data.length < 1) {
+                  that.setData({
+                    nomore: true
+                  })
+                }
+                var list = that.data.list;
+                list.push.apply(list, res.data.data);
+                that.setData({
+                  list: list
                 })
               }
             } else {
@@ -93,12 +109,20 @@ Page({
         success: function (res) {
           console.log(res)
           if (res.data.status == 200) {
-            that.setData({
-              list: res.data.data
-            })
-            if (that.data.page != 1 && res.data.data.length<1){
+            if (that.data.page == 1) {
               that.setData({
-                nomore:true
+                list: res.data.data
+              })
+            } else {
+              if (res.data.data.length < 1) {
+                that.setData({
+                  nomore: true
+                })
+              }
+              var list = that.data.list;
+              list.push.apply(list, res.data.data);
+              that.setData({
+                list: list
               })
             }
           } else {

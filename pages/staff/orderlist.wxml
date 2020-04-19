@@ -47,6 +47,10 @@
         <text class="iconfont icon-shangcheng1"></text>
         <text style="font-size:26rpx;">{{item._add_time}}</text>
       </view>  
+      <view>
+        <text class="time">{{item.real_name}}</text>
+        <text class="btntel" data-tel="{{item.user_phone}}" catchtap="toCall">联系电话</text>
+      </view>
     </view> 
   </view>  
   </block>  

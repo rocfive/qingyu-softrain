@@ -1,5 +1,5 @@
 <!--pages/myzoe/retail.wxml-->
-<!-- <view class="m-t bg_fff flex_c_c">
+<view class="m-t bg_fff flex_c_c">
   <view class="cardimg"><image src="../img/cardimg.png"></image></view>
   <view class="cardname">【V脸套餐】瘦脸针+玻尿酸+水光针乐享价988礼品卡</view>
   <view class="giftbag">
@@ -26,8 +26,8 @@
   </view>
   <view class="tips">点击“去支付”并购买礼包。</view>
 </view>
-<view class="btn">去支付</view> -->
-<view class="wrapper">
+<view class="btn">去支付</view>
+<!-- <view class="wrapper">
   <view class="bt p-w-24 bg_fff flex_r_b">
     <view class="bt_l flex_r">
       <text>会员升级要求</text>
@@ -50,4 +50,4 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->

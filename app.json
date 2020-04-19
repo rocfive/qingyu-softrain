@@ -1,5 +1,6 @@
 {
-  "pages": [     
+  "pages": [    
+    "pages/myzoe/retail", 
 
     "pages/index/index",
     "pages/headline/list",
@@ -31,7 +32,7 @@
     "pages/myzoe/evaluate",
     "pages/myzoe/coupon",
     "pages/myzoe/aboutus",
-    "pages/myzoe/retail",
+    
     "pages/myzoe/card",
     "pages/myzoe/invite",
     "pages/commission/index",
